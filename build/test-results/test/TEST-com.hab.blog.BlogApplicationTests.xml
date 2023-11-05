@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.hab.blog.BlogApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-11-05T20:05:39" hostname="PL4KX17XFK" time="0.539">
+<testsuite name="com.hab.blog.BlogApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-11-05T21:19:32" hostname="PL4KX17XFK" time="0.331">
   <properties/>
-  <testcase name="contextLoads()" classname="com.hab.blog.BlogApplicationTests" time="0.539"/>
-  <system-out><![CDATA[04:05:39.336 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.hab.blog.BlogApplicationTests]: BlogApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-04:05:39.375 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.hab.blog.BlogApplication for test class com.hab.blog.BlogApplicationTests
+  <testcase name="contextLoads()" classname="com.hab.blog.BlogApplicationTests" time="0.331"/>
+  <system-out><![CDATA[05:19:29.425 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.hab.blog.BlogApplicationTests]: BlogApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+05:19:29.459 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.hab.blog.BlogApplication for test class com.hab.blog.BlogApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -13,9 +13,23 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.1.5)
 
-2023-11-06T04:05:39.499+08:00  INFO 47352 --- [    Test worker] com.hab.blog.BlogApplicationTests        : Starting BlogApplicationTests using Java 20.0.2 with PID 47352 (started by i564407 in /Users/i564407/blog)
-2023-11-06T04:05:39.500+08:00  INFO 47352 --- [    Test worker] com.hab.blog.BlogApplicationTests        : No active profile set, falling back to 1 default profile: "default"
-2023-11-06T04:05:39.933+08:00  INFO 47352 --- [    Test worker] com.hab.blog.BlogApplicationTests        : Started BlogApplicationTests in 0.512 seconds (process running for 0.917)
+2023-11-06T05:19:29.583+08:00  INFO 50946 --- [    Test worker] com.hab.blog.BlogApplicationTests        : Starting BlogApplicationTests using Java 20.0.2 with PID 50946 (started by i564407 in /Users/i564407/blog)
+2023-11-06T05:19:29.584+08:00  INFO 50946 --- [    Test worker] com.hab.blog.BlogApplicationTests        : No active profile set, falling back to 1 default profile: "default"
+2023-11-06T05:19:29.781+08:00  INFO 50946 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-06T05:19:29.800+08:00  INFO 50946 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 1 JPA repository interfaces.
+2023-11-06T05:19:29.946+08:00  INFO 50946 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-06T05:19:29.964+08:00  INFO 50946 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-06T05:19:29.965+08:00  INFO 50946 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-06T05:19:30.054+08:00  INFO 50946 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-06T05:19:30.063+08:00  INFO 50946 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-06T05:19:31.611+08:00  INFO 50946 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1d1c37d5
+2023-11-06T05:19:31.615+08:00  INFO 50946 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-06T05:19:31.717+08:00  WARN 50946 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-06T05:19:31.718+08:00  WARN 50946 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2023-11-06T05:19:31.999+08:00  INFO 50946 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-06T05:19:32.166+08:00  INFO 50946 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-06T05:19:32.309+08:00  WARN 50946 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-06T05:19:32.435+08:00  INFO 50946 --- [    Test worker] com.hab.blog.BlogApplicationTests        : Started BlogApplicationTests in 2.928 seconds (process running for 3.341)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
