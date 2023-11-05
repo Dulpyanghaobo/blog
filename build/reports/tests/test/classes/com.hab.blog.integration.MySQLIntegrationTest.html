@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.041s</div>
+<div class="counter">0.042s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,7 +79,7 @@
 </thead>
 <tr>
 <td class="success">testSimpleSelect()</td>
-<td class="success">0.041s</td>
+<td class="success">0.042s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -87,29 +87,29 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2023-11-06T05:40:12.070+08:00  INFO 51824 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.hab.blog.integration.MySQLIntegrationTest]: MySQLIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-11-06T05:40:12.074+08:00  INFO 51824 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.hab.blog.BlogApplication for test class com.hab.blog.integration.MySQLIntegrationTest
-2023-11-06T05:40:12.092+08:00  INFO 51824 --- [    Test worker] o.t.utility.ImageNameSubstitutor         : Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
-2023-11-06T05:40:12.184+08:00  INFO 51824 --- [    Test worker] o.t.d.DockerClientProviderStrategy       : Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
-2023-11-06T05:40:12.291+08:00  INFO 51824 --- [    Test worker] o.t.d.DockerClientProviderStrategy       : Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
-2023-11-06T05:40:12.291+08:00  INFO 51824 --- [    Test worker] org.testcontainers.DockerClientFactory   : Docker host IP address is localhost
-2023-11-06T05:40:12.313+08:00  INFO 51824 --- [    Test worker] org.testcontainers.DockerClientFactory   : Connected to docker: 
+<pre>2023-11-06T05:56:35.866+08:00  INFO 52696 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.hab.blog.integration.MySQLIntegrationTest]: MySQLIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-11-06T05:56:35.869+08:00  INFO 52696 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.hab.blog.BlogApplication for test class com.hab.blog.integration.MySQLIntegrationTest
+2023-11-06T05:56:35.884+08:00  INFO 52696 --- [    Test worker] o.t.utility.ImageNameSubstitutor         : Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2023-11-06T05:56:35.966+08:00  INFO 52696 --- [    Test worker] o.t.d.DockerClientProviderStrategy       : Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2023-11-06T05:56:36.069+08:00  INFO 52696 --- [    Test worker] o.t.d.DockerClientProviderStrategy       : Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2023-11-06T05:56:36.069+08:00  INFO 52696 --- [    Test worker] org.testcontainers.DockerClientFactory   : Docker host IP address is localhost
+2023-11-06T05:56:36.080+08:00  INFO 52696 --- [    Test worker] org.testcontainers.DockerClientFactory   : Connected to docker: 
   Server Version: 23.0.5
   API Version: 1.42
   Operating System: Docker Desktop
   Total Memory: 7851 MB
-2023-11-06T05:40:12.331+08:00  INFO 51824 --- [    Test worker] tc.testcontainers/ryuk:0.5.1             : Creating container for image: testcontainers/ryuk:0.5.1
-2023-11-06T05:40:12.954+08:00  INFO 51824 --- [    Test worker] o.t.utility.RegistryAuthLocator          : Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
-2023-11-06T05:40:13.020+08:00  INFO 51824 --- [    Test worker] tc.testcontainers/ryuk:0.5.1             : Container testcontainers/ryuk:0.5.1 is starting: 664add012a25bc761c5d0cc2accd914496850c5170d5f08205d31b6e8aa498a0
-2023-11-06T05:40:13.319+08:00  INFO 51824 --- [    Test worker] tc.testcontainers/ryuk:0.5.1             : Container testcontainers/ryuk:0.5.1 started in PT1.002279S
-2023-11-06T05:40:13.323+08:00  INFO 51824 --- [    Test worker] o.t.utility.RyukResourceReaper           : Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
-2023-11-06T05:40:13.323+08:00  INFO 51824 --- [    Test worker] org.testcontainers.DockerClientFactory   : Checking the system...
-2023-11-06T05:40:13.323+08:00  INFO 51824 --- [    Test worker] org.testcontainers.DockerClientFactory   : ✔︎ Docker server version should be at least 1.6.0
-2023-11-06T05:40:13.325+08:00  INFO 51824 --- [    Test worker] tc.mysql:8.0                             : Creating container for image: mysql:8.0
-2023-11-06T05:40:13.405+08:00  INFO 51824 --- [    Test worker] tc.mysql:8.0                             : Container mysql:8.0 is starting: 2884912cc92f48c75ba818627e1e04196766979ba172bb77c39a19d60690cabc
-2023-11-06T05:40:13.621+08:00  INFO 51824 --- [    Test worker] tc.mysql:8.0                             : Waiting for database connection to become available at jdbc:mysql://localhost:52116/testdb using query 'SELECT 1'
-2023-11-06T05:40:21.213+08:00  INFO 51824 --- [    Test worker] tc.mysql:8.0                             : Container mysql:8.0 started in PT7.888244S
-2023-11-06T05:40:21.213+08:00  INFO 51824 --- [    Test worker] tc.mysql:8.0                             : Container is started (JDBC URL: jdbc:mysql://localhost:52116/testdb)
+2023-11-06T05:56:36.098+08:00  INFO 52696 --- [    Test worker] tc.testcontainers/ryuk:0.5.1             : Creating container for image: testcontainers/ryuk:0.5.1
+2023-11-06T05:56:36.397+08:00  INFO 52696 --- [    Test worker] o.t.utility.RegistryAuthLocator          : Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+2023-11-06T05:56:36.462+08:00  INFO 52696 --- [    Test worker] tc.testcontainers/ryuk:0.5.1             : Container testcontainers/ryuk:0.5.1 is starting: b901dccce77f9921aabf97cfce649fba1fa411b7f36b2855e4e25040b71db469
+2023-11-06T05:56:36.750+08:00  INFO 52696 --- [    Test worker] tc.testcontainers/ryuk:0.5.1             : Container testcontainers/ryuk:0.5.1 started in PT0.666028S
+2023-11-06T05:56:36.754+08:00  INFO 52696 --- [    Test worker] o.t.utility.RyukResourceReaper           : Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2023-11-06T05:56:36.754+08:00  INFO 52696 --- [    Test worker] org.testcontainers.DockerClientFactory   : Checking the system...
+2023-11-06T05:56:36.754+08:00  INFO 52696 --- [    Test worker] org.testcontainers.DockerClientFactory   : ✔︎ Docker server version should be at least 1.6.0
+2023-11-06T05:56:36.756+08:00  INFO 52696 --- [    Test worker] tc.mysql:8.0                             : Creating container for image: mysql:8.0
+2023-11-06T05:56:36.839+08:00  INFO 52696 --- [    Test worker] tc.mysql:8.0                             : Container mysql:8.0 is starting: 577eaf9575681dfd174008113518b990c03333d648e3afd74f57a9b685873b6c
+2023-11-06T05:56:37.041+08:00  INFO 52696 --- [    Test worker] tc.mysql:8.0                             : Waiting for database connection to become available at jdbc:mysql://localhost:54402/testdb using query 'SELECT 1'
+2023-11-06T05:56:44.627+08:00  INFO 52696 --- [    Test worker] tc.mysql:8.0                             : Container mysql:8.0 started in PT7.871359S
+2023-11-06T05:56:44.627+08:00  INFO 52696 --- [    Test worker] tc.mysql:8.0                             : Container is started (JDBC URL: jdbc:mysql://localhost:54402/testdb)
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -119,24 +119,24 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.1.5)
 
-2023-11-06T05:40:21.225+08:00  INFO 51824 --- [    Test worker] c.h.b.integration.MySQLIntegrationTest   : Starting MySQLIntegrationTest using Java 20.0.2 with PID 51824 (started by i564407 in /Users/i564407/blog)
-2023-11-06T05:40:21.225+08:00  INFO 51824 --- [    Test worker] c.h.b.integration.MySQLIntegrationTest   : The following 1 profile is active: &quot;mysql&quot;
-2023-11-06T05:40:21.273+08:00  INFO 51824 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-11-06T05:40:21.277+08:00  INFO 51824 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 1 JPA repository interfaces.
-2023-11-06T05:40:21.304+08:00  INFO 51824 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-11-06T05:40:21.306+08:00  INFO 51824 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-11-06T05:40:21.306+08:00  INFO 51824 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
-2023-11-06T05:40:21.319+08:00  INFO 51824 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@18a9762
-2023-11-06T05:40:21.319+08:00  INFO 51824 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
-2023-11-06T05:40:21.322+08:00  WARN 51824 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2023-11-06T05:40:21.322+08:00  WARN 51824 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2023-11-06T05:40:21.336+08:00  INFO 51824 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-06T05:56:44.644+08:00  INFO 52696 --- [    Test worker] c.h.b.integration.MySQLIntegrationTest   : Starting MySQLIntegrationTest using Java 20.0.2 with PID 52696 (started by i564407 in /Users/i564407/blog)
+2023-11-06T05:56:44.644+08:00  INFO 52696 --- [    Test worker] c.h.b.integration.MySQLIntegrationTest   : The following 1 profile is active: &quot;mysql&quot;
+2023-11-06T05:56:44.681+08:00  INFO 52696 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-06T05:56:44.685+08:00  INFO 52696 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 1 JPA repository interfaces.
+2023-11-06T05:56:44.708+08:00  INFO 52696 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-06T05:56:44.710+08:00  INFO 52696 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-06T05:56:44.711+08:00  INFO 52696 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2023-11-06T05:56:44.722+08:00  INFO 52696 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@53e6c017
+2023-11-06T05:56:44.722+08:00  INFO 52696 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2023-11-06T05:56:44.726+08:00  WARN 52696 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-06T05:56:44.726+08:00  WARN 52696 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2023-11-06T05:56:44.739+08:00  INFO 52696 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 Hibernate: drop table if exists users
 Hibernate: create table users (disabled bit not null, two_factor_auth_enabled bit not null, id bigint not null auto_increment, registered_at datetime(6) not null, bio varchar(500), avatar varchar(255), display_name varchar(255) not null, email varchar(255) not null, password varchar(255) not null, phone_number varchar(255), primary key (id)) engine=InnoDB
 Hibernate: alter table users add constraint UK_6dotkott2kjsp8vw4d0m25fb7 unique (email)
-2023-11-06T05:40:21.364+08:00  INFO 51824 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-11-06T05:40:21.384+08:00  WARN 51824 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-11-06T05:40:21.409+08:00  INFO 51824 --- [    Test worker] c.h.b.integration.MySQLIntegrationTest   : Started MySQLIntegrationTest in 0.193 seconds (process running for 17.171)
+2023-11-06T05:56:44.767+08:00  INFO 52696 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-06T05:56:44.787+08:00  WARN 52696 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-06T05:56:44.812+08:00  INFO 52696 --- [    Test worker] c.h.b.integration.MySQLIntegrationTest   : Started MySQLIntegrationTest in 0.18 seconds (process running for 16.651)
 </pre>
 </span>
 </div>
@@ -148,7 +148,7 @@ Hibernate: alter table users add constraint UK_6dotkott2kjsp8vw4d0m25fb7 unique 
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.4</a> at Nov 6, 2023, 5:40:21 AM</p>
+<a href="http://www.gradle.org">Gradle 8.4</a> at Nov 6, 2023, 5:56:45 AM</p>
 </div>
 </div>
 </body>
