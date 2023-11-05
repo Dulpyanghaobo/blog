@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.hab.blog.BlogApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-11-05T20:05:39" hostname="PL4KX17XFK" time="0.539">
+  <properties/>
+  <testcase name="contextLoads()" classname="com.hab.blog.BlogApplicationTests" time="0.539"/>
+  <system-out><![CDATA[04:05:39.336 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.hab.blog.BlogApplicationTests]: BlogApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+04:05:39.375 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.hab.blog.BlogApplication for test class com.hab.blog.BlogApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.5)
+
+2023-11-06T04:05:39.499+08:00  INFO 47352 --- [    Test worker] com.hab.blog.BlogApplicationTests        : Starting BlogApplicationTests using Java 20.0.2 with PID 47352 (started by i564407 in /Users/i564407/blog)
+2023-11-06T04:05:39.500+08:00  INFO 47352 --- [    Test worker] com.hab.blog.BlogApplicationTests        : No active profile set, falling back to 1 default profile: "default"
+2023-11-06T04:05:39.933+08:00  INFO 47352 --- [    Test worker] com.hab.blog.BlogApplicationTests        : Started BlogApplicationTests in 0.512 seconds (process running for 0.917)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
