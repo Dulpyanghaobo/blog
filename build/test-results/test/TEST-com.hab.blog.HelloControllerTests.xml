@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.hab.blog.HelloControllerTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-11-05T20:05:40" hostname="PL4KX17XFK" time="0.021">
+  <properties/>
+  <testcase name="shouldReturnDefaultMessage()" classname="com.hab.blog.HelloControllerTests" time="0.021"/>
+  <system-out><![CDATA[2023-11-06T04:05:40.479+08:00  INFO 47352 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.hab.blog.HelloControllerTests]: HelloControllerTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-11-06T04:05:40.482+08:00  INFO 47352 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.hab.blog.BlogApplication for test class com.hab.blog.HelloControllerTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.5)
+
+2023-11-06T04:05:40.491+08:00  INFO 47352 --- [    Test worker] com.hab.blog.HelloControllerTests        : Starting HelloControllerTests using Java 20.0.2 with PID 47352 (started by i564407 in /Users/i564407/blog)
+2023-11-06T04:05:40.491+08:00  INFO 47352 --- [    Test worker] com.hab.blog.HelloControllerTests        : No active profile set, falling back to 1 default profile: "default"
+2023-11-06T04:05:40.596+08:00  INFO 47352 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-11-06T04:05:40.596+08:00  INFO 47352 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-11-06T04:05:40.597+08:00  INFO 47352 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-11-06T04:05:40.600+08:00  INFO 47352 --- [    Test worker] com.hab.blog.HelloControllerTests        : Started HelloControllerTests in 0.116 seconds (process running for 1.584)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
