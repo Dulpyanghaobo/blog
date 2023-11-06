@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.hab.blog.BlogApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-11-05T21:56:33" hostname="PL4KX17XFK" time="0.294">
+<testsuite name="com.hab.blog.BlogApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-11-06T13:37:44" hostname="PL4KX17XFK" time="0.347">
   <properties/>
-  <testcase name="contextLoads()" classname="com.hab.blog.BlogApplicationTests" time="0.294"/>
-  <system-out><![CDATA[05:56:28.692 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.hab.blog.BlogApplicationTests]: BlogApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-05:56:28.727 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.hab.blog.BlogApplication for test class com.hab.blog.BlogApplicationTests
+  <testcase name="contextLoads()" classname="com.hab.blog.BlogApplicationTests" time="0.347"/>
+  <system-out><![CDATA[21:37:41.872 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.hab.blog.BlogApplicationTests]: BlogApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+21:37:41.937 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.hab.blog.BlogApplication for test class com.hab.blog.BlogApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -13,26 +13,22 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.1.5)
 
-2023-11-06T05:56:28.854+08:00  INFO 52696 --- [    Test worker] com.hab.blog.BlogApplicationTests        : Starting BlogApplicationTests using Java 20.0.2 with PID 52696 (started by i564407 in /Users/i564407/blog)
-2023-11-06T05:56:28.855+08:00  INFO 52696 --- [    Test worker] com.hab.blog.BlogApplicationTests        : No active profile set, falling back to 1 default profile: "default"
-2023-11-06T05:56:29.051+08:00  INFO 52696 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-11-06T05:56:29.071+08:00  INFO 52696 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interfaces.
-2023-11-06T05:56:29.221+08:00  INFO 52696 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-11-06T05:56:29.238+08:00  INFO 52696 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
-2023-11-06T05:56:29.239+08:00  INFO 52696 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-11-06T05:56:29.328+08:00  INFO 52696 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-11-06T05:56:29.338+08:00  INFO 52696 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-11-06T05:56:31.949+08:00  INFO 52696 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@38a96593
-2023-11-06T05:56:31.952+08:00  INFO 52696 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-11-06T05:56:32.050+08:00  WARN 52696 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2023-11-06T05:56:32.051+08:00  WARN 52696 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2023-11-06T05:56:32.346+08:00  INFO 52696 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-Hibernate: drop table if exists users
-Hibernate: create table users (disabled bit not null, two_factor_auth_enabled bit not null, id bigint not null auto_increment, registered_at datetime(6) not null, bio varchar(500), avatar varchar(255), display_name varchar(255) not null, email varchar(255) not null, password varchar(255) not null, phone_number varchar(255), primary key (id)) engine=InnoDB
-Hibernate: alter table users add constraint UK_6dotkott2kjsp8vw4d0m25fb7 unique (email)
-2023-11-06T05:56:33.075+08:00  INFO 52696 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-11-06T05:56:33.227+08:00  WARN 52696 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-11-06T05:56:33.362+08:00  INFO 52696 --- [    Test worker] com.hab.blog.BlogApplicationTests        : Started BlogApplicationTests in 4.579 seconds (process running for 5.201)
+2023-11-06T21:37:42.169+08:00  INFO 87416 --- [    Test worker] com.hab.blog.BlogApplicationTests        : Starting BlogApplicationTests using Java 20.0.2 with PID 87416 (started by i564407 in /Users/i564407/blog)
+2023-11-06T21:37:42.170+08:00  INFO 87416 --- [    Test worker] com.hab.blog.BlogApplicationTests        : No active profile set, falling back to 1 default profile: "default"
+2023-11-06T21:37:42.500+08:00  INFO 87416 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-06T21:37:42.533+08:00  INFO 87416 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 1 JPA repository interfaces.
+2023-11-06T21:37:42.750+08:00  INFO 87416 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-06T21:37:42.790+08:00  INFO 87416 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-06T21:37:42.792+08:00  INFO 87416 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-06T21:37:42.982+08:00  INFO 87416 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-06T21:37:43.002+08:00  INFO 87416 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-06T21:37:43.185+08:00  INFO 87416 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2023-11-06T21:37:43.186+08:00  INFO 87416 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-06T21:37:43.204+08:00  WARN 87416 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-06T21:37:43.687+08:00  INFO 87416 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-06T21:37:43.715+08:00  INFO 87416 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-06T21:37:43.960+08:00  WARN 87416 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-06T21:37:44.140+08:00  INFO 87416 --- [    Test worker] com.hab.blog.BlogApplicationTests        : Started BlogApplicationTests in 2.11 seconds (process running for 4.283)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
