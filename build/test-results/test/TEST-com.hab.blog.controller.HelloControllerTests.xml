@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.hab.blog.controller.HelloControllerTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-11-06T13:37:44" hostname="PL4KX17XFK" time="0.035">
+  <properties/>
+  <testcase name="shouldReturnDefaultMessage()" classname="com.hab.blog.controller.HelloControllerTests" time="0.035"/>
+  <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.5)
+
+2023-11-06T21:37:44.511+08:00  INFO 87416 --- [    Test worker] c.h.b.controller.HelloControllerTests    : Starting HelloControllerTests using Java 20.0.2 with PID 87416 (started by i564407 in /Users/i564407/blog)
+2023-11-06T21:37:44.511+08:00  INFO 87416 --- [    Test worker] c.h.b.controller.HelloControllerTests    : No active profile set, falling back to 1 default profile: "default"
+2023-11-06T21:37:44.575+08:00  INFO 87416 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-06T21:37:44.580+08:00  INFO 87416 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 1 JPA repository interfaces.
+2023-11-06T21:37:44.617+08:00  INFO 87416 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-06T21:37:44.619+08:00  INFO 87416 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-06T21:37:44.619+08:00  INFO 87416 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-11-06T21:37:44.620+08:00  INFO 87416 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:test user=SA
+2023-11-06T21:37:44.620+08:00  INFO 87416 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-11-06T21:37:44.621+08:00  WARN 87416 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2023-11-06T21:37:44.638+08:00  INFO 87416 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-06T21:37:44.640+08:00  INFO 87416 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-06T21:37:44.673+08:00  WARN 87416 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-06T21:37:44.716+08:00  INFO 87416 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-11-06T21:37:44.716+08:00  INFO 87416 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-11-06T21:37:44.717+08:00  INFO 87416 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2023-11-06T21:37:44.720+08:00  INFO 87416 --- [    Test worker] c.h.b.controller.HelloControllerTests    : Started HelloControllerTests in 0.217 seconds (process running for 4.863)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

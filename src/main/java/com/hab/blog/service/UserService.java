@@ -24,5 +24,5 @@ public class UserService {
         // Set other fields
         return userRepository.save(user);
     }
-    // 这里添加业务逻辑方法，比如创建、更新用户等
+
 }

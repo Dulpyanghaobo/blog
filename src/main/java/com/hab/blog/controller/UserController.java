@@ -1,4 +1,4 @@
-package com.hab.blog.Controller;
+package com.hab.blog.controller;
 
 import com.hab.blog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
