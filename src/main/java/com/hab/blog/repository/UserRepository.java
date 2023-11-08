@@ -9,6 +9,7 @@ import java.util.Optional;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByEmail(String email);
+    User findById(long id);
 
     // 这里可以定义查询方法，Spring Data JPA会自动实现
 }
