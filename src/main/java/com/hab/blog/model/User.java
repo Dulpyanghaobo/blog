@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.time.Instant;
+import java.util.List;
 
 @Data // Lombok annotation to create getters, setters, equals, hashCode and toString methods
 @NoArgsConstructor // Lombok annotation to create a no-args constructor
@@ -14,6 +15,10 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Column(unique = true)
+    private List<Post> posts;
 
     @Column(name = "display_name", nullable = false)
     private String displayName;

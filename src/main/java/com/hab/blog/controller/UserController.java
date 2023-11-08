@@ -2,6 +2,7 @@ package com.hab.blog.controller;
 
 import com.hab.blog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,14 +21,14 @@ public class UserController {
         this.userService = userService;
     }
     @PostMapping
-    public ResponseEntity<User> createUser(@RequestBody UserDto userDto) {
-        User newUser = userService.createUser(
-                userDto.getDisplayName(),
-                userDto.getAvatar(),
-                userDto.getEmail(),
-                userDto.getPassword()
-        );
-        return ResponseEntity.ok(newUser);
+    public ResponseEntity<User> createUser(@RequestBody User user) {
+        try {
+            User newUser = userService.createUser(user);
+            return ResponseEntity.ok(newUser);
+        } catch (Exception e) {
+            // 发生异常时返回HTTP状态500 Internal Server Error
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
     // 这里添加处理HTTP请求的方法，比如获取用户列表、创建新用户等
 }
