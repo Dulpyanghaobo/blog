@@ -11,5 +11,9 @@ public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByEmail(String email);
     User findById(long id);
 
+    boolean existsByDisplayName(String displayName);
+
+    boolean existsByEmail(String email);
+
     // 这里可以定义查询方法，Spring Data JPA会自动实现
 }
