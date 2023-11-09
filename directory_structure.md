@@ -1,0 +1,150 @@
+# Project Directory Structure
+- ChatGPT.pptx
+- Dockerfile
+- HELP.md
+- LICENSE
+- README.md
+- **build/**
+  - **classes/**
+    - **java/**
+      - **main/**
+        - **com/**
+          - **hab/**
+            - **blog/**
+              - BlogApplication.class
+              - **config/**
+                - EmailConfig.class
+                - RedisConfig.class
+                - WebSecurityConfig.class
+              - **controller/**
+                - FileUploadController.class
+                - HelloController.class
+                - PostController.class
+                - UserController.class
+              - **dto/**
+                - PostDto.class
+                - UserDto.class
+              - **exception/**
+                - AlreadyExistsException.class
+                - ApplicationException.class
+                - DataAccessException.class
+                - GlobalExceptionHandler.class
+                - MailException.class
+              - **model/**
+                - Post.class
+                - User.class
+                - VerificationToken.class
+                - VisibleEnum.class
+              - **repository/**
+                - PostRepository.class
+                - UserRepository.class
+                - VerificationTokenRepository.class
+              - **service/**
+                - EmailService.class
+                - PostService.class
+                - UserService.class
+              - **utility/**
+                - EncryptionUtility.class
+                - FileConvertProvider.class
+                - JwtTokenFilter.class
+                - JwtTokenProvider.class
+                - OssUtility.class
+  - **generated/**
+    - **sources/**
+      - **annotationProcessor/**
+        - **java/**
+          - **main/**
+            - *
+      - **headers/**
+        - **java/**
+          - **main/**
+            - *
+  - **resources/**
+    - **main/**
+      - application.properties
+      - keystore.p12
+  - **tmp/**
+    - **compileJava/**
+      - **compileTransaction/**
+        - **backup-dir/**
+          - *
+        - **stash-dir/**
+          - FileConvertProvider.class.uniqueId0
+      - previous-compilation-data.bin
+- build.gradle
+- **demo/**
+  - ChatGPT.pdf
+- directory_structure.md
+- **gradle/**
+  - **wrapper/**
+    - gradle-wrapper.jar
+    - gradle-wrapper.properties
+- gradlew
+- gradlew.bat
+- list_files_md.sh
+- settings.gradle
+- **src/**
+  - **main/**
+    - **java/**
+      - **com/**
+        - **hab/**
+          - **blog/**
+            - BlogApplication.java
+            - **config/**
+              - EmailConfig.java
+              - RedisConfig.java
+              - WebSecurityConfig.java
+            - **controller/**
+              - FileUploadController.java
+              - HelloController.java
+              - PostController.java
+              - UserController.java
+            - **dto/**
+              - PostDto.java
+              - UserDto.java
+            - **exception/**
+              - AlreadyExistsException.java
+              - ApplicationException.java
+              - DataAccessException.java
+              - GlobalExceptionHandler.java
+              - MailException.java
+            - **model/**
+              - Post.java
+              - User.java
+              - VerificationToken.java
+            - **repository/**
+              - PostRepository.java
+              - UserRepository.java
+              - VerificationTokenRepository.java
+            - **service/**
+              - EmailService.java
+              - PostService.java
+              - UserService.java
+              - WordToPdfConverter.java
+            - **utility/**
+              - EncryptionUtility.java
+              - FileConvertProvider.java
+              - JwtTokenFilter.java
+              - JwtTokenProvider.java
+              - OssUtility.java
+    - **resources/**
+      - application.properties
+      - keystore.p12
+  - **test/**
+    - **java/**
+      - **com/**
+        - **hab/**
+          - **blog/**
+            - BlogApplicationTests.java
+            - **controller/**
+              - HelloControllerTests.java
+              - UserControllerTest.java
+            - **integration/**
+              - MySQLIntegrationTest.java
+              - RedisIntegrationTest.java
+            - **repository/**
+              - UserRepositoryTest.java
+            - **service/**
+              - UserServiceTest.java
+    - **resources/**
+      - application.properties
