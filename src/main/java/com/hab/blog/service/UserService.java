@@ -1,5 +1,7 @@
 package com.hab.blog.service;
 
+import com.hab.blog.exception.AlreadyExistsException;
+import com.hab.blog.exception.MailException;
 import com.hab.blog.model.VerificationToken;
 import com.hab.blog.repository.VerificationTokenRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -29,10 +31,11 @@ public class UserService {
 
     public User createUser(User user) {
         if (userRepository.existsByDisplayName(user.getDisplayName())) {
-            throw  new IllegalStateException("DisplayName already taken");
+            throw new AlreadyExistsException("User", "username", user.getDisplayName());
+
         }
         if (userRepository.existsByEmail(user.getEmail())) {
-            throw  new IllegalStateException("email already taken");
+            throw  new MailException("","",user.getEmail());
         }
         String hashedPassword = passwordEncoder.encode(user.getPassword());
         user.setPassword(hashedPassword);

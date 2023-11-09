@@ -2,6 +2,7 @@ package com.hab.blog.controller;
 
 import com.hab.blog.service.UserService;
 import com.hab.blog.model.VerificationToken;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,14 +21,9 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<User> registerUser(@RequestBody User user) {
-        try {
-            User newUser = userService.createUser(user);
-            return ResponseEntity.ok(newUser);
-        } catch (Exception e) {
-            // 发生异常时返回HTTP状态500 Internal Server Error
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+    public ResponseEntity<User> registerUser(@Valid @RequestBody User user) {
+        User newUser = userService.createUser(user);
+        return ResponseEntity.ok(newUser);
     }
 
     @GetMapping("/activate")
