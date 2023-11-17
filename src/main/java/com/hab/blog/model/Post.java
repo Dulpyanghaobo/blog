@@ -17,7 +17,7 @@ public class Post {
     private Long id;
 
     // Post到User的多对一关系
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id") // 对应数据库中的外键列
     private User user;
 

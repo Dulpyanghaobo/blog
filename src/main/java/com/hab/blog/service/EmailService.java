@@ -1,16 +1,13 @@
 package com.hab.blog.service;
 
-import com.hab.blog.model.User;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 
 @Component
@@ -43,7 +40,6 @@ public class EmailService {
             helper.setText(email);
             javaMailSender.send(mimeMessage);
         } catch (MessagingException e) {
-//            log.error("failed to send email", e);
             throw new IllegalStateException("failed to send email");
         }
     }
