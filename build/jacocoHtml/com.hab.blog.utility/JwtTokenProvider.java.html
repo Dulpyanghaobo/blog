@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>JwtTokenProvider.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">blog</a> &gt; <a href="index.source.html" class="el_package">com.hab.blog.utility</a> &gt; <span class="el_source">JwtTokenProvider.java</span></div><h1>JwtTokenProvider.java</h1><pre class="source lang-java linenums">package com.hab.blog.utility;
+
+import io.jsonwebtoken.*;
+import io.jsonwebtoken.security.Keys;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.stereotype.Component;
+
+import javax.crypto.SecretKey;
+import java.util.Date;
+
+@Component
+<span class="nc" id="L15">public class JwtTokenProvider {</span>
+
+<span class="nc" id="L17">    private final SecretKey secretKey = Keys.secretKeyFor(SignatureAlgorithm.HS512);</span>
+<span class="nc" id="L18">    private final long validityInMilliseconds = 3600000; // 1h</span>
+
+    private UserDetailsService userDetailsService;
+
+    public String createToken(Authentication authentication) {
+<span class="nc" id="L23">        String username = authentication.getName();</span>
+<span class="nc" id="L24">        Claims claims = Jwts.claims().setSubject(username);</span>
+
+<span class="nc" id="L26">        Date now = new Date();</span>
+<span class="nc" id="L27">        Date validity = new Date(now.getTime() + validityInMilliseconds);</span>
+
+<span class="nc" id="L29">        return Jwts.builder()</span>
+<span class="nc" id="L30">                .setClaims(claims)</span>
+<span class="nc" id="L31">                .setIssuedAt(now)</span>
+<span class="nc" id="L32">                .setExpiration(validity)</span>
+<span class="nc" id="L33">                .signWith(secretKey, SignatureAlgorithm.HS512)</span>
+<span class="nc" id="L34">                .compact();</span>
+    }
+
+    public Authentication getAuthentication(String token) {
+<span class="nc" id="L38">        UserDetails userDetails = this.userDetailsService.loadUserByUsername(getUsername(token));</span>
+<span class="nc" id="L39">        return new UsernamePasswordAuthenticationToken(userDetails, &quot;&quot;, userDetails.getAuthorities());</span>
+    }
+
+    private String getUsername(String token) {
+<span class="nc" id="L43">        return Jwts.parserBuilder().setSigningKey(secretKey).build().parseClaimsJws(token).getBody().getSubject();</span>
+    }
+
+    public boolean validateToken(String token) throws Exception {
+        try {
+<span class="nc" id="L48">            Jws&lt;Claims&gt; claims = Jwts.parserBuilder().setSigningKey(secretKey).build().parseClaimsJws(token);</span>
+<span class="nc bnc" id="L49" title="All 2 branches missed.">            return !claims.getBody().getExpiration().before(new Date());</span>
+<span class="nc" id="L50">        } catch (JwtException | IllegalArgumentException e) {</span>
+<span class="nc" id="L51">            throw new Exception(&quot;Expired or invalid JWT token&quot;);</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

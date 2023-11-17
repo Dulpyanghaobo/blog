@@ -11,10 +11,10 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import java.io.IOException;
 
 public class JwtTokenFilter extends OncePerRequestFilter {
-    private final JwtTokenProvider jwtTokenProvider;
+    private final JwtTokenProvider jwtAuthenticationProvider;
 
-    public JwtTokenFilter(JwtTokenProvider jwtTokenProvider) {
-        this.jwtTokenProvider = jwtTokenProvider;
+    public JwtTokenFilter(JwtTokenProvider jwtAuthenticationProvider) {
+        this.jwtAuthenticationProvider = jwtAuthenticationProvider;
     }
 
     private String resolveToken(HttpServletRequest req) {
@@ -26,17 +26,21 @@ public class JwtTokenFilter extends OncePerRequestFilter {
         }
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+            throws ServletException, IOException {
         String token = resolveToken(request);
         try {
-            if (token != null && jwtTokenProvider.validateToken(token)) {
-                Authentication auth = jwtTokenProvider.getAuthentication(token);
+            if (token != null && jwtAuthenticationProvider.validateToken(token)) {
+                Authentication auth = jwtAuthenticationProvider.getAuthentication(token);
                 if (auth != null) {
+                    logger.info("User: " + auth.getName() + ", Authorities: " + auth.getAuthorities());
                     SecurityContextHolder.getContext().setAuthentication(auth);
                 }
             }
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            // 更详细地记录或处理JWT异常
+            response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "JWT token is invalid");
+            return; // 注意：在发送错误响应后，不要调用filterChain.doFilter
         }
         filterChain.doFilter(request, response);
     }

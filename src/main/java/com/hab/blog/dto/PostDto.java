@@ -23,5 +23,4 @@ public class PostDto {
     private String categories;
     private String tags;
     private String htmlMetas;
-
 }
