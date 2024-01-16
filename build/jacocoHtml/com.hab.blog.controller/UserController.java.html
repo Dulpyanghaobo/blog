@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">blog</a> &gt; <a href="index.source.html" class="el_package">com.hab.blog.controller</a> &gt; <span class="el_source">UserController.java</span></div><h1>UserController.java</h1><pre class="source lang-java linenums">package com.hab.blog.controller;
+
+import com.hab.blog.dto.JwtRequestDto;
+import com.hab.blog.dto.UserRegistrationDto;
+import com.hab.blog.model.User;
+import com.hab.blog.model.VerificationToken;
+import com.hab.blog.service.UserService;
+import com.hab.blog.utility.JwtTokenProvider;
+import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping(&quot;/api/v1/users&quot;)
+public class UserController {
+
+    private final AuthenticationManager authenticationManager;
+
+    private final JwtTokenProvider jwtTokenProvider;
+
+    private final UserService userService;
+
+    @Autowired
+<span class="nc" id="L30">    public UserController(AuthenticationManager authenticationManager, JwtTokenProvider jwtTokenProvider, UserService userService) {</span>
+<span class="nc" id="L31">        this.authenticationManager = authenticationManager;</span>
+<span class="nc" id="L32">        this.jwtTokenProvider = jwtTokenProvider;</span>
+<span class="nc" id="L33">        this.userService = userService;</span>
+<span class="nc" id="L34">    }</span>
+
+    @PostMapping(&quot;/register&quot;)
+    public ResponseEntity&lt;User&gt; registerUser(@Valid @RequestBody UserRegistrationDto user) {
+<span class="nc" id="L38">        User newUser = userService.createUser(user);</span>
+<span class="nc" id="L39">        return ResponseEntity.ok(newUser);</span>
+    }
+
+    @GetMapping(&quot;/activate&quot;)
+    public ResponseEntity&lt;?&gt; confirmRegistration(@RequestParam(&quot;token&quot;) String token) {
+<span class="nc" id="L44">        VerificationToken verificationToken = userService.getVerificationToken(token);</span>
+<span class="nc bnc" id="L45" title="All 4 branches missed.">        if (verificationToken == null || verificationToken.isExpired()) {</span>
+            // Token无效或已过期
+<span class="nc" id="L47">            return new ResponseEntity&lt;&gt;(&quot;Token is invalid or expired&quot;, HttpStatus.BAD_REQUEST);</span>
+        }
+
+<span class="nc" id="L50">        User user = verificationToken.getUser();</span>
+<span class="nc" id="L51">        user.setDisabled(false); // 或者其他标记为已验证的逻辑</span>
+<span class="nc" id="L52">        userService.updateUser(user);</span>
+<span class="nc" id="L53">        return new ResponseEntity&lt;&gt;(&quot;User verified successfully!&quot;, HttpStatus.OK);</span>
+    }
+
+    @PostMapping(&quot;/login&quot;)
+    public ResponseEntity&lt;?&gt; createAuthenticationToken(@RequestBody JwtRequestDto authenticationRequest) throws Exception {
+<span class="nc" id="L58">        Authentication authentication = authenticationManager.authenticate(</span>
+                new UsernamePasswordAuthenticationToken(
+<span class="nc" id="L60">                        authenticationRequest.getUsername(),</span>
+<span class="nc" id="L61">                        authenticationRequest.getPassword()</span>
+                )
+        );
+
+<span class="nc" id="L65">        SecurityContextHolder.getContext().setAuthentication(authentication);</span>
+
+<span class="nc" id="L67">        final String token = jwtTokenProvider.createToken(authentication);</span>
+
+<span class="nc" id="L69">        return ResponseEntity.ok(token);</span>
+    }
+    // 这里添加处理HTTP请求的方法，比如获取用户列表、创建新用户等
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EmailService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">blog</a> &gt; <a href="index.source.html" class="el_package">com.hab.blog.service</a> &gt; <span class="el_source">EmailService.java</span></div><h1>EmailService.java</h1><pre class="source lang-java linenums">package com.hab.blog.service;
+
+import jakarta.mail.MessagingException;
+import jakarta.mail.internet.MimeMessage;
+import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.stereotype.Component;
+
+
+@Component
+<span class="nc" id="L14">@NoArgsConstructor</span>
+public class EmailService {
+    private final static String EMAIL_CONFIRMATION_SUBJECT = &quot;Registration Confirmation&quot;;
+
+    @Autowired
+    private JavaMailSender javaMailSender;
+
+    public void sendConfirmationEmail(String email,String token) {
+        // build email
+        // send message
+<span class="nc" id="L24">        String confirmationUrl = &quot;/api/v1/users/register/confirm?token=&quot; + token;</span>
+
+<span class="nc" id="L26">        String message = &quot;Click to confirm&quot; + &quot;\r\nhttps://localhost:8081&quot; + confirmationUrl;</span>
+<span class="nc" id="L27">        String from = &quot;17843150270@163.com&quot;;</span>
+<span class="nc" id="L28">        send(email, from, message);</span>
+<span class="nc" id="L29">    }</span>
+
+    @Async
+    protected void send(String to, String from, String email) {
+        try {
+<span class="nc" id="L34">            MimeMessage mimeMessage = javaMailSender.createMimeMessage();</span>
+<span class="nc" id="L35">            MimeMessageHelper helper =</span>
+                    new MimeMessageHelper(mimeMessage, &quot;utf-8&quot;);
+<span class="nc" id="L37">            helper.setFrom(from);</span>
+<span class="nc" id="L38">            helper.setTo(to);</span>
+<span class="nc" id="L39">            helper.setSubject(EMAIL_CONFIRMATION_SUBJECT);</span>
+<span class="nc" id="L40">            helper.setText(email);</span>
+<span class="nc" id="L41">            javaMailSender.send(mimeMessage);</span>
+<span class="nc" id="L42">        } catch (MessagingException e) {</span>
+<span class="nc" id="L43">            throw new IllegalStateException(&quot;failed to send email&quot;);</span>
+<span class="nc" id="L44">        }</span>
+<span class="nc" id="L45">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>
