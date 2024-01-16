@@ -26,8 +26,8 @@ group = 'com.hab'
 version = '0.0.1-SNAPSHOT'
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_20
-    targetCompatibility = JavaVersion.VERSION_20
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 repositories {
@@ -35,11 +35,8 @@ repositories {
 }
 
 dependencies {
-    // 如果您打算使用异步方法，可以加入异步相关的支持
-    implementation 'org.springframework:spring-webflux'
-    // 如果您的应用程序需要发送异步消息（如使用RabbitMQ或Kafka），可以添加对应的Starter
     // 或者使用Kafka
-    implementation 'org.springframework.kafka:spring-kafka'
+//    implementation 'org.springframework.kafka:spring-kafka'
     // Swagger (SpringFox) 自动生成API文档的依赖（如果需要）
     implementation 'io.springfox:springfox-boot-starter:3.0.0'
     // AOP相关，如果您需要使用AOP
@@ -57,22 +54,6 @@ dependencies {
 
     // 如果需要更复杂的对象映射，可以使用ModelMapper
     implementation 'org.modelmapper:modelmapper:3.1.0'
-
-    // 如果要对异步操作进行测试，可能还需要添加Spring的异步测试支持
-    testImplementation 'org.springframework:spring-test'
-
-    // 对于集成测试，如果需要模拟Web环境，可以添加以下依赖
-    testImplementation 'org.springframework.boot:spring-boot-starter-webflux'
-
-    // 断言库 AssertJ，如果您想使用更流畅的断言方式
-    testImplementation 'org.assertj:assertj-core:3.21.0'
-
-    // Mockito用于Mock测试
-    testImplementation 'org.mockito:mockito-core:4.0.0'
-    testImplementation 'org.mockito:mockito-junit-jupiter:4.0.0'
-
-    // 异步事件的测试
-    testImplementation 'org.springframework:spring-messaging'
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -86,9 +67,10 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
     // Spring Boot Send Email
     implementation 'org.springframework.boot:spring-boot-starter-mail'
-    // https://mvnrepository.com/artifact/com.aliyun.oss/aliyun-sdk-oss
+    implementation 'org.jodconverter:jodconverter-local-lo:4.4.7'
     implementation 'com.aliyun.oss:aliyun-sdk-oss:3.16.0'
     implementation 'org.projectlombok:lombok:1.18.22'
+    testImplementation 'org.testng:testng:7.1.0'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
     // https://mvnrepository.com/artifact/javax.persistence/javax.persistence-api
     // Mysql Connect
@@ -97,6 +79,8 @@ dependencies {
     implementation 'io.jsonwebtoken:jjwt-api:0.11.2'
     // https://mvnrepository.com/artifact/org.springframework/spring-jdbc
     implementation 'org.springframework:spring-jdbc:6.0.13'
+    // hutool
+    implementation 'cn.hutool:hutool-all:5.8.23'
     runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.2'
     runtimeOnly('io.jsonwebtoken:jjwt-jackson:0.11.2') // For Jackson JSON processor
     // https://mvnrepository.com/artifact/com.fasterxml.uuid/java-uuid-generator
@@ -119,6 +103,24 @@ dependencies {
     // Testcontainers for integration tests
     testImplementation 'org.testcontainers:junit-jupiter:1.16.0'
     testImplementation 'org.testcontainers:mysql:1.16.0'
+
+    // 如果要对异步操作进行测试，可能还需要添加Spring的异步测试支持
+    testImplementation 'org.springframework:spring-test'
+
+    // 对于集成测试，如果需要模拟Web环境，可以添加以下依赖
+    testImplementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+    // 断言库 AssertJ，如果您想使用更流畅的断言方式
+    testImplementation 'org.assertj:assertj-core:3.21.0'
+
+    // Mockito用于Mock测试
+    testImplementation 'org.mockito:mockito-core:4.0.0'
+    testImplementation 'org.mockito:mockito-junit-jupiter:4.0.0'
+
+    // 异步事件的测试
+    testImplementation 'org.springframework:spring-messaging'
+    testImplementation 'org.springframework.kafka:spring-kafka-test'
+
 }
 
 tasks.named('test') {
