@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="197b6aba-7b6f-4b2a-b160-7d806540735a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/8.4/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.4/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.4/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/blog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/blog.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/blog.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/blog.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/BlogApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/BlogApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/Controller/DocumentProcessingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/Controller/DocumentProcessingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/Controller/FileUploadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/Controller/FileUploadController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/Controller/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/Controller/HelloController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/Controller/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/Controller/PostController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/Controller/TaskController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/Controller/TaskController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/Controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/Controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/apect/LoggingAspect.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/apect/LoggingAspect.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/apect/ResourceManagementAspect.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/apect/ResourceManagementAspect.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/config/AsyncConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/config/AsyncConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/config/CacheConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/config/CacheConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/config/EmailConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/config/EmailConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/config/RedisConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/config/RedisConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/config/ResourcePolicyConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/config/ResourcePolicyConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/config/SwaggerConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/config/SwaggerConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/config/WebSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/dto/JwtRequestDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/dto/JwtRequestDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/dto/PostDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/dto/PostDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/dto/TaskDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/dto/TaskDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/dto/UserRegistrationDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/dto/UserRegistrationDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/exception/AlreadyExistsException.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/exception/AlreadyExistsException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/exception/ApplicationException.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/exception/ApplicationException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/exception/DataAccessException.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/exception/DataAccessException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/exception/DocumentProcessingException.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/exception/DocumentProcessingException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/exception/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/exception/GlobalExceptionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/exception/MailException.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/exception/MailException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/exception/ResourceLimitExceededException.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/exception/ResourceLimitExceededException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/init/DataInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/init/DataInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/model/Document.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/model/Document.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/model/OKR.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/model/OKR.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/model/OcrResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/model/OcrResult.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/model/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/model/Post.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/model/ProcessingJob.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/model/ProcessingJob.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/model/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/model/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/model/RoleName.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/model/RoleName.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/model/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/model/Task.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/model/TaskCategory.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/model/TaskCategory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/model/TaskMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/model/TaskMode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/model/TaskStatus.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/model/TaskStatus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/model/VerificationToken.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/model/VerificationToken.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/model/VisibleEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/model/VisibleEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/protocol/IAsyncDocumentProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/protocol/IAsyncDocumentProcessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/protocol/ICacheProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/protocol/ICacheProvider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/protocol/PDFDocumentProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/protocol/PDFDocumentProcessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/protocol/RedisCacheProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/protocol/RedisCacheProvider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/protocol/ResourcePolicyConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/protocol/ResourcePolicyConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/protocol/SimpleResourcePolicy.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/protocol/SimpleResourcePolicy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/repository/DocumentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/repository/DocumentRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/repository/JobRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/repository/JobRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/repository/OkrRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/repository/OkrRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/repository/PostRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/repository/PostRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/repository/RoleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/repository/RoleRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/repository/TaskRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/repository/TaskRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/repository/VerificationTokenRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/repository/VerificationTokenRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/service/DocumentProcessService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/service/DocumentProcessService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/service/EmailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/service/EmailService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/service/LoggingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/service/LoggingService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/service/OcrService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/service/OcrService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/service/PostService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/service/PostService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/service/RoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/service/RoleService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/service/TaskService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/service/TaskService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/utility/EncryptionUtility.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/utility/EncryptionUtility.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/utility/FileConvertProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/utility/FileConvertProvider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/utility/FileUtility.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/utility/FileUtility.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/utility/JwtTokenFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/utility/JwtTokenFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/utility/JwtTokenProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/utility/JwtTokenProvider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/utility/OssUtility.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/utility/OssUtility.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/utility/ResourceUtility.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/utility/ResourceUtility.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="blog" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="blog" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="blog" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build blog.executor": "Run",
+    "Gradle.blog [build].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "Spring Boot.BlogApplication.executor": "Run",
+    "git-widget-placeholder": "yzh__1",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "configurable.group.editor"
+  }
+}]]></component>
+  <component name="RunManager" selected="Spring Boot.BlogApplication">
+    <configuration name="blog [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="BlogApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="blog.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hab.blog.BlogApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.blog [build]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
