@@ -4,6 +4,7 @@ import com.hab.blog.service.UserService;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -13,24 +14,30 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
+import java.util.Base64;
 import java.util.Date;
 
 @Component
 public class JwtTokenProvider implements AuthenticationProvider {
-
-
-    private final SecretKey secretKey = Keys.secretKeyFor(SignatureAlgorithm.HS512);
-    private final long validityInMilliseconds = 360000000; // 1h
+    private final SecretKey secretKey;
 
     @Autowired
     private UserService userService;
+
+    public JwtTokenProvider(@Value("${jwt.secretKey}") String secretKeyString) {
+        byte[] decodedKey = Base64.getDecoder().decode(secretKeyString);
+        this.secretKey = Keys.hmacShaKeyFor(decodedKey);
+    }
 
     public String createToken(Authentication authentication) {
         String username = authentication.getName();
         Claims claims = Jwts.claims().setSubject(username);
 
         Date now = new Date();
+        // 1h
+        long validityInMilliseconds = 360000000;
         Date validity = new Date(now.getTime() + validityInMilliseconds);
+        System.out.printf("this.secretKey:"+this.secretKey.toString());
 
         return Jwts.builder()
                 .setClaims(claims)

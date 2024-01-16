@@ -3,6 +3,7 @@ package com.hab.blog.config;
 import com.hab.blog.service.UserService;
 import com.hab.blog.utility.JwtTokenFilter;
 import com.hab.blog.utility.JwtTokenProvider;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -22,6 +23,7 @@ public class WebSecurityConfig {
     private final JwtTokenProvider jwtTokenProvider;
     private final UserService userService;
 
+    @Autowired
     public WebSecurityConfig(JwtTokenProvider jwtTokenProvider, UserService userService) {
         this.jwtTokenProvider = jwtTokenProvider;
         this.userService = userService;

@@ -1,8 +1,8 @@
 package com.hab.blog.service;
 
 import com.hab.blog.dto.UserRegistrationDto;
-import com.hab.blog.exception.AlreadyExistsException;
-import com.hab.blog.exception.MailException;
+import com.hab.blog.response.exception.AlreadyExistsException;
+import com.hab.blog.response.exception.MailException;
 import com.hab.blog.model.Role;
 import com.hab.blog.model.User;
 import com.hab.blog.model.VerificationToken;
@@ -75,6 +75,7 @@ public class UserService implements UserDetailsService {
         newUser.setDisabled(true);
 
         User user = userRepository.save(newUser);
+
         String token = generateNewToken();
         VerificationToken verificationToken = new VerificationToken(token, newUser);
         System.out.printf("verificationToken:saddasd"+verificationToken);

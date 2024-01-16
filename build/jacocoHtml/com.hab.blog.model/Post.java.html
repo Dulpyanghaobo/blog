@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import java.time.Instant;
 
 <span class="nc bnc" id="L9" title="All 174 branches missed.">@Data</span>
-<span class="nc" id="L10">@NoArgsConstructor</span>
+<span class="fc" id="L10">@NoArgsConstructor</span>
 @Entity
 @Table(name = &quot;posts&quot;)
 public class Post {
@@ -17,7 +17,7 @@ public class Post {
 <span class="nc" id="L17">    private Long id;</span>
 
     // Post到User的多对一关系
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = &quot;user_id&quot;) // 对应数据库中的外键列
 <span class="nc" id="L22">    private User user;</span>
 
@@ -51,29 +51,29 @@ public class Post {
     @Column(name = &quot;cover&quot;)
 <span class="nc" id="L52">    private String cover;</span>
 
-<span class="nc" id="L54">    @Column(nullable = false)</span>
-<span class="nc" id="L55">    private Boolean deleted = false;</span>
+<span class="fc" id="L54">    @Column(nullable = false)</span>
+<span class="pc" id="L55">    private Boolean deleted = false;</span>
 
-<span class="nc" id="L57">    @Column(nullable = false)</span>
-<span class="nc" id="L58">    private Boolean publish = false;</span>
+<span class="fc" id="L57">    @Column(nullable = false)</span>
+<span class="pc" id="L58">    private Boolean publish = false;</span>
 
     // 发布时间可以为空，这表示文章还没有发布
     @Column(name = &quot;publish_time&quot;)
 <span class="nc" id="L62">    private Instant publishTime;</span>
 
-<span class="nc" id="L64">    @Column(nullable = false)</span>
-<span class="nc" id="L65">    private Boolean pinned = false;</span>
+<span class="fc" id="L64">    @Column(nullable = false)</span>
+<span class="pc" id="L65">    private Boolean pinned = false;</span>
 
-<span class="nc" id="L67">    @Column(nullable = false)</span>
-<span class="nc" id="L68">    private Boolean allowComment = true;</span>
+<span class="fc" id="L67">    @Column(nullable = false)</span>
+<span class="pc" id="L68">    private Boolean allowComment = true;</span>
 
     // 使用枚举来限制值
-<span class="nc" id="L71">    @Enumerated(EnumType.STRING)</span>
+<span class="fc" id="L71">    @Enumerated(EnumType.STRING)</span>
     @Column(nullable = false)
 <span class="nc" id="L73">    private VisibleEnum visible = VisibleEnum.PUBLIC;</span>
 
-<span class="nc" id="L75">    @Column(nullable = false)</span>
-<span class="nc" id="L76">    private Integer priority = 0;</span>
+<span class="fc" id="L75">    @Column(nullable = false)</span>
+<span class="pc" id="L76">    private Integer priority = 0;</span>
 
     // 文章摘要，如有需要可以映射为一个文本字段
     @Column(name = &quot;excerpt&quot;)
@@ -94,9 +94,9 @@ public class Post {
 }
 
 // 可见性枚举，与原类一致
-<span class="nc" id="L97">enum VisibleEnum {</span>
-<span class="nc" id="L98">    PUBLIC,</span>
-<span class="nc" id="L99">    INTERNAL,</span>
-<span class="nc" id="L100">    PRIVATE</span>
+<span class="fc" id="L97">enum VisibleEnum {</span>
+<span class="fc" id="L98">    PUBLIC,</span>
+<span class="fc" id="L99">    INTERNAL,</span>
+<span class="fc" id="L100">    PRIVATE</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

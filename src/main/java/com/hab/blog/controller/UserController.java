@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     private final AuthenticationManager authenticationManager;
+
     private final JwtTokenProvider jwtTokenProvider;
 
     private final UserService userService;
