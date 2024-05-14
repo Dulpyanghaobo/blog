@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EmailService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">blog</a> &gt; <a href="index.source.html" class="el_package">com.hab.blog.api.v1.service</a> &gt; <span class="el_source">EmailService.java</span></div><h1>EmailService.java</h1><pre class="source lang-java linenums">package com.hab.blog.api.v1.service;
+
+import jakarta.mail.MessagingException;
+import jakarta.mail.internet.MimeMessage;
+import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.stereotype.Component;
+
+
+@Component
+<span class="nc" id="L14">@NoArgsConstructor</span>
+public class EmailService {
+    private final static String EMAIL_CONFIRMATION_SUBJECT = &quot;Registration Confirmation&quot;;
+
+    @Autowired
+    private JavaMailSender javaMailSender;
+
+    public void sendConfirmationEmail(String username, String email,String token) {
+        // build email
+        // send message
+<span class="nc" id="L24">        String message = buildHtmlEmailContent(username, token);</span>
+<span class="nc" id="L25">        send(email, sendEmail(), message);</span>
+<span class="nc" id="L26">    }</span>
+
+    @Async
+    protected void send(String to, String from, String email) {
+        try {
+<span class="nc" id="L31">            MimeMessage mimeMessage = javaMailSender.createMimeMessage();</span>
+<span class="nc" id="L32">            MimeMessageHelper helper =</span>
+                    new MimeMessageHelper(mimeMessage, &quot;utf-8&quot;);
+<span class="nc" id="L34">            helper.setFrom(from);</span>
+<span class="nc" id="L35">            helper.setTo(to);</span>
+<span class="nc" id="L36">            helper.setSubject(EMAIL_CONFIRMATION_SUBJECT);</span>
+<span class="nc" id="L37">            helper.setText(email, true);</span>
+<span class="nc" id="L38">            javaMailSender.send(mimeMessage);</span>
+<span class="nc" id="L39">        } catch (MessagingException e) {</span>
+<span class="nc" id="L40">            throw new IllegalStateException(&quot;failed to send email&quot;);</span>
+<span class="nc" id="L41">        }</span>
+<span class="nc" id="L42">    }</span>
+
+    public static String sendEmail() {
+<span class="nc" id="L45">        return &quot;18913505701@163.com&quot;;</span>
+    }
+
+    public static String buildHtmlEmailContent(String username, String activationCode) {
+<span class="nc" id="L49">        return &quot;&lt;html&gt;&quot; +</span>
+                &quot;&lt;body&gt;&quot; +
+                &quot;&lt;h1&gt;尊敬的 &quot; + username + &quot;，&lt;/h1&gt;&quot; +
+                &quot;&lt;p&gt;您好！感谢您注册 Butler。为了完成注册流程，请输入下面的邮箱验证码：&lt;/p&gt;&quot; +
+                &quot;&lt;h2&gt;验证码：&quot; + activationCode + &quot;&lt;/h2&gt;&quot; +
+                &quot;&lt;p&gt;请在10分钟内输入此验证码以完成验证。请注意，此验证码仅用于当前注册流程，不要将此验证码泄露给其他人。&lt;/p&gt;&quot; +
+                &quot;&lt;p&gt;如果您没有尝试注册 Butler，请忽略此邮件。&lt;/p&gt;&quot; +
+                &quot;&lt;p&gt;感谢您对 Butler 的支持！&lt;/p&gt;&quot; +
+                &quot;&lt;p&gt;祝好，&lt;br&gt;Butler 团队&lt;/p&gt;&quot; +
+                &quot;&lt;/body&gt;&quot; +
+                &quot;&lt;/html&gt;&quot;;
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

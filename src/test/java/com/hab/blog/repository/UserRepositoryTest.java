@@ -1,6 +1,7 @@
 package com.hab.blog.repository;
 
-import com.hab.blog.model.User;
+import com.hab.blog.api.v1.auth.Entity.User;
+import com.hab.blog.api.v1.auth.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -19,12 +20,12 @@ public class UserRepositoryTest {
     @Autowired
     private UserRepository userRepository;
 
-//    @Test
+//    @TestModel
 //    public void findByEmailShouldReturnUser() {
 //        // Arrange - given
 //        User user = new User();
-//        user.setDisplayName("Test User");
-//        user.setAvatar("Test Avatar");
+//        user.setDisplayName("TestModel User");
+//        user.setAvatar("TestModel Avatar");
 //        user.setEmail("test@example.com");
 //        user.setPassword("password");
 //        entityManager.persist(user);

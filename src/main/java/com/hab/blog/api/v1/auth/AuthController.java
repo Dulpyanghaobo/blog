@@ -1,0 +1,163 @@
+package com.hab.blog.api.v1.auth;
+
+import com.hab.blog.api.v1.auth.Entity.User;
+import com.hab.blog.api.v1.auth.Entity.VerificationRequest;
+import com.hab.blog.api.v1.auth.Service.UserService;
+import com.hab.blog.api.v1.dto.JwtRequestDto;
+import com.hab.blog.api.v1.dto.UserRegistrationDto;
+import com.hab.blog.api.v1.model.VerificationToken;
+import com.hab.blog.api.v1.response.ApiResponse;
+import com.hab.blog.api.v1.response.exception.AlreadyExistsException;
+import com.hab.blog.api.v1.utility.JwtTokenProvider;
+import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.*;
+
+import java.time.Instant;
+import java.util.Optional;
+
+@RestController
+@RequestMapping("/api/v1/auth")
+public class AuthController {
+    private final AuthenticationManager authenticationManager;
+
+    private final JwtTokenProvider jwtTokenProvider;
+
+    private final UserService userService;
+
+    public AuthController(AuthenticationManager authenticationManager, JwtTokenProvider jwtTokenProvider, UserService userService) {
+        this.authenticationManager = authenticationManager;
+        this.jwtTokenProvider = jwtTokenProvider;
+        this.userService = userService;
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequestDto authenticationRequest) throws Exception {
+        Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        authenticationRequest.getUsername(),
+                        authenticationRequest.getPassword()
+                )
+        );
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        final String token = jwtTokenProvider.createToken(authentication);
+        return ResponseEntity.ok(token);
+    }
+
+    @PostMapping("/register")
+    public ResponseEntity<ApiResponse<String>> registerUser(@Valid @RequestBody UserRegistrationDto user) throws Exception {
+        try {
+            User newUser = userService.createUser(user);
+            return ResponseEntity.status(HttpStatus.CREATED).body(new ApiResponse<String>(201, "User registered successfully", String.valueOf(newUser.getId())));
+        } catch (AlreadyExistsException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(new ApiResponse<>(409, e.getMessage(), null));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ApiResponse<>(500, "Failed to register user", null));
+        }
+    }
+
+    @PostMapping("/activity/verify")
+    public ResponseEntity<?> confirmRegistration(@RequestBody VerificationRequest request) {
+        String token = request.getToken();
+        Long userId = request.getUserId();
+
+        // 检查用户是否存在
+        Optional<User> optionalUser = userService.findById(userId);
+        if (!optionalUser.isPresent()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse<>(404, "User not found", "User not found"));
+        }
+
+        // 检查验证码是否存在
+        Optional<VerificationToken> optionalToken = userService.findByUserIdAndToken(token, userId);
+        if (!optionalToken.isPresent()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse<>(409, "Invalid verification token", "Invalid verification token"));
+        }
+
+        VerificationToken verificationToken = optionalToken.get();
+
+        // 检查验证码是否过期
+        if (verificationToken.getExpiryDate().isBefore(Instant.now())) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Verification token has expired");
+        }
+
+        // 验证码正确,更新用户状态
+        User user = optionalUser.get();
+        user.setDisabled(false);
+        userService.updateUser(user);
+
+        // 删除验证码记录
+        userService.deleteVerificationToken(verificationToken);
+        return ResponseEntity.status(HttpStatus.OK).body(new ApiResponse<String>(200, "User verified successfully", "User verified successfully"));
+    }
+
+    @PostMapping("/password/reset/code")
+    public ResponseEntity<?> resetPasswordCode(@RequestParam("token") String token) {
+        VerificationToken verificationToken = userService.getVerificationToken(token);
+        if (verificationToken == null || verificationToken.isExpired()) {
+            // Token无效或已过期
+            return new ResponseEntity<>("Token is invalid or expired", HttpStatus.BAD_REQUEST);
+        }
+
+        User user = verificationToken.getUser();
+        user.setDisabled(false); // 或者其他标记为已验证的逻辑
+        userService.updateUser(user);
+        return new ResponseEntity<>("User verified successfully!", HttpStatus.OK);
+    }
+    @PostMapping("/password/reset/verify")
+    public ResponseEntity<?> verifyPasswordCode(@RequestParam("token") String token) {
+        VerificationToken verificationToken = userService.getVerificationToken(token);
+        if (verificationToken == null || verificationToken.isExpired()) {
+            // Token无效或已过期
+            return new ResponseEntity<>("Token is invalid or expired", HttpStatus.BAD_REQUEST);
+        }
+
+        User user = verificationToken.getUser();
+        user.setDisabled(false); // 或者其他标记为已验证的逻辑
+        userService.updateUser(user);
+        return new ResponseEntity<>("User verified successfully!", HttpStatus.OK);
+    }
+    @PostMapping("/password/reset")
+    public ResponseEntity<?> resetPassword(@RequestParam("token") String token) {
+        VerificationToken verificationToken = userService.getVerificationToken(token);
+        if (verificationToken == null || verificationToken.isExpired()) {
+            // Token无效或已过期
+            return new ResponseEntity<>("Token is invalid or expired", HttpStatus.BAD_REQUEST);
+        }
+
+        User user = verificationToken.getUser();
+        user.setDisabled(false); // 或者其他标记为已验证的逻辑
+        userService.updateUser(user);
+        return new ResponseEntity<>("User verified successfully!", HttpStatus.OK);
+    }
+    @PostMapping("/activity/code/create")
+    public ResponseEntity<?> createActivityCode(@RequestParam("token") String token) {
+        VerificationToken verificationToken = userService.getVerificationToken(token);
+        if (verificationToken == null || verificationToken.isExpired()) {
+            // Token无效或已过期
+            return new ResponseEntity<>("Token is invalid or expired", HttpStatus.BAD_REQUEST);
+        }
+
+        User user = verificationToken.getUser();
+        user.setDisabled(false); // 或者其他标记为已验证的逻辑
+        userService.updateUser(user);
+        return new ResponseEntity<>("User verified successfully!", HttpStatus.OK);
+    }
+    @PostMapping("/account/clear")
+    public ResponseEntity<?> clearAccount(@RequestParam("token") String token) {
+        VerificationToken verificationToken = userService.getVerificationToken(token);
+        if (verificationToken == null || verificationToken.isExpired()) {
+            // Token无效或已过期
+            return new ResponseEntity<>("Token is invalid or expired", HttpStatus.BAD_REQUEST);
+        }
+
+        User user = verificationToken.getUser();
+        user.setDisabled(false); // 或者其他标记为已验证的逻辑
+        userService.updateUser(user);
+        return new ResponseEntity<>("User verified successfully!", HttpStatus.OK);
+    }
+}

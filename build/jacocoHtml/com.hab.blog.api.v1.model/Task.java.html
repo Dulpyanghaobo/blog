@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Task.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">blog</a> &gt; <a href="index.source.html" class="el_package">com.hab.blog.api.v1.model</a> &gt; <span class="el_source">Task.java</span></div><h1>Task.java</h1><pre class="source lang-java linenums">package com.hab.blog.api.v1.model;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+import java.time.Instant;
+import java.util.List;
+import java.util.UUID;
+
+@Entity
+<span class="nc bnc" id="L13" title="All 110 branches missed.">@Data</span>
+<span class="nc" id="L14">@NoArgsConstructor // Lombok annotation to create a no-args constructor</span>
+@Table(name = &quot;tasks&quot;)
+public class Task {
+
+    @Id
+    @GeneratedValue
+<span class="nc" id="L20">    private UUID id;</span>
+
+    @Column(nullable = false)
+<span class="nc" id="L23">    private String title;</span>
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+<span class="nc" id="L27">    private TaskCategory category;</span>
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+<span class="nc" id="L31">    private TaskMode mode;</span>
+
+    // Post到User的多对一关系
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = &quot;user_id&quot;) // 对应数据库中的外键列
+<span class="nc" id="L36">    private User user;</span>
+
+    @ManyToOne(optional = true)
+    @JoinColumn(name = &quot;okr_id&quot;, nullable = true) // This column will store the ID of the OKR
+<span class="nc" id="L40">    private OKR okr;</span>
+    @ElementCollection
+<span class="nc" id="L42">    private List&lt;String&gt; tags;</span>
+
+    @Column(nullable = false)
+<span class="nc" id="L45">    private int difficulty;</span>
+
+    @Column(nullable = false)
+<span class="nc" id="L48">    private int urgency;</span>
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+<span class="nc" id="L52">    private TaskStatus status;</span>
+
+<span class="nc" id="L54">    @Column(nullable = false)</span>
+<span class="nc" id="L55">    private Instant createAt = Instant.now();</span>
+
+<span class="nc" id="L57">    @Column(nullable = false)</span>
+<span class="nc" id="L58">    private Instant updateAt = Instant.now();</span>
+
+    @Column
+<span class="nc" id="L61">    private Instant deadline;</span>
+
+    @Column(nullable = false)
+<span class="nc" id="L64">    private int importance;</span>
+
+    @Column(nullable = false)
+<span class="nc" id="L67">    private int progress; // Progress as a percentage (0-100)</span>
+
+    @Column(length = 1000)
+<span class="nc" id="L70">    private String comments;</span>
+}
+
+<span class="nc" id="L73">@Getter</span>
+enum TaskCategory {
+<span class="nc" id="L75">    STUDY(&quot;学习&quot;),</span>
+<span class="nc" id="L76">    WORK(&quot;工作&quot;),</span>
+<span class="nc" id="L77">    LIFE(&quot;生活&quot;),</span>
+<span class="nc" id="L78">    TECHNOLOGY(&quot;技术&quot;),</span>
+<span class="nc" id="L79">    THINKING(&quot;思考&quot;);</span>
+
+<span class="nc" id="L81">    private final String displayName;</span>
+
+<span class="nc" id="L83">    TaskCategory(String displayName) {</span>
+<span class="nc" id="L84">        this.displayName = displayName;</span>
+<span class="nc" id="L85">    }</span>
+
+}
+
+<span class="nc" id="L89">@Getter</span>
+enum TaskMode {
+<span class="nc" id="L91">    PERMANENT(&quot;常驻任务&quot;),</span>
+<span class="nc" id="L92">    REPETITIVE(&quot;重复性任务&quot;),</span>
+<span class="nc" id="L93">    ONCE(&quot;一次性任务&quot;);</span>
+
+<span class="nc" id="L95">    private final String displayName;</span>
+
+<span class="nc" id="L97">    TaskMode(String displayName) {</span>
+<span class="nc" id="L98">        this.displayName = displayName;</span>
+<span class="nc" id="L99">    }</span>
+
+}
+
+<span class="nc" id="L103">@Getter</span>
+enum TaskStatus {
+<span class="nc" id="L105">    CREATED(&quot;创建&quot;),</span>
+<span class="nc" id="L106">    IN_PROGRESS(&quot;执行中&quot;),</span>
+<span class="nc" id="L107">    IS_BLOCK(&quot;阻塞&quot;),</span>
+<span class="nc" id="L108">    WAITING(&quot;等待&quot;),</span>
+<span class="nc" id="L109">    COMPLETED(&quot;完成&quot;),</span>
+<span class="nc" id="L110">    SETTLEMENT(&quot;结算&quot;);</span>
+
+<span class="nc" id="L112">    private final String displayName;</span>
+
+<span class="nc" id="L114">    TaskStatus(String displayName) {</span>
+<span class="nc" id="L115">        this.displayName = displayName;</span>
+<span class="nc" id="L116">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>
