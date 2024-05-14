@@ -35,7 +35,7 @@ public class UserControllerTest {
 //        userDto.setPassword("password");
 //    }
 
-//    @Test
+//    @TestModel
 //    public void createUser_ShouldReturnUser_WhenRequestIsValid() throws Exception {
 //        given(userService.createUser(anyString(), anyString(), anyString(), anyString())).willReturn(validUser);
 //

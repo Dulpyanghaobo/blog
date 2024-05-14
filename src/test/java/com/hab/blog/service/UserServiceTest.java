@@ -1,6 +1,7 @@
 package com.hab.blog.service;
 
-import com.hab.blog.repository.UserRepository;
+import com.hab.blog.api.v1.auth.UserRepository;
+import com.hab.blog.api.v1.auth.Service.UserService;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 @SpringBootTest
@@ -16,12 +17,12 @@ public class UserServiceTest {
 //        userService = new UserService(emailService, userRepository, verificationTokenRepository);
 //    }
 //
-//    @Test
+//    @TestModel
 //    public void userRepositoryIsMocked() {
 //        assertNotNull(userRepository, "UserRepository should be mocked!");
 //    }
 
-//    @Test
+//    @TestModel
 //    public void testCreateUser() {
 //        // Arrange
 //        String displayName = "TestName";

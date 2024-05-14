@@ -36,16 +36,15 @@ repositories {
 
 dependencies {
     // 或者使用Kafka
-//    implementation 'org.springframework.kafka:spring-kafka'
-    // Swagger (SpringFox) 自动生成API文档的依赖（如果需要）
-    implementation 'io.springfox:springfox-boot-starter:3.0.0'
+
+    implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.0.3'
+
     // AOP相关，如果您需要使用AOP
     implementation 'org.springframework.boot:spring-boot-starter-aop'
     // 日志框架的依赖，Spring Boot默认使用Logback，如果您需要其他的日志框架，可以进行相应配置
     // HikariCP作为数据库连接池的依赖，通常spring-boot-starter-data-jpa已经自动配置了
     // 如果需要显式配置或者自定义版本，可以添加以下依赖
     implementation 'com.zaxxer:HikariCP'
-
     // 用于服务监控和管理
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
@@ -120,7 +119,6 @@ dependencies {
     // 异步事件的测试
     testImplementation 'org.springframework:spring-messaging'
     testImplementation 'org.springframework.kafka:spring-kafka-test'
-
 }
 
 tasks.named('test') {

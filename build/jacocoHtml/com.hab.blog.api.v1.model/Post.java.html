@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Post.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">blog</a> &gt; <a href="index.source.html" class="el_package">com.hab.blog.api.v1.model</a> &gt; <span class="el_source">Post.java</span></div><h1>Post.java</h1><pre class="source lang-java linenums">package com.hab.blog.api.v1.model;
+
+
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.time.Instant;
+
+<span class="nc bnc" id="L9" title="All 174 branches missed.">@Data</span>
+<span class="nc" id="L10">@NoArgsConstructor</span>
+@Entity
+@Table(name = &quot;posts&quot;)
+public class Post {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+<span class="nc" id="L17">    private Long id;</span>
+
+    // Post到User的多对一关系
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = &quot;user_id&quot;) // 对应数据库中的外键列
+<span class="nc" id="L22">    private User user;</span>
+
+    @Column(nullable = false)
+<span class="nc" id="L25">    private String title;</span>
+
+    @Column(nullable = false, unique = true)
+<span class="nc" id="L28">    private String slug;</span>
+
+    // 可能需要将此字段与文件存储服务链接，这里只存储引用
+    @Column(name = &quot;release_snapshot&quot;)
+<span class="nc" id="L32">    private String releaseSnapshot;</span>
+
+    // 头快照，如有需要可以加入
+    @Column(name = &quot;head_snapshot&quot;)
+<span class="nc" id="L36">    private String headSnapshot;</span>
+
+    // 基础快照，如有需要可以加入
+    @Column(name = &quot;base_snapshot&quot;)
+<span class="nc" id="L40">    private String baseSnapshot;</span>
+
+    // 文章的拥有者，可能是用户的ID或用户名
+    @Column(name = &quot;owner&quot;)
+<span class="nc" id="L44">    private String owner;</span>
+
+    // 使用的模板
+    @Column(name = &quot;template&quot;)
+<span class="nc" id="L48">    private String template;</span>
+
+    // 封面图片路径
+    @Column(name = &quot;cover&quot;)
+<span class="nc" id="L52">    private String cover;</span>
+
+<span class="nc" id="L54">    @Column(nullable = false)</span>
+<span class="nc" id="L55">    private Boolean deleted = false;</span>
+
+<span class="nc" id="L57">    @Column(nullable = false)</span>
+<span class="nc" id="L58">    private Boolean publish = false;</span>
+
+    // 发布时间可以为空，这表示文章还没有发布
+    @Column(name = &quot;publish_time&quot;)
+<span class="nc" id="L62">    private Instant publishTime;</span>
+
+<span class="nc" id="L64">    @Column(nullable = false)</span>
+<span class="nc" id="L65">    private Boolean pinned = false;</span>
+
+<span class="nc" id="L67">    @Column(nullable = false)</span>
+<span class="nc" id="L68">    private Boolean allowComment = true;</span>
+
+    // 使用枚举来限制值
+<span class="nc" id="L71">    @Enumerated(EnumType.STRING)</span>
+    @Column(nullable = false)
+<span class="nc" id="L73">    private VisibleEnum visible = VisibleEnum.PUBLIC;</span>
+
+<span class="nc" id="L75">    @Column(nullable = false)</span>
+<span class="nc" id="L76">    private Integer priority = 0;</span>
+
+    // 文章摘要，如有需要可以映射为一个文本字段
+    @Column(name = &quot;excerpt&quot;)
+<span class="nc" id="L80">    private String excerpt;</span>
+
+    // 假设分类和标签以逗号分隔的字符串存储，或者可以创建单独的表来映射多对多关系
+    @Column(name = &quot;categories&quot;)
+<span class="nc" id="L84">    private String categories;</span>
+
+    @Column(name = &quot;tags&quot;)
+<span class="nc" id="L87">    private String tags;</span>
+
+    // HTML元数据可能需要复杂的映射，这里简化为一个文本字段，具体取决于需求
+    @Column(name = &quot;html_metas&quot;)
+<span class="nc" id="L91">    private String htmlMetas;</span>
+
+    // You can add more fields, constructors, and methods as needed.
+}
+
+// 可见性枚举，与原类一致
+<span class="nc" id="L97">enum VisibleEnum {</span>
+<span class="nc" id="L98">    PUBLIC,</span>
+<span class="nc" id="L99">    INTERNAL,</span>
+<span class="nc" id="L100">    PRIVATE</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>
