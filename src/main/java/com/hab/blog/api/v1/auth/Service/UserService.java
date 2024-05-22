@@ -70,8 +70,15 @@ public class UserService implements UserDetailsService {
         return user;
     }
 
+
+
     public Optional<User> findById(Long userId) {
         Optional<User> optionalUser = userRepository.findById(userId);
+        return optionalUser;
+    }
+
+    public Optional<User> findUsersByEmail(String email) {
+        Optional<User> optionalUser = userRepository.findUserByEmail(email);
         return optionalUser;
     }
 

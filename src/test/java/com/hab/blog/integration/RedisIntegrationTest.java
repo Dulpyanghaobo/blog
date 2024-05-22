@@ -1,4 +1,4 @@
 package com.hab.blog.integration;
 
-public class RedisIntegrationTest {
-}
+//public class RedisIntegrationTest {
+//}

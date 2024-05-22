@@ -10,6 +10,7 @@ import com.hab.blog.api.v1.response.ApiResponse;
 import com.hab.blog.api.v1.response.exception.AlreadyExistsException;
 import com.hab.blog.api.v1.utility.JwtTokenProvider;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -28,6 +29,7 @@ public class AuthController {
 
     private final JwtTokenProvider jwtTokenProvider;
 
+    @Autowired
     private final UserService userService;
 
     public AuthController(AuthenticationManager authenticationManager, JwtTokenProvider jwtTokenProvider, UserService userService) {
@@ -38,15 +40,19 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequestDto authenticationRequest) throws Exception {
+        Optional<User> user = userService.findUsersByEmail(authenticationRequest.getEmail());
+        if (!user.isPresent()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse<>(404, "User not found", "User not found"));
+        }
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
-                        authenticationRequest.getUsername(),
+                        user.orElse(null).getUserName(),
                         authenticationRequest.getPassword()
                 )
         );
         SecurityContextHolder.getContext().setAuthentication(authentication);
         final String token = jwtTokenProvider.createToken(authentication);
-        return ResponseEntity.ok(token);
+        return ResponseEntity.status(HttpStatus.CREATED).body(new ApiResponse<String>(201, "Generate token", token));
     }
 
     @PostMapping("/register")
@@ -96,17 +102,19 @@ public class AuthController {
     }
 
     @PostMapping("/password/reset/code")
-    public ResponseEntity<?> resetPasswordCode(@RequestParam("token") String token) {
-        VerificationToken verificationToken = userService.getVerificationToken(token);
-        if (verificationToken == null || verificationToken.isExpired()) {
-            // Token无效或已过期
-            return new ResponseEntity<>("Token is invalid or expired", HttpStatus.BAD_REQUEST);
-        }
+    public ResponseEntity<?> resetPasswordCode(@RequestBody VerificationRequest request) {
+        return ResponseEntity.status(HttpStatus.OK).body(new ApiResponse<String>(200, "Send Verification Code Successfully", "Send Verification Code Successfully"));
 
-        User user = verificationToken.getUser();
-        user.setDisabled(false); // 或者其他标记为已验证的逻辑
-        userService.updateUser(user);
-        return new ResponseEntity<>("User verified successfully!", HttpStatus.OK);
+//        VerificationToken verificationToken = userService.getVerificationToken(token);
+//        if (verificationToken == null || verificationToken.isExpired()) {
+//            // Token无效或已过期
+//            return new ResponseEntity<>("Token is invalid or expired", HttpStatus.BAD_REQUEST);
+//        }
+//
+//        User user = verificationToken.getUser();
+//        user.setDisabled(false); // 或者其他标记为已验证的逻辑
+//        userService.updateUser(user);
+//        return new ResponseEntity<>("User verified successfully!", HttpStatus.OK);
     }
     @PostMapping("/password/reset/verify")
     public ResponseEntity<?> verifyPasswordCode(@RequestParam("token") String token) {
