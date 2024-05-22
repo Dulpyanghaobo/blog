@@ -19,7 +19,7 @@ public class EmailConfig {
     private String host;
 
     @Value("${spring.mail.username}")
-    private String username;
+    private String emailSender;
 
     @Value("${spring.mail.password}")
     private String password;
@@ -35,7 +35,7 @@ public class EmailConfig {
         mailSender.setPort(GMAIL_SMTP_PORT);
 
         // Set up email config (using udeesa email)
-        mailSender.setUsername(username);
+        mailSender.setUsername(emailSender);
         mailSender.setPassword(password);
 
         Properties props = mailSender.getJavaMailProperties();
@@ -46,5 +46,10 @@ public class EmailConfig {
         props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
         props.put("mail.debug", debug);
         return mailSender;
+    }
+
+    @Bean
+    public String emailSender() {
+        return emailSender;
     }
 }

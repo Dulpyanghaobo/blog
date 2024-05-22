@@ -9,4 +9,6 @@ import lombok.NoArgsConstructor;
 public class VerificationRequest {
     String token;
     Long userId;
+    String email;
+
 }
