@@ -1,9 +1,8 @@
 package com.hab.blog.service;
 
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.kafka.test.context.EmbeddedKafka;
 
-@EmbeddedKafka(partitions = 1, topics = { "yourTopic" })
+//@EmbeddedKafka(partitions = 1, topics = { "yourTopic" })
 @SpringBootTest
 public class KafkaIntegrationTest {
 

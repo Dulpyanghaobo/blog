@@ -1,10 +1,10 @@
 package com.hab.blog.api.v1.auth.Service;
 
 import com.hab.blog.api.v1.auth.Entity.User;
+import com.hab.blog.api.v1.auth.Entity.VerificationToken;
 import com.hab.blog.api.v1.auth.UserRepository;
-import com.hab.blog.api.v1.dto.UserRegistrationDto;
-import com.hab.blog.api.v1.model.VerificationToken;
 import com.hab.blog.api.v1.auth.VerificationTokenRepository;
+import com.hab.blog.api.v1.dto.UserRegistrationDto;
 import com.hab.blog.api.v1.response.exception.AlreadyExistsException;
 import com.hab.blog.api.v1.response.exception.MailException;
 import com.hab.blog.api.v1.service.EmailService;
@@ -58,19 +58,23 @@ public class UserService implements UserDetailsService {
         newUser.setAvatar(registrationDto.getAvatar());
         newUser.setEmail(registrationDto.getEmail());
         newUser.setRegisteredAt(new Date().toInstant());
-        VerificationToken verificationToken = new VerificationToken(token, newUser);
+        VerificationToken verificationToken = new VerificationToken(token, VerificationToken.TokenType.VERIFY_EMAIL, newUser.getEmail(), newUser.getId());
         String hashedPassword = passwordEncoder.encode(registrationDto.getPassword());
         registrationDto.setPassword(hashedPassword);
-        emailService.sendConfirmationEmail(newUser.getUserName(),newUser.getEmail(), token);
+        emailService.sendActivationEmail(newUser.getEmail(), newUser.getUserName(), token);
         newUser.setPassword(registrationDto.getPassword());
         newUser.setDisabled(true);
-
         User user = userRepository.save(newUser);
         verificationTokenRepository.save(verificationToken);
         return user;
     }
 
-
+    public void resetUserPassword(User user) {
+        String token = generateNewToken();
+        VerificationToken verificationToken = new VerificationToken(token, VerificationToken.TokenType.RESET_PASSWORD, user.getEmail());
+        emailService.sendReSetPassword(user.getEmail(), user.getUserName(), token);
+        verificationTokenRepository.save(verificationToken);
+    }
 
     public Optional<User> findById(Long userId) {
         Optional<User> optionalUser = userRepository.findById(userId);
@@ -96,6 +100,10 @@ public class UserService implements UserDetailsService {
     }
     public VerificationToken getVerificationToken(String token) {
         return verificationTokenRepository.findByToken(token);
+    }
+
+    public Optional<VerificationToken> getVerificationTokenByUserId(String token, long userId) {
+        return verificationTokenRepository.findByUserIdAndToken(userId, token);
     }
 
     public void deleteVerificationToken(VerificationToken token) {

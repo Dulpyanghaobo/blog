@@ -1,6 +1,6 @@
 package com.hab.blog.api.v1.auth;
 
-import com.hab.blog.api.v1.model.VerificationToken;
+import com.hab.blog.api.v1.auth.Entity.VerificationToken;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import java.util.Optional;
@@ -11,5 +11,4 @@ public interface VerificationTokenRepository extends JpaRepository<VerificationT
     Optional<VerificationToken> findByUserId(Long userId);
 
     Optional<VerificationToken> findByUserIdAndToken(Long userId, String token);
-
 }

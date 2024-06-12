@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AuthController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">blog</a> &gt; <a href="index.source.html" class="el_package">com.hab.blog.api.v1.auth</a> &gt; <span class="el_source">AuthController.java</span></div><h1>AuthController.java</h1><pre class="source lang-java linenums">package com.hab.blog.api.v1.auth;
+
+import com.hab.blog.api.v1.auth.Entity.User;
+import com.hab.blog.api.v1.auth.Entity.VerificationRequest;
+import com.hab.blog.api.v1.auth.Service.UserService;
+import com.hab.blog.api.v1.dto.JwtRequestDto;
+import com.hab.blog.api.v1.dto.UserRegistrationDto;
+import com.hab.blog.api.v1.auth.Entity.VerificationToken;
+import com.hab.blog.api.v1.response.ApiResponse;
+import com.hab.blog.api.v1.response.exception.AlreadyExistsException;
+import com.hab.blog.api.v1.utility.JwtTokenProvider;
+import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.*;
+
+import java.time.Instant;
+import java.util.Optional;
+
+@RestController
+@RequestMapping(&quot;/api/v1/auth&quot;)
+public class AuthController {
+    private final AuthenticationManager authenticationManager;
+
+    private final JwtTokenProvider jwtTokenProvider;
+
+    @Autowired
+    private final UserService userService;
+
+<span class="nc" id="L35">    public AuthController(AuthenticationManager authenticationManager, JwtTokenProvider jwtTokenProvider, UserService userService) {</span>
+<span class="nc" id="L36">        this.authenticationManager = authenticationManager;</span>
+<span class="nc" id="L37">        this.jwtTokenProvider = jwtTokenProvider;</span>
+<span class="nc" id="L38">        this.userService = userService;</span>
+<span class="nc" id="L39">    }</span>
+
+    @PostMapping(&quot;/login&quot;)
+    public ResponseEntity&lt;?&gt; createAuthenticationToken(@RequestBody JwtRequestDto authenticationRequest) throws Exception {
+<span class="nc" id="L43">        Optional&lt;User&gt; user = userService.findUsersByEmail(authenticationRequest.getEmail());</span>
+<span class="nc bnc" id="L44" title="All 2 branches missed.">        if (!user.isPresent()) {</span>
+<span class="nc" id="L45">            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse&lt;&gt;(404, &quot;User not found&quot;, &quot;User not found&quot;));</span>
+        }
+<span class="nc" id="L47">        Authentication authentication = authenticationManager.authenticate(</span>
+                new UsernamePasswordAuthenticationToken(
+<span class="nc" id="L49">                        user.orElse(null).getUserName(),</span>
+<span class="nc" id="L50">                        authenticationRequest.getPassword()</span>
+                )
+        );
+<span class="nc" id="L53">        SecurityContextHolder.getContext().setAuthentication(authentication);</span>
+<span class="nc" id="L54">        final String token = jwtTokenProvider.createToken(authentication);</span>
+<span class="nc" id="L55">        return ResponseEntity.status(HttpStatus.CREATED).body(new ApiResponse&lt;String&gt;(201, &quot;Generate token&quot;, token));</span>
+    }
+
+    @PostMapping(&quot;/register&quot;)
+    public ResponseEntity&lt;ApiResponse&lt;String&gt;&gt; registerUser(@Valid @RequestBody UserRegistrationDto user) throws Exception {
+        try {
+<span class="nc" id="L61">            User newUser = userService.createUser(user);</span>
+<span class="nc" id="L62">            return ResponseEntity.status(HttpStatus.CREATED).body(new ApiResponse&lt;String&gt;(201, &quot;User registered successfully&quot;, String.valueOf(newUser.getId())));</span>
+<span class="nc" id="L63">        } catch (AlreadyExistsException e) {</span>
+<span class="nc" id="L64">            return ResponseEntity.status(HttpStatus.CONFLICT).body(new ApiResponse&lt;&gt;(409, e.getMessage(), null));</span>
+<span class="nc" id="L65">        } catch (Exception e) {</span>
+<span class="nc" id="L66">            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ApiResponse&lt;&gt;(500, &quot;Failed to register user&quot;, null));</span>
+        }
+    }
+
+    @PostMapping(&quot;/activity/verify&quot;)
+    public ResponseEntity&lt;?&gt; confirmRegistration(@RequestBody VerificationRequest request) {
+<span class="nc" id="L72">        String token = request.getToken();</span>
+<span class="nc" id="L73">        Long userId = request.getUserId();</span>
+
+        // 检查用户是否存在
+<span class="nc" id="L76">        Optional&lt;User&gt; optionalUser = userService.findById(userId);</span>
+<span class="nc bnc" id="L77" title="All 2 branches missed.">        if (!optionalUser.isPresent()) {</span>
+<span class="nc" id="L78">            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse&lt;&gt;(404, &quot;User not found&quot;, &quot;User not found&quot;));</span>
+        }
+
+        // 检查验证码是否存在
+<span class="nc" id="L82">        Optional&lt;VerificationToken&gt; optionalToken = userService.findByUserIdAndToken(token, userId);</span>
+<span class="nc bnc" id="L83" title="All 2 branches missed.">        if (!optionalToken.isPresent()) {</span>
+<span class="nc" id="L84">            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse&lt;&gt;(409, &quot;Invalid verification token&quot;, &quot;Invalid verification token&quot;));</span>
+        }
+
+<span class="nc" id="L87">        VerificationToken verificationToken = optionalToken.get();</span>
+
+        // 检查验证码是否过期
+<span class="nc bnc" id="L90" title="All 2 branches missed.">        if (verificationToken.getExpiryDate().isBefore(Instant.now())) {</span>
+<span class="nc" id="L91">            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(&quot;Verification token has expired&quot;);</span>
+        }
+
+        // 验证码正确,更新用户状态
+<span class="nc" id="L95">        User user = optionalUser.get();</span>
+<span class="nc" id="L96">        user.setDisabled(false);</span>
+<span class="nc" id="L97">        userService.updateUser(user);</span>
+
+        // 删除验证码记录
+<span class="nc" id="L100">        userService.deleteVerificationToken(verificationToken);</span>
+<span class="nc" id="L101">        return ResponseEntity.status(HttpStatus.OK).body(new ApiResponse&lt;String&gt;(200, &quot;User verified successfully&quot;, &quot;User verified successfully&quot;));</span>
+    }
+
+    @PostMapping(&quot;/password/reset/code&quot;)
+    public ResponseEntity&lt;?&gt; resetPasswordCode(@RequestBody VerificationRequest request) {
+<span class="nc" id="L106">        String email = request.getEmail();</span>
+        // 检查用户是否存在
+<span class="nc" id="L108">        Optional&lt;User&gt; optionalUser = userService.findUsersByEmail(email);</span>
+<span class="nc bnc" id="L109" title="All 2 branches missed.">        if (!optionalUser.isPresent()) {</span>
+<span class="nc" id="L110">            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse&lt;&gt;(404, &quot;User not found&quot;, &quot;User not found&quot;));</span>
+        }
+<span class="nc" id="L112">        userService.resetUserPassword(optionalUser.orElseThrow());</span>
+<span class="nc" id="L113">        return ResponseEntity.status(HttpStatus.OK).body(new ApiResponse&lt;String&gt;(200, &quot;Send Verification Code Successfully&quot;, &quot;Send Verification Code Successfully&quot;));</span>
+    }
+
+    @PostMapping(&quot;/password/reset/verify&quot;)
+    public ResponseEntity&lt;?&gt; verifyPasswordCode(@RequestBody VerificationRequest request) {
+<span class="nc" id="L118">        Optional&lt;User&gt; optionalUser = userService.findUsersByEmail(request.getEmail());</span>
+<span class="nc bnc" id="L119" title="All 2 branches missed.">        if (!optionalUser.isPresent()) {</span>
+<span class="nc" id="L120">            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse&lt;&gt;(404, &quot;User not found&quot;, &quot;User not found&quot;));</span>
+        }
+<span class="nc" id="L122">        Optional&lt;VerificationToken&gt; verificationToken = userService.getVerificationTokenByUserId(request.getToken(), optionalUser.orElseThrow().getId());</span>
+<span class="nc bnc" id="L123" title="All 4 branches missed.">        if (verificationToken.isPresent() &amp;&amp; verificationToken.orElseThrow().isExpired()) {</span>
+            // Token无效或已过期
+<span class="nc" id="L125">            return new ResponseEntity&lt;&gt;(&quot;Token is invalid or expired&quot;, HttpStatus.BAD_REQUEST);</span>
+        }
+<span class="nc" id="L127">        userService.deleteVerificationToken(verificationToken.get());</span>
+<span class="nc" id="L128">        return ResponseEntity.status(HttpStatus.OK).body(new ApiResponse&lt;String&gt;(200, &quot;User verified successfully&quot;, &quot;User verified successfully&quot;));</span>
+    }
+
+    @PostMapping(&quot;/password/reset&quot;)
+    public ResponseEntity&lt;?&gt; resetPassword(@RequestParam(&quot;token&quot;) String token) {
+<span class="nc" id="L133">        VerificationToken verificationToken = userService.getVerificationToken(token);</span>
+<span class="nc bnc" id="L134" title="All 4 branches missed.">        if (verificationToken == null || verificationToken.isExpired()) {</span>
+            // Token无效或已过期
+<span class="nc" id="L136">            return new ResponseEntity&lt;&gt;(&quot;Token is invalid or expired&quot;, HttpStatus.BAD_REQUEST);</span>
+        }
+//
+//        User user = verificationToken.getUser();
+//        user.setDisabled(false); // 或者其他标记为已验证的逻辑
+//        userService.updateUser(user);
+<span class="nc" id="L142">        return new ResponseEntity&lt;&gt;(&quot;User verified successfully!&quot;, HttpStatus.OK);</span>
+    }
+
+    @PostMapping(&quot;/account/clear&quot;)
+    public ResponseEntity&lt;?&gt; clearAccount(@RequestParam(&quot;token&quot;) String token) {
+<span class="nc" id="L147">        VerificationToken verificationToken = userService.getVerificationToken(token);</span>
+<span class="nc bnc" id="L148" title="All 4 branches missed.">        if (verificationToken == null || verificationToken.isExpired()) {</span>
+            // Token无效或已过期
+<span class="nc" id="L150">            return new ResponseEntity&lt;&gt;(&quot;Token is invalid or expired&quot;, HttpStatus.BAD_REQUEST);</span>
+        }
+
+//        User user = verificationToken.getUserId();
+//        user.setDisabled(false); // 或者其他标记为已验证的逻辑
+//        userService.updateUser(user);
+<span class="nc" id="L156">        return new ResponseEntity&lt;&gt;(&quot;User verified successfully!&quot;, HttpStatus.OK);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

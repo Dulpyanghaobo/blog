@@ -26,10 +26,6 @@ public class EmailService {
         this.emailSender = emailSender;
     }
 
-    public void sendConfirmationEmail(String username, String email,String token) {
-        sendActivationEmail(email,username, token);
-    }
-
     public void sendActivationEmail(String to, String username, String activationCode) {
         Context context = new Context();
         context.setVariable("username", username);
@@ -38,6 +34,16 @@ public class EmailService {
         String htmlContent = templateEngine.process("register-email", context);
 
         sendHtmlMail(to, "Butler注册激活邮件", htmlContent);
+    }
+
+    public void sendReSetPassword(String to, String username, String resetCode) {
+        Context context = new Context();
+        context.setVariable("username", username);
+        context.setVariable("resetCode", resetCode);
+
+        String htmlContent = templateEngine.process("reset-password-email", context);
+
+        sendHtmlMail(to, "Butler重置密码邮件", htmlContent);
     }
 
     @Async
