@@ -5,7 +5,7 @@ import com.hab.blog.api.v1.auth.Entity.VerificationRequest;
 import com.hab.blog.api.v1.auth.Service.UserService;
 import com.hab.blog.api.v1.dto.JwtRequestDto;
 import com.hab.blog.api.v1.dto.UserRegistrationDto;
-import com.hab.blog.api.v1.model.VerificationToken;
+import com.hab.blog.api.v1.auth.Entity.VerificationToken;
 import com.hab.blog.api.v1.response.ApiResponse;
 import com.hab.blog.api.v1.response.exception.AlreadyExistsException;
 import com.hab.blog.api.v1.utility.JwtTokenProvider;
@@ -103,32 +103,31 @@ public class AuthController {
 
     @PostMapping("/password/reset/code")
     public ResponseEntity<?> resetPasswordCode(@RequestBody VerificationRequest request) {
+        String email = request.getEmail();
+        // 检查用户是否存在
+        Optional<User> optionalUser = userService.findUsersByEmail(email);
+        if (!optionalUser.isPresent()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse<>(404, "User not found", "User not found"));
+        }
+        userService.resetUserPassword(optionalUser.orElseThrow());
         return ResponseEntity.status(HttpStatus.OK).body(new ApiResponse<String>(200, "Send Verification Code Successfully", "Send Verification Code Successfully"));
-
-//        VerificationToken verificationToken = userService.getVerificationToken(token);
-//        if (verificationToken == null || verificationToken.isExpired()) {
-//            // Token无效或已过期
-//            return new ResponseEntity<>("Token is invalid or expired", HttpStatus.BAD_REQUEST);
-//        }
-//
-//        User user = verificationToken.getUser();
-//        user.setDisabled(false); // 或者其他标记为已验证的逻辑
-//        userService.updateUser(user);
-//        return new ResponseEntity<>("User verified successfully!", HttpStatus.OK);
     }
+
     @PostMapping("/password/reset/verify")
-    public ResponseEntity<?> verifyPasswordCode(@RequestParam("token") String token) {
-        VerificationToken verificationToken = userService.getVerificationToken(token);
-        if (verificationToken == null || verificationToken.isExpired()) {
+    public ResponseEntity<?> verifyPasswordCode(@RequestBody VerificationRequest request) {
+        Optional<User> optionalUser = userService.findUsersByEmail(request.getEmail());
+        if (!optionalUser.isPresent()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse<>(404, "User not found", "User not found"));
+        }
+        Optional<VerificationToken> verificationToken = userService.getVerificationTokenByUserId(request.getToken(), optionalUser.orElseThrow().getId());
+        if (verificationToken.isPresent() && verificationToken.orElseThrow().isExpired()) {
             // Token无效或已过期
             return new ResponseEntity<>("Token is invalid or expired", HttpStatus.BAD_REQUEST);
         }
-
-        User user = verificationToken.getUser();
-        user.setDisabled(false); // 或者其他标记为已验证的逻辑
-        userService.updateUser(user);
-        return new ResponseEntity<>("User verified successfully!", HttpStatus.OK);
+        userService.deleteVerificationToken(verificationToken.get());
+        return ResponseEntity.status(HttpStatus.OK).body(new ApiResponse<String>(200, "User verified successfully", "User verified successfully"));
     }
+
     @PostMapping("/password/reset")
     public ResponseEntity<?> resetPassword(@RequestParam("token") String token) {
         VerificationToken verificationToken = userService.getVerificationToken(token);
@@ -136,25 +135,13 @@ public class AuthController {
             // Token无效或已过期
             return new ResponseEntity<>("Token is invalid or expired", HttpStatus.BAD_REQUEST);
         }
-
-        User user = verificationToken.getUser();
-        user.setDisabled(false); // 或者其他标记为已验证的逻辑
-        userService.updateUser(user);
+//
+//        User user = verificationToken.getUser();
+//        user.setDisabled(false); // 或者其他标记为已验证的逻辑
+//        userService.updateUser(user);
         return new ResponseEntity<>("User verified successfully!", HttpStatus.OK);
     }
-    @PostMapping("/activity/code/create")
-    public ResponseEntity<?> createActivityCode(@RequestParam("token") String token) {
-        VerificationToken verificationToken = userService.getVerificationToken(token);
-        if (verificationToken == null || verificationToken.isExpired()) {
-            // Token无效或已过期
-            return new ResponseEntity<>("Token is invalid or expired", HttpStatus.BAD_REQUEST);
-        }
 
-        User user = verificationToken.getUser();
-        user.setDisabled(false); // 或者其他标记为已验证的逻辑
-        userService.updateUser(user);
-        return new ResponseEntity<>("User verified successfully!", HttpStatus.OK);
-    }
     @PostMapping("/account/clear")
     public ResponseEntity<?> clearAccount(@RequestParam("token") String token) {
         VerificationToken verificationToken = userService.getVerificationToken(token);
@@ -163,9 +150,9 @@ public class AuthController {
             return new ResponseEntity<>("Token is invalid or expired", HttpStatus.BAD_REQUEST);
         }
 
-        User user = verificationToken.getUser();
-        user.setDisabled(false); // 或者其他标记为已验证的逻辑
-        userService.updateUser(user);
+//        User user = verificationToken.getUserId();
+//        user.setDisabled(false); // 或者其他标记为已验证的逻辑
+//        userService.updateUser(user);
         return new ResponseEntity<>("User verified successfully!", HttpStatus.OK);
     }
 }
