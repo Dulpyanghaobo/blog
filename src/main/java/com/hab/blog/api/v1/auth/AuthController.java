@@ -2,10 +2,11 @@ package com.hab.blog.api.v1.auth;
 
 import com.hab.blog.api.v1.auth.Entity.User;
 import com.hab.blog.api.v1.auth.Entity.VerificationRequest;
+import com.hab.blog.api.v1.auth.Entity.VerificationToken;
 import com.hab.blog.api.v1.auth.Service.UserService;
+import com.hab.blog.api.v1.auth.Service.WeChatAuthService;
 import com.hab.blog.api.v1.dto.JwtRequestDto;
 import com.hab.blog.api.v1.dto.UserRegistrationDto;
-import com.hab.blog.api.v1.auth.Entity.VerificationToken;
 import com.hab.blog.api.v1.response.ApiResponse;
 import com.hab.blog.api.v1.response.exception.AlreadyExistsException;
 import com.hab.blog.api.v1.utility.JwtTokenProvider;
@@ -32,10 +33,15 @@ public class AuthController {
     @Autowired
     private final UserService userService;
 
-    public AuthController(AuthenticationManager authenticationManager, JwtTokenProvider jwtTokenProvider, UserService userService) {
+    @Autowired
+    private final WeChatAuthService weChatAuthService;
+
+
+    public AuthController(AuthenticationManager authenticationManager, JwtTokenProvider jwtTokenProvider, UserService userService, WeChatAuthService weChatAuthService) {
         this.authenticationManager = authenticationManager;
         this.jwtTokenProvider = jwtTokenProvider;
         this.userService = userService;
+        this.weChatAuthService = weChatAuthService;
     }
 
     @PostMapping("/login")
@@ -59,7 +65,7 @@ public class AuthController {
     public ResponseEntity<ApiResponse<String>> registerUser(@Valid @RequestBody UserRegistrationDto user) throws Exception {
         try {
             User newUser = userService.createUser(user);
-            return ResponseEntity.status(HttpStatus.CREATED).body(new ApiResponse<String>(201, "User registered successfully", String.valueOf(newUser.getId())));
+            return ResponseEntity.status(HttpStatus.CREATED).body(ApiResponse.success( String.valueOf(newUser.getId())));
         } catch (AlreadyExistsException e) {
             return ResponseEntity.status(HttpStatus.CONFLICT).body(new ApiResponse<>(409, e.getMessage(), null));
         } catch (Exception e) {
@@ -135,10 +141,6 @@ public class AuthController {
             // Token无效或已过期
             return new ResponseEntity<>("Token is invalid or expired", HttpStatus.BAD_REQUEST);
         }
-//
-//        User user = verificationToken.getUser();
-//        user.setDisabled(false); // 或者其他标记为已验证的逻辑
-//        userService.updateUser(user);
         return new ResponseEntity<>("User verified successfully!", HttpStatus.OK);
     }
 
@@ -149,10 +151,13 @@ public class AuthController {
             // Token无效或已过期
             return new ResponseEntity<>("Token is invalid or expired", HttpStatus.BAD_REQUEST);
         }
-
-//        User user = verificationToken.getUserId();
-//        user.setDisabled(false); // 或者其他标记为已验证的逻辑
-//        userService.updateUser(user);
         return new ResponseEntity<>("User verified successfully!", HttpStatus.OK);
+    }
+
+    // 新增的微信登录接口
+    @PostMapping("/wechat/login")
+    public ResponseEntity<ApiResponse<String>> loginWithWeChat(@RequestParam String code) {
+        ApiResponse<String> response = weChatAuthService.loginWithWeChat(code);
+        return ResponseEntity.ok(response);
     }
 }

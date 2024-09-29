@@ -38,6 +38,10 @@ public class User {
     @Column(nullable = false)
     private String userName;
 
+    // 新增的 openid 字段，微信用户的唯一标识
+    @Column(unique = true)
+    private String openid;
+
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
