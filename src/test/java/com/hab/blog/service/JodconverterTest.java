@@ -7,7 +7,7 @@ public class JodconverterTest {
 //        DocumentConverter converter = new Ste();
 //        }
 //    }
-//    @Test void contextLoads(){
+//    @TestModel void contextLoads(){
 //        try {
 //            File file = FileUtil.file("D:/2042202107216014.xlsx");
 //            File out = FileUtil.file("D:/2042202107216014.pdf");

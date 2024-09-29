@@ -35,34 +35,17 @@ repositories {
 }
 
 dependencies {
-    // 或者使用Kafka
-//    implementation 'org.springframework.kafka:spring-kafka'
-    // Swagger (SpringFox) 自动生成API文档的依赖（如果需要）
-    implementation 'io.springfox:springfox-boot-starter:3.0.0'
-    // AOP相关，如果您需要使用AOP
+    implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.0.3'
     implementation 'org.springframework.boot:spring-boot-starter-aop'
-    // 日志框架的依赖，Spring Boot默认使用Logback，如果您需要其他的日志框架，可以进行相应配置
-    // HikariCP作为数据库连接池的依赖，通常spring-boot-starter-data-jpa已经自动配置了
-    // 如果需要显式配置或者自定义版本，可以添加以下依赖
     implementation 'com.zaxxer:HikariCP'
-
-    // 用于服务监控和管理
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
-
-    // 用于API版本控制的依赖（如果需要）
     implementation 'org.springframework.data:spring-data-rest-webmvc'
-
-    // 如果需要更复杂的对象映射，可以使用ModelMapper
-    implementation 'org.modelmapper:modelmapper:3.1.0'
     implementation 'org.springframework.boot:spring-boot-starter'
-    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
-    // Spring Cache and Redis
-    implementation 'org.springframework.boot:spring-boot-starter-cache'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     // Spring Boot oauth2 client
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
     // Spring Boot Send Email
@@ -70,57 +53,32 @@ dependencies {
     implementation 'org.jodconverter:jodconverter-local-lo:4.4.7'
     implementation 'com.aliyun.oss:aliyun-sdk-oss:3.16.0'
     implementation 'org.projectlombok:lombok:1.18.22'
-    testImplementation 'org.testng:testng:7.1.0'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
-    // https://mvnrepository.com/artifact/javax.persistence/javax.persistence-api
-    // Mysql Connect
     implementation 'mysql:mysql-connector-java:8.0.33' // replace with the desired version
-    // config JWT Generate project
     implementation 'io.jsonwebtoken:jjwt-api:0.11.2'
-    // https://mvnrepository.com/artifact/org.springframework/spring-jdbc
     implementation 'org.springframework:spring-jdbc:6.0.13'
-    // hutool
     implementation 'cn.hutool:hutool-all:5.8.23'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
     runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.2'
     runtimeOnly('io.jsonwebtoken:jjwt-jackson:0.11.2') // For Jackson JSON processor
-    // https://mvnrepository.com/artifact/com.fasterxml.uuid/java-uuid-generator
     implementation 'com.fasterxml.uuid:java-uuid-generator:4.3.0'
-    // Spring Test
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    // Spring autoconfigure Test
     testImplementation 'org.springframework.boot:spring-boot-test-autoconfigure'
-    // Object match
     testImplementation 'org.hamcrest:hamcrest:2.1'
     testImplementation 'org.testcontainers:mysql'
-    // JUnit Jupiter API and Engine for writing tests
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
-    // Spring Boot test starter for testing Spring Boot applications
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'com.h2database:h2:2.2.224'
-    // https://mvnrepository.com/artifact/org.junit.vintage/junit-vintage-engine
     testImplementation 'org.junit.vintage:junit-vintage-engine:5.10.0'
-    // Testcontainers for integration tests
     testImplementation 'org.testcontainers:junit-jupiter:1.16.0'
     testImplementation 'org.testcontainers:mysql:1.16.0'
-
-    // 如果要对异步操作进行测试，可能还需要添加Spring的异步测试支持
     testImplementation 'org.springframework:spring-test'
-
-    // 对于集成测试，如果需要模拟Web环境，可以添加以下依赖
-    testImplementation 'org.springframework.boot:spring-boot-starter-webflux'
-
-    // 断言库 AssertJ，如果您想使用更流畅的断言方式
     testImplementation 'org.assertj:assertj-core:3.21.0'
-
-    // Mockito用于Mock测试
     testImplementation 'org.mockito:mockito-core:4.0.0'
     testImplementation 'org.mockito:mockito-junit-jupiter:4.0.0'
-
-    // 异步事件的测试
     testImplementation 'org.springframework:spring-messaging'
-    testImplementation 'org.springframework.kafka:spring-kafka-test'
-
 }
 
 tasks.named('test') {
