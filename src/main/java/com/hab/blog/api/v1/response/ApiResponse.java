@@ -14,6 +14,16 @@ public class ApiResponse<T> {
         this.data = data;
     }
 
+    // 静态工厂方法用于成功响应
+    public static <T> ApiResponse<T> success(T data) {
+        return new ApiResponse<>(200, "Operation successful", data);
+    }
+
+    // 静态工厂方法用于失败响应
+    public static <T> ApiResponse<T> failure(String message) {
+        return new ApiResponse<>(500, message, null);
+    }
+
     @Override
     public String toString() {
         return "ApiResponse{" +
