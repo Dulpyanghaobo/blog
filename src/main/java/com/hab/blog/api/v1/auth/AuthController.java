@@ -21,7 +21,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import java.time.Instant;
 import java.util.Optional;
-
+ 
 @RestController
 @RequestMapping("/api/v1/auth")
 public class AuthController {
