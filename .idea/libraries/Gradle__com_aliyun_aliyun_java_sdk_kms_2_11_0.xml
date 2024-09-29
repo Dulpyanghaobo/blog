@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.aliyun:aliyun-java-sdk-kms:2.11.0" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="com.aliyun" artifactId="aliyun-java-sdk-kms" version="2.11.0" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/com.aliyun/aliyun-java-sdk-kms/2.11.0/64e6d9608f30eefbe807e65c148018065f971ca6/aliyun-java-sdk-kms-2.11.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/com.aliyun/aliyun-java-sdk-kms/2.11.0/bca61734cd74916db9877e8b1385b8f5d61d9211/aliyun-java-sdk-kms-2.11.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

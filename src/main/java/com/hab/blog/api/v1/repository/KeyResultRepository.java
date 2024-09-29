@@ -1,6 +1,6 @@
 package com.hab.blog.api.v1.repository;
 
-import com.hab.blog.api.v1.model.KeyResult;
+import com.hab.blog.api.v1.Objective.model.KeyResult;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

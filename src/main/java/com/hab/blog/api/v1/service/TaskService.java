@@ -1,7 +1,7 @@
 package com.hab.blog.api.v1.service;
 
-import com.hab.blog.api.v1.dto.TaskDto;
-import com.hab.blog.api.v1.model.Task;
+import com.hab.blog.api.v1.Objective.dto.TaskDto;
+import com.hab.blog.api.v1.Objective.model.Task;
 import com.hab.blog.api.v1.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

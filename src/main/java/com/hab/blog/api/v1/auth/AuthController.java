@@ -5,8 +5,8 @@ import com.hab.blog.api.v1.auth.Entity.VerificationRequest;
 import com.hab.blog.api.v1.auth.Entity.VerificationToken;
 import com.hab.blog.api.v1.auth.Service.UserService;
 import com.hab.blog.api.v1.auth.Service.WeChatAuthService;
-import com.hab.blog.api.v1.dto.JwtRequestDto;
-import com.hab.blog.api.v1.dto.UserRegistrationDto;
+import com.hab.blog.api.v1.Objective.dto.JwtRequestDto;
+import com.hab.blog.api.v1.Objective.dto.UserRegistrationDto;
 import com.hab.blog.api.v1.response.ApiResponse;
 import com.hab.blog.api.v1.response.exception.AlreadyExistsException;
 import com.hab.blog.api.v1.utility.JwtTokenProvider;
@@ -19,30 +19,24 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
-
 import java.time.Instant;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/auth")
 public class AuthController {
-    private final AuthenticationManager authenticationManager;
-
-    private final JwtTokenProvider jwtTokenProvider;
 
     @Autowired
-    private final UserService userService;
+    private AuthenticationManager authenticationManager;
 
     @Autowired
-    private final WeChatAuthService weChatAuthService;
+    private JwtTokenProvider jwtTokenProvider;
 
+    @Autowired
+    private UserService userService;
 
-    public AuthController(AuthenticationManager authenticationManager, JwtTokenProvider jwtTokenProvider, UserService userService, WeChatAuthService weChatAuthService) {
-        this.authenticationManager = authenticationManager;
-        this.jwtTokenProvider = jwtTokenProvider;
-        this.userService = userService;
-        this.weChatAuthService = weChatAuthService;
-    }
+    @Autowired
+    private WeChatAuthService weChatAuthService;
 
     @PostMapping("/login")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequestDto authenticationRequest) throws Exception {

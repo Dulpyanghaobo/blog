@@ -4,7 +4,7 @@ import com.hab.blog.api.v1.auth.Entity.User;
 import com.hab.blog.api.v1.auth.Entity.VerificationToken;
 import com.hab.blog.api.v1.auth.UserRepository;
 import com.hab.blog.api.v1.auth.VerificationTokenRepository;
-import com.hab.blog.api.v1.dto.UserRegistrationDto;
+import com.hab.blog.api.v1.Objective.dto.UserRegistrationDto;
 import com.hab.blog.api.v1.response.exception.AlreadyExistsException;
 import com.hab.blog.api.v1.response.exception.MailException;
 import com.hab.blog.api.v1.service.EmailService;

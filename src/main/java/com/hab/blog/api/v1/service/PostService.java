@@ -1,8 +1,8 @@
 package com.hab.blog.api.v1.service;
 
-import com.hab.blog.api.v1.model.Post;
+import com.hab.blog.api.v1.Objective.model.Post;
 import com.hab.blog.api.v1.auth.UserRepository;
-import com.hab.blog.api.v1.dto.PostDto;
+import com.hab.blog.api.v1.Objective.dto.PostDto;
 import com.hab.blog.api.v1.auth.Entity.User;
 import com.hab.blog.api.v1.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;

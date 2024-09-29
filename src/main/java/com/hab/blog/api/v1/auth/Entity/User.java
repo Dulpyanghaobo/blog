@@ -1,6 +1,6 @@
 package com.hab.blog.api.v1.auth.Entity;
 
-import com.hab.blog.api.v1.model.Role;
+import com.hab.blog.api.v1.Objective.model.Role;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
