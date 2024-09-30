@@ -1,20 +1,20 @@
 package com.hab.blog.service;
 
 //import com.hab.blog.api.v1.auth.UserRepository;
-//import com.hab.blog.api.v1.auth.Service.UserService;
+//import com.hab.blog.api.v1.auth.Service.AuthService;
 //import org.springframework.boot.test.context.SpringBootTest;
 //import org.springframework.boot.test.mock.mockito.MockBean;
 //@SpringBootTest
 //public class UserServiceTest {
 //
-//    private UserService userService;
+//    private AuthService userService;
 //
 //    @MockBean
 //    private UserRepository userRepository;
 ////
 ////    @BeforeEach
 ////    public void setUp() {
-////        userService = new UserService(emailService, userRepository, verificationTokenRepository);
+////        userService = new AuthService(emailService, userRepository, verificationTokenRepository);
 ////    }
 ////
 ////    @TestModel

@@ -1,11 +1,12 @@
 package com.hab.blog.common.config;
 
-import com.hab.blog.feature.v1.auth.Service.UserService;
-import com.hab.blog.feature.v1.utility.JwtTokenFilter;
-import com.hab.blog.feature.v1.utility.JwtTokenProvider;
+import com.hab.blog.feature.v1.auth.Service.AuthService;
+import com.hab.blog.common.utility.JwtTokenFilter;
+import com.hab.blog.common.utility.JwtTokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
@@ -22,10 +23,11 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class WebSecurityConfig {
 
     @Autowired
+    @Lazy
     private JwtTokenProvider jwtTokenProvider;
 
     @Autowired
-    private UserService userService;
+    private AuthService authService;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -35,7 +37,7 @@ public class WebSecurityConfig {
     @Bean
     public DaoAuthenticationProvider daoAuthenticationProvider() {
         DaoAuthenticationProvider daoAuthProvider = new DaoAuthenticationProvider();
-        daoAuthProvider.setUserDetailsService(userService);
+        daoAuthProvider.setUserDetailsService(authService);
         daoAuthProvider.setPasswordEncoder(passwordEncoder());
         return daoAuthProvider;
     }

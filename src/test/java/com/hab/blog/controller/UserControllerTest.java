@@ -11,7 +11,7 @@ public class UserControllerTest {
 //    private MockMvc mockMvc;
 //
 //    @MockBean
-//    private UserService userService;
+//    private AuthService userService;
 //
 //    @InjectMocks
 //    private UserController userController;

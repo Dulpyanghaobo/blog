@@ -1,0 +1,42 @@
+package com.hab.blog.feature.v1.entities.Task;
+
+import com.hab.blog.feature.v1.entities.Objective.Objective;
+import com.hab.blog.feature.v1.entities.User.User;
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.Date;
+
+@Entity
+@Table(name = "key_action")
+@Data
+@NoArgsConstructor
+public class KeyAction {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "objective_id", nullable = false)
+    private Objective objective;
+
+    @Column(nullable = false)
+    private String title;
+
+    @Column(columnDefinition = "text")
+    private String description;
+
+    private Date startDate;
+    private Date endDate;
+    private double progress = 0;
+    private String status = "Not Started";
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    private int complexity = 1;
+    private int priority = 1;
+    private int importance = 1;
+}

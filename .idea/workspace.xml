@@ -5,111 +5,164 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="497bd1a7-a118-4e6f-82ca-4b5799822a5e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/common/config/RestTemplateConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/User/Dto/FriendDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/User/Dto/LinkedAccountDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/User/Dto/PrivacySettingsDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/User/Dto/RecentActivityDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/User/Dto/UserProfileDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/User/Service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/Dto/RelationshipStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/entities/User/FriendshipStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/entities/User/Gender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/entities/User/RoleName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/entities/User/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/entities/User/UserFriend.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/entities/User/UserFriendId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/entities/User/UserLinkedAccount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/entities/User/UserPrivacySettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/blog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/blog.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/blog.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/blog.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f20e0a8b-f8ab-4f42-9703-b50340de0dc3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f20e0a8b-f8ab-4f42-9703-b50340de0dc3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f20e0a8b-f8ab-4f42-9703-b50340de0dc3/storage_v2/_src_/schema/blog.oi8uAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f20e0a8b-f8ab-4f42-9703-b50340de0dc3/storage_v2/_src_/schema/blog.oi8uAA.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/BlogApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/BlogApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/common/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/common/config/WebSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/Objective/Objective.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/Objective/ObjectiveController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/Objective/ObjectiveController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/User/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/User/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/auth/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/auth/AuthController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/auth/Entity/WeChatLoginResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/auth/Entity/WeChatLoginResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/auth/Service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/auth/Service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/auth/Service/WeChatAuthService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/response/exception/ApplicationException.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/response/exception/ApplicationException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/AlreadyExistsException.class.uniqueId69" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ApiResponse.class.uniqueId36" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ApplicationException.class.uniqueId59" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/AsyncConfig.class.uniqueId44" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/AuthController.class.uniqueId56" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/AuthService.class.uniqueId64" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/CommonStatusEnum.class.uniqueId38" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/DataAccessException.class.uniqueId60" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/DataInitializer.class.uniqueId27" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/DocumentProcessingController.class.uniqueId39" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/DocumentProcessingException.class.uniqueId49" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/EmailConfig.class.uniqueId51" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/EmailService.class.uniqueId3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/EncryptionUtility.class.uniqueId42" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/FileConvertProvider.class.uniqueId30" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/FileUtility.class.uniqueId31" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GlobalExceptionHandler.class.uniqueId7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/HelloController.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/IAsyncDocumentProcessor.class.uniqueId66" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ICacheProvider.class.uniqueId61" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/IntArrayValuable.class.uniqueId71" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/JwtRequestDto.class.uniqueId67" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/JwtTokenFilter.class.uniqueId13" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/JwtTokenProvider.class.uniqueId53" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/KafkaReceiver.class.uniqueId63" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/KafkaSender.class.uniqueId16" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/KeyAction.class.uniqueId18" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/KeyActionRepository.class.uniqueId2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/KeyResult.class.uniqueId8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/KeyResultRepository.class.uniqueId20" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/KeyValue.class.uniqueId19" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/LoggingAspect.class.uniqueId14" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/LoggingService.class.uniqueId74" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/MailException.class.uniqueId72" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Mood.class.uniqueId4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/MoodController.class.uniqueId68" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/MoodRepository.class.uniqueId23" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/MoodRequest.class.uniqueId25" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/MoodService.class.uniqueId26" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Objective.class.uniqueId45" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ObjectiveController.class.uniqueId28" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ObjectiveRepository.class.uniqueId9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/OssUtility.class.uniqueId48" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/PDFDocumentProcessor.class.uniqueId15" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Post$Visible.class.uniqueId34" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Post.class.uniqueId32" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/PostController.class.uniqueId33" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/PostDto.class.uniqueId62" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/PostRepository.class.uniqueId22" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/PostService.class.uniqueId40" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/RedisCacheProvider.class.uniqueId65" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ResourceLimitExceededException.class.uniqueId35" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ResourceManagementAspect.class.uniqueId50" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ResourcePolicyConfig.class.uniqueId37" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ResourcePolicyConfig.class.uniqueId43" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ResourceUtility.class.uniqueId57" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Role$RoleName.class.uniqueId54" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Role.class.uniqueId73" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/RoleRepository.class.uniqueId12" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/RoleService.class.uniqueId46" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/SimpleResourcePolicy.class.uniqueId6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Task.class.uniqueId21" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/TaskController.class.uniqueId5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/TaskDto.class.uniqueId58" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/TaskRepository.class.uniqueId1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/TaskService.class.uniqueId29" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/User.class.uniqueId17" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/UserRegistrationDto.class.uniqueId47" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/UserRepository.class.uniqueId41" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/UserService.class.uniqueId24" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/VerificationRequest.class.uniqueId10" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/VerificationToken$TokenType.class.uniqueId11" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/VerificationToken.class.uniqueId55" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/VerificationTokenRepository.class.uniqueId52" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/WebSecurityConfig.class.uniqueId70" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/auth/Entity/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/auth/Entity/UserRegistrationDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/auth/Entity/VerificationRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/auth/Entity/VerificationToken$TokenType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/auth/Entity/VerificationToken.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/auth/Entity/WeChatLoginResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/auth/Service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/auth/repository/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/auth/repository/VerificationTokenRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/controller/DocumentProcessingController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/controller/HelloController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/controller/PostController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/controller/TaskController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/dto/JwtRequestDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/dto/PostDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/dto/TaskDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/framework/common/core/IntArrayValuable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/framework/common/core/KeyValue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/framework/common/enums/CommonStatusEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/init/DataInitializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/model/KeyAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/model/KeyResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/model/Post$Visible.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/model/Post.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/model/Role$RoleName.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/model/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/model/Task.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/moods/Entity/Mood.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/moods/Entity/MoodRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/moods/MoodController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/moods/MoodController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/moods/Repository/MoodRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/moods/Service/MoodService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/moods/Service/MoodService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/payment/Repository/PaymentRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/protocol/IAsyncDocumentProcessor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/protocol/ICacheProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/protocol/PDFDocumentProcessor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/protocol/RedisCacheProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/protocol/ResourcePolicyConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/protocol/SimpleResourcePolicy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/repository/KeyActionRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/repository/KeyResultRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/repository/ObjectiveRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/repository/PostRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/repository/RoleRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/repository/TaskRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/service/KafkaReceiver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/service/KafkaSender.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/service/LoggingService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/service/PostService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/service/RoleService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/service/TaskService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/utility/EncryptionUtility.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/utility/FileConvertProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/utility/FileUtility.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/utility/JwtTokenFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/utility/JwtTokenProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/utility/OssUtility.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/hab/blog/feature/v1/utility/ResourceUtility.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/AuthController.class.uniqueId2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/JwtTokenFilter.class.uniqueId3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/JwtTokenProvider.class.uniqueId1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/WebSecurityConfig.class.uniqueId0" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/WebSecurityConfig.class.uniqueId0" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/BlogApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/BlogApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/common/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/common/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/Objective/Objective.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/entities/Objective/Objective.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/Objective/ObjectiveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/Objective/ObjectiveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/User/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/User/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/Entity/WeChatLoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/Entity/WeChatLoginResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/Service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/Service/WeChatAuthService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/utility/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/utility/JwtTokenProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/Entity/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/Entity/UserRegistrationDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/Dto/UserRegistrationDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/Entity/VerificationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/Dto/VerificationRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/Entity/VerificationToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/Dto/VerificationToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/Entity/WeChatLoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/Dto/WeChatLoginResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/Service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/entities/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/repository/VerificationTokenRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/entities/repository/VerificationTokenRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/controller/DocumentProcessingController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/controller/FileUploadController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/controller/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/Publish/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/Task/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/dto/JwtRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/Dto/JwtRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/dto/PostDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/Publish/PostDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/dto/TaskDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/Task/Dto/TaskDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/framework/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/common/framework/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/framework/common/core/IntArrayValuable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/common/framework/common/core/IntArrayValuable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/framework/common/core/KeyValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/common/framework/common/core/KeyValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/framework/common/enums/CommonStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/common/framework/common/enums/CommonStatusEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/framework/common/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/common/framework/common/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/init/DataInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/model/KeyAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/entities/Task/KeyAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/model/KeyResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/entities/Task/KeyResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/model/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/Publish/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/entities/User/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/model/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/entities/Task/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/moods/Entity/Mood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/entities/Mood/Mood.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/moods/Entity/MoodRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/moods/Dto/MoodRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/moods/MoodController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/moods/MoodController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/moods/Repository/MoodRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/entities/repository/MoodRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/moods/Service/MoodService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/moods/Service/MoodService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/payment/Repository/PaymentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/entities/repository/PaymentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/protocol/IAsyncDocumentProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/common/config/protocol/IAsyncDocumentProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/protocol/ICacheProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/common/config/protocol/ICacheProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/protocol/PDFDocumentProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/common/config/protocol/PDFDocumentProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/protocol/RedisCacheProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/common/config/protocol/RedisCacheProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/protocol/ResourcePolicyConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/common/config/protocol/ResourcePolicyConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/protocol/SimpleResourcePolicy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/common/config/protocol/SimpleResourcePolicy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/repository/KeyActionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/entities/repository/KeyActionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/repository/KeyResultRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/entities/repository/KeyResultRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/repository/ObjectiveRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/entities/repository/ObjectiveRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/entities/repository/PostRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/repository/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/entities/repository/RoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/repository/TaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/entities/repository/TaskRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/service/KafkaReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/common/kafka/KafkaReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/service/KafkaSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/common/kafka/KafkaSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/service/LoggingService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/Publish/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/service/RoleService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/Task/Service/TaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/utility/EncryptionUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/common/utility/EncryptionUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/utility/FileConvertProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/common/utility/FileConvertProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/utility/FileUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/common/utility/FileUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/utility/JwtTokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/common/utility/JwtTokenFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/utility/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/common/utility/JwtTokenProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/utility/OssUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/common/utility/OssUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/utility/ResourceUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/common/utility/ResourceUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hab/blog/controller/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hab/blog/controller/UserControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hab/blog/service/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hab/blog/service/UserServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +290,7 @@
       <updated>1727660218083</updated>
       <workItem from="1727660219146" duration="15000" />
       <workItem from="1727660240271" duration="35000" />
-      <workItem from="1727660742309" duration="4779000" />
+      <workItem from="1727660742309" duration="14558000" />
     </task>
     <servers />
   </component>

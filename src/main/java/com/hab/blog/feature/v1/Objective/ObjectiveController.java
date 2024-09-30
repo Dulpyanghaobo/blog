@@ -1,6 +1,7 @@
 package com.hab.blog.feature.v1.Objective;
 
-import com.hab.blog.feature.v1.repository.ObjectiveRepository;
+import com.hab.blog.feature.v1.entities.Objective.Objective;
+import com.hab.blog.feature.v1.entities.repository.ObjectiveRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
