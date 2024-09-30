@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="497bd1a7-a118-4e6f-82ca-4b5799822a5e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/common/config/WeChatConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/User/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/framework/common/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/payment/PaymentViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/payment/Repository/PaymentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/payment/Service/PaymentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/protocol/ICacheProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/response/exception/DocumentProcessingException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/response/exception/ResourceLimitExceededException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/service/LoggingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/utility/FileUtility.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/utility/ResourceUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/Objective/Objective.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/Objective/Objective.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/Objective/ObjectiveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/Objective/ObjectiveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/apect/LoggingAspect.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/apect/ResourceManagementAspect.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/auth/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/auth/Entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/Entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/auth/Entity/VerificationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/Entity/VerificationRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/auth/Entity/VerificationToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/Entity/VerificationToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/auth/Entity/WeChatLoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/Entity/WeChatLoginResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/auth/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/Service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/auth/Service/WeChatAuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/Service/WeChatAuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/auth/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/auth/VerificationTokenRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/repository/VerificationTokenRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/config/AsyncConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/common/config/AsyncConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/config/CacheConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/common/config/CacheConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/config/EmailConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/common/config/EmailConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/common/config/RedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/config/ResourcePolicyConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/common/config/ResourcePolicyConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/common/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/controller/DocumentProcessingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/controller/DocumentProcessingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/controller/FileUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/controller/FileUploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/controller/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/controller/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/controller/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/dto/JwtRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/dto/JwtRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/dto/PostDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/dto/PostDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/dto/TaskDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/dto/TaskDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/dto/UserRegistrationDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/Entity/UserRegistrationDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/framework/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/framework/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/framework/common/core/IntArrayValuable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/framework/common/core/IntArrayValuable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/framework/common/core/KeyValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/framework/common/core/KeyValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/framework/common/enums/CommonStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/framework/common/enums/CommonStatusEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/framework/common/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/init/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/init/DataInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/model/KeyAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/model/KeyAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/model/KeyResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/model/KeyResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/model/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/model/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/model/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/model/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/moods/Entity/Mood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/moods/Entity/Mood.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/moods/Entity/MoodRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/moods/Entity/MoodRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/moods/MoodController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/moods/MoodController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/moods/Repository/MoodRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/moods/Repository/MoodRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/moods/Service/MoodService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/moods/Service/MoodService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/protocol/IAsyncDocumentProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/protocol/IAsyncDocumentProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/protocol/ICacheProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/protocol/PDFDocumentProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/protocol/PDFDocumentProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/protocol/RedisCacheProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/protocol/RedisCacheProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/protocol/ResourcePolicyConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/protocol/ResourcePolicyConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/protocol/SimpleResourcePolicy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/protocol/SimpleResourcePolicy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/repository/KeyActionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/repository/KeyActionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/repository/KeyResultRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/repository/KeyResultRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/repository/ObjectiveRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/repository/ObjectiveRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/repository/PostRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/repository/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/repository/RoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/repository/TaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/repository/TaskRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/response/ApiResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/response/ApiResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/response/exception/AlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/response/exception/AlreadyExistsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/response/exception/ApplicationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/response/exception/ApplicationException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/response/exception/DataAccessException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/response/exception/DataAccessException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/response/exception/DocumentProcessingException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/response/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/response/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/response/exception/MailException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/response/exception/MailException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/response/exception/ResourceLimitExceededException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/service/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/auth/Service/EmailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/service/KafkaReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/service/KafkaReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/service/KafkaSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/service/KafkaSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/service/LoggingService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/service/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/service/RoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/service/TaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/utility/EncryptionUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/utility/EncryptionUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/utility/FileConvertProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/utility/FileConvertProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/utility/FileUtility.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/utility/JwtTokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/utility/JwtTokenFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/utility/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/utility/JwtTokenProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/utility/OssUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/feature/v1/utility/OssUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/utility/ResourceUtility.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2mlnq73dCZK9PhAF4Z0uct5QwvB" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/develop&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="blog [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.blog [build]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="497bd1a7-a118-4e6f-82ca-4b5799822a5e" name="Changes" comment="" />
+      <created>1727660218083</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1727660218083</updated>
+      <workItem from="1727660219146" duration="15000" />
+      <workItem from="1727660240271" duration="35000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
