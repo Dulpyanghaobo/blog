@@ -1,6 +1,5 @@
 package com.hab.blog.feature.v1.utility;
 
-import com.hab.blog.feature.v1.auth.Service.UserService;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +10,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
-
 import javax.crypto.SecretKey;
 import java.util.Base64;
 import java.util.Date;
@@ -22,7 +21,7 @@ public class JwtTokenProvider implements AuthenticationProvider {
     private final SecretKey secretKey;
 
     @Autowired
-    private UserService userService;
+    private UserDetailsService userService;
 
     public JwtTokenProvider(@Value("${jwt.secretKey}") String secretKeyString) {
         byte[] decodedKey = Base64.getDecoder().decode(secretKeyString);

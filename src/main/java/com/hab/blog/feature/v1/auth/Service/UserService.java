@@ -1,7 +1,9 @@
 package com.hab.blog.feature.v1.auth.Service;
 
+import com.hab.blog.common.config.WeChatConfig;
 import com.hab.blog.feature.v1.auth.Entity.User;
 import com.hab.blog.feature.v1.auth.Entity.VerificationToken;
+import com.hab.blog.feature.v1.auth.Entity.WeChatLoginResponse;
 import com.hab.blog.feature.v1.auth.repository.UserRepository;
 import com.hab.blog.feature.v1.auth.repository.VerificationTokenRepository;
 import com.hab.blog.feature.v1.auth.Entity.UserRegistrationDto;
@@ -14,12 +16,11 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
+import org.springframework.web.client.RestTemplate;
+import java.time.Instant;
 import java.util.Collection;
-import java.util.Date;
 import java.util.Optional;
 import java.util.Random;
 import java.util.stream.Collectors;
@@ -27,28 +28,26 @@ import java.util.stream.Collectors;
 @Service
 public class UserService implements UserDetailsService {
 
-    private final EmailService emailService;
-    private final RoleService roleService;
-    private final UserRepository userRepository;
-    private final VerificationTokenRepository verificationTokenRepository;
-    private final PasswordEncoder passwordEncoder;
-
     @Autowired
-    public UserService(EmailService emailService, RoleService roleService, UserRepository userRepository, VerificationTokenRepository verificationTokenRepository) {
-        this.emailService = emailService;
-        this.roleService = roleService;
-        this.userRepository = userRepository;
-        this.verificationTokenRepository = verificationTokenRepository;
-        this.passwordEncoder = new BCryptPasswordEncoder(); // 初始化PasswordEncoder
-    }
-
+    private EmailService emailService;
+    @Autowired
+    private RoleService roleService;
+    @Autowired
+    private UserRepository userRepository;
+    @Autowired
+    private VerificationTokenRepository verificationTokenRepository;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+    @Autowired
+    private WeChatConfig weChatConfig;
+    @Autowired
+    private RestTemplate restTemplate;
     public User createUser(UserRegistrationDto registrationDto) throws Exception {
         if (userRepository.existsByUserName(registrationDto.getUserName())) {
             throw new AlreadyExistsException("User", "username", registrationDto.getUserName());
-
         }
         if (userRepository.existsByEmail(registrationDto.getEmail())) {
-            throw  new MailException("","",registrationDto.getEmail());
+            throw new MailException("", "", registrationDto.getEmail());
         }
 
         String token = generateNewToken();
@@ -56,7 +55,7 @@ public class UserService implements UserDetailsService {
         newUser.setUserName(registrationDto.getUserName());
         newUser.setAvatar(registrationDto.getAvatar());
         newUser.setEmail(registrationDto.getEmail());
-        newUser.setRegisteredAt(new Date().toInstant());
+        newUser.setRegisteredAt(Instant.now());
         VerificationToken verificationToken = new VerificationToken(token, VerificationToken.TokenType.VERIFY_EMAIL, newUser.getEmail(), newUser.getId());
         String hashedPassword = passwordEncoder.encode(registrationDto.getPassword());
         registrationDto.setPassword(hashedPassword);
@@ -66,6 +65,41 @@ public class UserService implements UserDetailsService {
         User user = userRepository.save(newUser);
         verificationTokenRepository.save(verificationToken);
         return user;
+    }
+
+    public User loginWithWeChat(String code) {
+        // 调用微信接口获取 openid 和 session_key
+        WeChatLoginResponse response = getWeChatSession(code);
+
+        if (response.getErrcode() != null) {
+            throw new RuntimeException("微信登录失败: " + response.getErrmsg());
+        }
+
+        Optional<User> optionalUser = userRepository.findByOpenid(response.getOpenid());
+        User user;
+
+        if (optionalUser.isPresent()) {
+            user = optionalUser.get();
+        } else {
+            // 用户不存在，创建新用户
+            user = new User();
+            user.setOpenid(response.getOpenid());
+            user.setUserName("WeChatUser" + System.currentTimeMillis());
+            user.setDisabled(false);
+            user.setRegisteredAt(Instant.now());
+            userRepository.save(user);
+        }
+        return user;
+    }
+
+    // 调用微信API获取session_key和openid
+    private WeChatLoginResponse getWeChatSession(String code) {
+        String url = String.format(
+                "%s?appid=%s&secret=%s&js_code=%s&grant_type=authorization_code",
+                weChatConfig.getApiJscode2session(), weChatConfig.getAppid(), weChatConfig.getSecret(), code
+        );
+
+        return restTemplate.getForObject(url, WeChatLoginResponse.class);
     }
 
     public void resetUserPassword(User user) {

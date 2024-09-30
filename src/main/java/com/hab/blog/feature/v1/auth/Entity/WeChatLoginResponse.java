@@ -8,4 +8,5 @@ public class WeChatLoginResponse {
     private String session_key;
     private Integer errcode;
     private String errmsg;
+    private String unionid;
 }

@@ -4,7 +4,6 @@ import com.hab.blog.feature.v1.auth.Entity.User;
 import com.hab.blog.feature.v1.auth.Entity.VerificationRequest;
 import com.hab.blog.feature.v1.auth.Entity.VerificationToken;
 import com.hab.blog.feature.v1.auth.Service.UserService;
-import com.hab.blog.feature.v1.auth.Service.WeChatAuthService;
 import com.hab.blog.feature.v1.dto.JwtRequestDto;
 import com.hab.blog.feature.v1.auth.Entity.UserRegistrationDto;
 import com.hab.blog.feature.v1.response.ApiResponse;
@@ -21,28 +20,21 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.Instant;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/auth")
 public class AuthController {
-    private final AuthenticationManager authenticationManager;
-
-    private final JwtTokenProvider jwtTokenProvider;
 
     @Autowired
-    private final UserService userService;
+    private AuthenticationManager authenticationManager;
 
     @Autowired
-    private final WeChatAuthService weChatAuthService;
+    private JwtTokenProvider jwtTokenProvider;
 
-
-    public AuthController(AuthenticationManager authenticationManager, JwtTokenProvider jwtTokenProvider, UserService userService, WeChatAuthService weChatAuthService) {
-        this.authenticationManager = authenticationManager;
-        this.jwtTokenProvider = jwtTokenProvider;
-        this.userService = userService;
-        this.weChatAuthService = weChatAuthService;
-    }
+    @Autowired
+    private UserService userService;
 
     @PostMapping("/login")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequestDto authenticationRequest) throws Exception {
@@ -156,8 +148,17 @@ public class AuthController {
 
     // 新增的微信登录接口
     @PostMapping("/wechat/login")
-    public ResponseEntity<ApiResponse<String>> loginWithWeChat(@RequestParam String code) {
-        ApiResponse<String> response = weChatAuthService.loginWithWeChat(code);
-        return ResponseEntity.ok(response);
+    public ResponseEntity<ApiResponse<String>> loginWithWeChat(@RequestBody Map<String, String> requestBody) {
+        String code = requestBody.get("code");
+        User user = userService.loginWithWeChat(code);
+        Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        user.getUserName(),
+                        "123456"
+                )
+        );
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        final String token = jwtTokenProvider.createToken(authentication);
+        return ResponseEntity.status(HttpStatus.CREATED).body(new ApiResponse<String>(201, "Generate token", token));
     }
 }
