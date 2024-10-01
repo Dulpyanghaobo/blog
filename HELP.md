@@ -56,8 +56,12 @@
     - 输入密码后能成功登录则安装成功
 
 5. 创建对应的数据库和表
-   - 
+   - 在进入mysql运行blog.sql文件
    
+### 4. 配置application.properties
+spring.datasource.username=数据库的账户
+spring.datasource.password=数据库的密码
+
 ### 运行项目
 
 1. 克隆项目代码到本地
@@ -68,16 +72,4 @@
 
 4. 执行 `gradle bootRun` 运行项目
 
-5. 访问 http://localhost:8080 查看项目是否成功运行
-
-如遇问题,请检查Gradle、JDK、MySQL版本是否符合项目要求。
-
-Citations:
-[1] https://www.cnblogs.com/soloversion/p/16089662.html
-[2] https://www.icode504.com/posts/20.html
-[3] https://blog.csdn.net/qq_59636442/article/details/123058454
-[4] https://blog.csdn.net/ACE_U_005A/article/details/114840497
-[5] https://blog.csdn.net/weixin_43423484/article/details/124408565
-[6] https://cloud.tencent.com/developer/article/1698454
-[7] https://liaoxuefeng.com/books/java/quick-start/dev-env/install-jdk/
-[8] https://cloud.tencent.com/developer/article/1798144
+5. 访问 http://localhost:8081 查看项目是否成功运行
