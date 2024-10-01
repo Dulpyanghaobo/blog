@@ -1,6 +1,6 @@
-package com.hab.blog.feature.v1.Task;
+package com.hab.blog.feature.v1.task;
 
-import com.hab.blog.feature.v1.Task.Service.TaskService;
+import com.hab.blog.feature.v1.task.Service.TaskService;
 import com.hab.blog.feature.v1.entities.Task.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

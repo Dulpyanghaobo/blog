@@ -1,4 +1,4 @@
-package com.hab.blog.feature.v1.Objective;
+package com.hab.blog.feature.v1.objective;
 
 import com.hab.blog.feature.v1.entities.Objective.Objective;
 import com.hab.blog.feature.v1.entities.repository.ObjectiveRepository;

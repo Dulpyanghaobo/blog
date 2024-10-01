@@ -1,6 +1,6 @@
 package com.hab.blog.feature.v1.entities.repository;
 
-import com.hab.blog.feature.v1.Publish.Post;
+import com.hab.blog.feature.v1.publish.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

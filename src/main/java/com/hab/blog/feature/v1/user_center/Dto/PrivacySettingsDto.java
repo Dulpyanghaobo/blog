@@ -1,4 +1,4 @@
-package com.hab.blog.feature.v1.User.Dto;
+package com.hab.blog.feature.v1.user_center.Dto;
 
 import lombok.Data;
 

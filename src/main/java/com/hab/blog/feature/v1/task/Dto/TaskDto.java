@@ -1,4 +1,4 @@
-package com.hab.blog.feature.v1.Task.Dto;
+package com.hab.blog.feature.v1.task.Dto;
 
 import lombok.Data;
 

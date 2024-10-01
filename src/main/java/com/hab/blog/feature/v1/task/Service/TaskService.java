@@ -1,6 +1,6 @@
-package com.hab.blog.feature.v1.Task.Service;
+package com.hab.blog.feature.v1.task.Service;
 
-import com.hab.blog.feature.v1.Task.Dto.TaskDto;
+import com.hab.blog.feature.v1.task.Dto.TaskDto;
 import com.hab.blog.feature.v1.entities.Task.Task;
 import com.hab.blog.feature.v1.entities.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.hab.blog.feature.v1.Publish;
+package com.hab.blog.feature.v1.publish;
 
 import lombok.Data;
 

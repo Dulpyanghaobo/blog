@@ -1,4 +1,4 @@
-package com.hab.blog.feature.v1.Publish;
+package com.hab.blog.feature.v1.publish;
 
 import com.hab.blog.feature.v1.entities.repository.UserRepository;
 import com.hab.blog.feature.v1.entities.User.User;

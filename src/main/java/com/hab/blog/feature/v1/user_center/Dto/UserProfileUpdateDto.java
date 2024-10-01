@@ -1,11 +1,9 @@
-package com.hab.blog.feature.v1.User.Dto;
+package com.hab.blog.feature.v1.user_center.Dto;
 
 import lombok.Data;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.List;
-import java.util.Map;
 
 @Data
 public class UserProfileUpdateDto {
