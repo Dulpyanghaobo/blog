@@ -56,7 +56,7 @@
     - 输入密码后能成功登录则安装成功
 
 5. 创建对应的数据库和表
-   - 在进入mysql运行blog.sql文件
+   - 在进入mysql运行sql_scrpit/sql文件
    
 ### 4. 配置application.properties
 spring.datasource.username=数据库的账户

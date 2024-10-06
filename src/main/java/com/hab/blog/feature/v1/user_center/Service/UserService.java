@@ -1,8 +1,8 @@
 package com.hab.blog.feature.v1.user_center.Service;
 
-import com.hab.blog.feature.v1.user_center.Dto.PrivacySettingsDto;
-import com.hab.blog.feature.v1.user_center.Dto.UserProfileDto;
-import com.hab.blog.feature.v1.user_center.Dto.UserProfileUpdateDto;
+import com.hab.blog.feature.v1.user_center.dto.PrivacySettingsDto;
+import com.hab.blog.feature.v1.user_center.dto.UserProfileDto;
+import com.hab.blog.feature.v1.user_center.dto.UserProfileUpdateDto;
 import com.hab.blog.feature.v1.auth.Dto.RelationshipStatus;
 import com.hab.blog.feature.v1.entities.User.Gender;
 import com.hab.blog.feature.v1.entities.User.User;

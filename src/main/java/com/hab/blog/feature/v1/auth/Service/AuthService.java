@@ -61,6 +61,7 @@ public class AuthService implements UserDetailsService {
         registrationDto.setPassword(hashedPassword);
         emailService.sendActivationEmail(newUser.getEmail(), newUser.getUserName(), token);
         newUser.setPassword(registrationDto.getPassword());
+        newUser.setName(registrationDto.getUserName());
         newUser.setDisabled(true);
         User user = userRepository.save(newUser);
         VerificationToken verificationToken = new VerificationToken(token, VerificationToken.TokenType.VERIFY_EMAIL, user.getEmail(), user.getId());

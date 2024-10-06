@@ -1,13 +1,13 @@
-package com.hab.blog.feature.v1.user_center.Dto;
+package com.hab.blog.feature.v1.user_center.dto;
 
 import lombok.Data;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.List;
 
 @Data
-public class UserProfileDto {
+public class UserProfileUpdateDto {
+
     private String nickname;
     private String relationshipStatus;
     private String gender;
@@ -21,11 +21,7 @@ public class UserProfileDto {
     private String risingSign;
     private String moonSign;
     private String tarotPreference;
-    private List<String> interests;
-    private PrivacySettingsDto privacySettings;
-    private List<LinkedAccountDto> linkedAccounts;
-    private List<FriendDto> friends;
-    private int points;
-    private List<RecentActivityDto> recentActivity;
+    private Integer points;
+    private String recentActivity;
 }
 

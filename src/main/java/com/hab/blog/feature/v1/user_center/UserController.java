@@ -1,7 +1,7 @@
 package com.hab.blog.feature.v1.user_center;
 
-import com.hab.blog.feature.v1.user_center.Dto.UserProfileDto;
-import com.hab.blog.feature.v1.user_center.Dto.UserProfileUpdateDto;
+import com.hab.blog.feature.v1.user_center.dto.UserProfileDto;
+import com.hab.blog.feature.v1.user_center.dto.UserProfileUpdateDto;
 import com.hab.blog.feature.v1.user_center.Service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

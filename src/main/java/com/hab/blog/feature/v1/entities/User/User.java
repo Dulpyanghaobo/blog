@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -17,6 +18,7 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -41,6 +43,9 @@ public class User {
     @Column(nullable = false)
     private String userName;             // 用户名
 
+    @Column(nullable = false)
+    private String name;             // 用户昵称
+
     @Column(unique = true)
     private String openid;               // 微信用户的唯一标识
 
@@ -61,7 +66,7 @@ public class User {
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private UserPrivacySettings privacySettings;
 
-    // 新增的字段
+    @Column(length = 100)
     private String nickname;             // 用户昵称
 
     @Enumerated(EnumType.STRING)
@@ -86,7 +91,13 @@ public class User {
     @ElementCollection
     private List<String> interests;      // 用户的兴趣标签
 
-    // 好友关系
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<UserFriend> friends = new HashSet<>();  // 用户的好友集合
+    private Set<UserFriend> friends = new HashSet<>();
+
+    // 新增的出生地经纬度字段
+    @Column(name = "birth_location_lat", precision = 9, scale = 6)
+    private BigDecimal birthLocationLat;
+
+    @Column(name = "birth_location_lng", precision = 9, scale = 6)
+    private BigDecimal birthLocationLng;
 }
