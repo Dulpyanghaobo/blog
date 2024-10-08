@@ -1,10 +1,8 @@
-package com.hab.blog.feature.v1.entities.carot.repository;
+package com.hab.blog.feature.v1.entities.tarot.repository;
 
-import com.hab.blog.feature.v1.entities.carot.TarotCard;
+import com.hab.blog.feature.v1.entities.tarot.TarotCard;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
-import java.util.Optional;
 
 @Repository
 public interface TarotCardRepository extends JpaRepository<TarotCard, Long> {

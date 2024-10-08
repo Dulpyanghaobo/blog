@@ -1,6 +1,6 @@
-package com.hab.blog.feature.v1.entities.carot.repository;
+package com.hab.blog.feature.v1.entities.tarot.repository;
 
-import com.hab.blog.feature.v1.entities.carot.TarotSpread;
+import com.hab.blog.feature.v1.entities.tarot.TarotSpread;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

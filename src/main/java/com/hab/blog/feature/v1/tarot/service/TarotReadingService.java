@@ -4,8 +4,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hab.blog.common.framework.manager.LLMService;
 import com.hab.blog.feature.v1.entities.User.User;
-import com.hab.blog.feature.v1.entities.carot.TarotCard;
-import com.hab.blog.feature.v1.entities.carot.repository.TarotCardRepository;
+import com.hab.blog.feature.v1.entities.tarot.TarotCard;
+import com.hab.blog.feature.v1.entities.tarot.TarotCategory;
+import com.hab.blog.feature.v1.entities.tarot.repository.TarotCardRepository;
+import com.hab.blog.feature.v1.entities.tarot.repository.TarotCategoryRepository;
 import com.hab.blog.feature.v1.entities.repository.UserRepository;
 import com.hab.blog.feature.v1.tarot.dto.TarotCardInterpretation;
 import com.hab.blog.feature.v1.tarot.dto.TarotCardRequest;
@@ -23,14 +25,57 @@ import java.util.Optional;
 @Service
 public class TarotReadingService {
 
+    private static final String DAILY_TAROT_PREFIX = "daily_tarot:";
+
     @Autowired
     private UserRepository userRepository;  // 获取用户信息
 
     @Autowired
+    private TarotCategoryRepository tarotCategoryRepository;
+
+    @Autowired
     private TarotCardRepository tarotCardRepository;
+
     @Autowired
     @Qualifier("perplexityGptService")
     private LLMService llmService;  // 调用大语言模型（如ChatGPT）
+
+    public List<String> guessUserQuestion() {
+        // 直接返回hard code的三个推荐问题
+        return List.of(
+                "What should I focus on in the upcoming month?",
+                "How can I improve my relationship with those around me?",
+                "What challenges will I face in my career soon?"
+        );
+    }
+
+    public List<TarotCategory> getAllTarotCategories() {
+        return tarotCategoryRepository.findAll();
+    }
+
+
+    private String buildGuessPrompt(Optional<User> user) {
+        // 构建一个简洁的 prompt 传递给GPT来进行问题猜测
+        StringBuilder prompt = new StringBuilder();
+        prompt.append("Guess what the user wants to ask based on their recent interactions:\n");
+        prompt.append("The user has drawn tarot cards in recent sessions. Provide a suggestion on what they might ask next.");
+        return prompt.toString();
+    }
+
+    private String parseGptResponse(String gptResponse) {
+        // 解析GPT模型的响应
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            JsonNode rootNode = objectMapper.readTree(gptResponse);
+            JsonNode messageContentNode = rootNode.path("choices").get(0).path("message").path("content");
+            if (messageContentNode.isTextual()) {
+                return messageContentNode.asText();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "No valid response from GPT.";
+    }
 
     public TarotInterpretationResponse generateTarotInterpretation(TarotInterpretationRequest request) {
         // 1. 用户信息获取

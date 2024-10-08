@@ -1,7 +1,7 @@
 package com.hab.blog.feature.v1.tarot.service;
 
-import com.hab.blog.feature.v1.entities.carot.TarotCard;
-import com.hab.blog.feature.v1.entities.carot.repository.TarotCardRepository;
+import com.hab.blog.feature.v1.entities.tarot.TarotCard;
+import com.hab.blog.feature.v1.entities.tarot.repository.TarotCardRepository;
 import com.hab.blog.feature.v1.tarot.dto.TarotCardResponse;
 import com.hab.blog.feature.v1.tarot.dto.TarotDrawRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,6 @@ public class TarotCardService {
 
     @Autowired
     private TarotCardRepository tarotCardRepository;
-
     private final Random random = new Random();
 
     /**

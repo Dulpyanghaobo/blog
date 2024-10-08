@@ -1,6 +1,6 @@
 package com.hab.blog.feature.v1.tarot;
 
-import com.hab.blog.common.framework.manager.TaskSchedulerService;
+import com.hab.blog.feature.v1.entities.tarot.TarotCategory;
 import com.hab.blog.feature.v1.tarot.dto.*;
 import com.hab.blog.feature.v1.tarot.service.TarotCardService;
 import com.hab.blog.feature.v1.tarot.service.TarotReadingService;
@@ -21,7 +21,6 @@ public class TarotController {
     private TarotSpreadService tarotSpreadService;
     @Autowired
     private TarotReadingService tarotReadingService;
-
     // 获取所有塔罗牌阵
     @GetMapping("/spreads")
     public ResponseEntity<List<TarotSpreadResponse>> getAllTarotSpreads() {
@@ -48,4 +47,21 @@ public class TarotController {
         TarotInterpretationResponse response = tarotReadingService.generateTarotInterpretation(request);
         return ResponseEntity.ok(response);
     }
+
+    // 新增接口: 系统猜测用户想问的问题或推荐解读
+    // 新增接口: 系统猜测用户想问的问题或推荐解读
+    @GetMapping("/guess")
+    public ResponseEntity<List<String>> guessUserQuestion() {
+        List<String> guessResponse = tarotReadingService.guessUserQuestion();
+        return ResponseEntity.ok(guessResponse);
+    }
+
+    // 获取所有塔罗种类
+    @GetMapping("/categories")
+    public ResponseEntity<List<TarotCategory>> getAllTarotCategories() {
+        List<TarotCategory> categories = tarotReadingService.getAllTarotCategories();
+        return ResponseEntity.ok(categories);
+    }
+
+
 }

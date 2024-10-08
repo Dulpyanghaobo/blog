@@ -1,4 +1,4 @@
-package com.hab.blog.feature.v1.entities.carot;
+package com.hab.blog.feature.v1.entities.tarot;
 
 import jakarta.persistence.*;
 import lombok.Data;

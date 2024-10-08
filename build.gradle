@@ -46,8 +46,12 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
     // Spring Boot oauth2 client
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+    implementation 'org.mapstruct:mapstruct:1.5.5.Final'  // MapStruct 核心库
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'  // 注解处理器
+
     // Spring Boot Send Email
     implementation 'org.springframework.boot:spring-boot-starter-mail'
     implementation 'org.jodconverter:jodconverter-local-lo:4.4.7'

@@ -1,7 +1,7 @@
 package com.hab.blog.feature.v1.tarot.service;
 
-import com.hab.blog.feature.v1.entities.carot.TarotSpread;
-import com.hab.blog.feature.v1.entities.carot.repository.TarotSpreadRepository;
+import com.hab.blog.feature.v1.entities.tarot.TarotSpread;
+import com.hab.blog.feature.v1.entities.tarot.repository.TarotSpreadRepository;
 import com.hab.blog.feature.v1.tarot.dto.TarotSpreadResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

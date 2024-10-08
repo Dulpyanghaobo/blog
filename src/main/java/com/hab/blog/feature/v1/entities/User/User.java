@@ -1,6 +1,11 @@
 package com.hab.blog.feature.v1.entities.User;
 
 import com.hab.blog.feature.v1.auth.Dto.RelationshipStatus;
+import com.hab.blog.feature.v1.entities.astrology.UserAstrology;
+import com.hab.blog.feature.v1.entities.astrology.UserDailyFortune;
+import com.hab.blog.feature.v1.entities.notification.Message;
+import com.hab.blog.feature.v1.entities.notification.Notification;
+import com.hab.blog.feature.v1.entities.tarot.DailyHoroscope;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -39,6 +44,9 @@ public class User {
     private Instant registeredAt;        // 用户注册时间
 
     private boolean twoFactorAuthEnabled; // 是否启用双重认证
+
+    @Column(name = "has_completed_tutorial", nullable = false, columnDefinition = "BOOLEAN DEFAULT FALSE")
+    private Boolean hasCompletedTutorial = false;  // 标记是否完成新手教程
 
     @Column(nullable = false)
     private String userName;             // 用户名
@@ -100,4 +108,25 @@ public class User {
 
     @Column(name = "birth_location_lng", precision = 9, scale = 6)
     private BigDecimal birthLocationLng;
+
+    @Column(name = "profile_complete", nullable = false, columnDefinition = "BOOLEAN DEFAULT FALSE")
+    private Boolean profileComplete = false;  // 用来记录用户是否填写完整信息
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<UserAstrology> userAstrologyList;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<UserDailyFortune> dailyFortunes;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Message> messages;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Notification> notifications;
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private UserSettings userSettings;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<DailyHoroscope> dailyHoroscopes;
 }

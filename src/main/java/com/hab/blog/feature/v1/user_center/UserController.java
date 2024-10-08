@@ -3,6 +3,7 @@ package com.hab.blog.feature.v1.user_center;
 import com.hab.blog.feature.v1.user_center.dto.UserProfileDto;
 import com.hab.blog.feature.v1.user_center.dto.UserProfileUpdateDto;
 import com.hab.blog.feature.v1.user_center.Service.UserService;
+import com.hab.blog.feature.v1.user_center.dto.UserSettingsDto;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -29,6 +30,47 @@ public class UserController {
         UserProfileDto userProfile = userService.getUserProfile(username);
 
         return ResponseEntity.ok(userProfile);
+    }
+
+    @GetMapping("/settings")
+    public ResponseEntity<UserSettingsDto> getUserSettings() {
+        // 从 SecurityContext 中获取当前用户
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+
+        // 调用服务层获取用户设置
+        UserSettingsDto userSettings = userService.getUserSettings(username);
+
+        return ResponseEntity.ok(userSettings);
+    }
+
+    // 检查用户是否完成新手教程
+    @GetMapping("/tutorial/status")
+    public ResponseEntity<Boolean> hasCompletedTutorial() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+        boolean hasCompleted = userService.hasCompletedTutorial(username);
+        return ResponseEntity.ok(hasCompleted);
+    }
+
+    // 标记用户完成新手教程
+    @PostMapping("/tutorial/complete")
+    public ResponseEntity<String> completeTutorial() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+        userService.completeTutorial(username);
+        return ResponseEntity.ok("Tutorial completed");
+    }
+
+    @PutMapping("/settings")
+    public ResponseEntity<String> updateUserSettings(@Valid @RequestBody UserSettingsDto userSettingsDto) {
+        // 从 SecurityContext 中获取当前用户
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+        // 调用服务层更新用户设置
+        userService.updateUserSettings(username, userSettingsDto);
+
+        return ResponseEntity.ok("Settings updated successfully");
     }
 
     // 更新用户资料的接口
