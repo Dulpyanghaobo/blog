@@ -4,7 +4,7 @@ import com.hab.blog.common.config.WeChatConfig;
 import com.hab.blog.feature.v1.entities.User.User;
 import com.hab.blog.feature.v1.auth.Dto.VerificationToken;
 import com.hab.blog.feature.v1.auth.Dto.WeChatLoginResponse;
-import com.hab.blog.feature.v1.entities.repository.UserRepository;
+import com.hab.blog.feature.v1.entities.User.Repository.UserRepository;
 import com.hab.blog.feature.v1.entities.repository.VerificationTokenRepository;
 import com.hab.blog.feature.v1.auth.Dto.UserRegistrationDto;
 import com.hab.blog.feature.v1.response.exception.AlreadyExistsException;
@@ -87,6 +87,8 @@ public class AuthService implements UserDetailsService {
             user = new User();
             user.setOpenid(response.getOpenid());
             user.setUserName("WeChatUser" + System.currentTimeMillis());
+            user.setName(String.valueOf(new Random()));
+
             user.setDisabled(false);
             user.setRegisteredAt(Instant.now());
             // 为微信用户生成随机不可用密码

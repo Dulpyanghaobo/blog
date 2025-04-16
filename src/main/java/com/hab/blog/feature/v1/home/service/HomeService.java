@@ -6,7 +6,7 @@ import com.hab.blog.feature.v1.entities.astrology.Repository.UserAstrologyReposi
 import com.hab.blog.feature.v1.entities.astrology.Repository.UserDailyFortuneRepository;
 import com.hab.blog.feature.v1.entities.astrology.UserAstrology;
 import com.hab.blog.feature.v1.entities.astrology.UserDailyFortune;
-import com.hab.blog.feature.v1.entities.repository.UserRepository;
+import com.hab.blog.feature.v1.entities.User.Repository.UserRepository;
 import com.hab.blog.feature.v1.home.dto.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;

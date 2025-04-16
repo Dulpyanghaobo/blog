@@ -20,7 +20,7 @@ public class UserAstrology {
     private AstrologyEvents astrologyEvent;
 
     @ManyToOne(fetch = FetchType.LAZY)  // 多个星象解读可以关联同一个用户
-    @JoinColumn(name = "user_id", nullable = false)  // 关联用户表
+    @JoinColumn(name = "user_name", referencedColumnName = "userName", nullable = false)
     private User user;
 
     @Column(name = "personal_interpretation", columnDefinition = "TEXT")  // 个人解读

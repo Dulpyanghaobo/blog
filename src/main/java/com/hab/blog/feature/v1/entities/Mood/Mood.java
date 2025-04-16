@@ -15,7 +15,7 @@ public class Mood {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name="user_id", nullable=false)
+    @JoinColumn(name="user_name", nullable=false)
     private User user;
 
     @Column(name="mood_date", nullable = false)

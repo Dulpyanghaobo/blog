@@ -1,6 +1,6 @@
 package com.hab.blog.feature.v1.moods.Service;
 
-import com.hab.blog.feature.v1.entities.repository.UserRepository;
+import com.hab.blog.feature.v1.entities.User.Repository.UserRepository;
 import com.hab.blog.feature.v1.entities.Mood.Mood;
 import com.hab.blog.feature.v1.entities.repository.MoodRepository;
 import org.springframework.beans.factory.annotation.Autowired;

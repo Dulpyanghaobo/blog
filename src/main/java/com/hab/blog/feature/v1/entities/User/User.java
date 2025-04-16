@@ -99,9 +99,6 @@ public class User {
     @ElementCollection
     private List<String> interests;      // 用户的兴趣标签
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<UserFriend> friends = new HashSet<>();
-
     // 新增的出生地经纬度字段
     @Column(name = "birth_location_lat", precision = 9, scale = 6)
     private BigDecimal birthLocationLat;

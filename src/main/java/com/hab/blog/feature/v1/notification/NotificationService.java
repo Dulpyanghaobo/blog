@@ -5,7 +5,7 @@ import com.hab.blog.feature.v1.entities.notification.Message;
 import com.hab.blog.feature.v1.entities.notification.Notification;
 import com.hab.blog.feature.v1.entities.notification.respository.MessageRepository;
 import com.hab.blog.feature.v1.entities.notification.respository.NotificationRepository;
-import com.hab.blog.feature.v1.entities.repository.UserRepository;
+import com.hab.blog.feature.v1.entities.User.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

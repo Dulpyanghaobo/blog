@@ -16,7 +16,7 @@ public class DailyHoroscope {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)  // 关联到用户表
+    @JoinColumn(name = "user_name", referencedColumnName = "userName", nullable = false)
     private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)

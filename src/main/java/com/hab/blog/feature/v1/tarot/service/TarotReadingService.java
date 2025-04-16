@@ -8,7 +8,7 @@ import com.hab.blog.feature.v1.entities.tarot.TarotCard;
 import com.hab.blog.feature.v1.entities.tarot.TarotCategory;
 import com.hab.blog.feature.v1.entities.tarot.repository.TarotCardRepository;
 import com.hab.blog.feature.v1.entities.tarot.repository.TarotCategoryRepository;
-import com.hab.blog.feature.v1.entities.repository.UserRepository;
+import com.hab.blog.feature.v1.entities.User.Repository.UserRepository;
 import com.hab.blog.feature.v1.tarot.dto.TarotCardInterpretation;
 import com.hab.blog.feature.v1.tarot.dto.TarotCardRequest;
 import com.hab.blog.feature.v1.tarot.dto.TarotInterpretationRequest;

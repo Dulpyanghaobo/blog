@@ -147,8 +147,14 @@ public class AuthController {
 
     // 新增的微信登录接口
     @PostMapping("/wechat/login")
-    public ResponseEntity<ApiResponse<String>> loginWithWeChat(@RequestBody Map<String, String> requestBody) {
-        String code = requestBody.get("code");
+    public ResponseEntity<ApiResponse<String>> loginWithWeChat(@RequestBody Map<String, Object> requestBody) {
+        // 获取 action 和 params
+        String action = (String) requestBody.get("action");
+        Map<String, String> params = (Map<String, String>) requestBody.get("params");
+
+        // 获取 code 和 platform
+        String code = params.get("code");
+        String platform = params.get("platform");
         User user = authService.loginWithWeChat(code);
         Authentication authentication = new UsernamePasswordAuthenticationToken(
                 user.getUserName(),

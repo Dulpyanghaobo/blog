@@ -58,7 +58,14 @@ public class WebSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/api/v1/auth/**", "/api/v1/app/**", "/api/v1/location/**").permitAll()
+                        .requestMatchers(
+                                "/swagger-ui/**",       // UI界面静态资源
+                                "/v3/api-docs/**",      // OpenAPI JSON文档
+                                "/swagger-ui.html",     // 默认UI入口
+                                "/webjars/**",          // Swagger UI依赖的webjar资源
+                                "/swagger-resources/**" // Swagger配置资源
+                        ).permitAll()
+                        .requestMatchers("/api/v1/auth/**", "/api/v1/app/**", "/api/v1/location/**", "/actuator/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);

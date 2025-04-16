@@ -33,7 +33,7 @@ public class KeyAction {
     private String status = "Not Started";
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_name", referencedColumnName = "userName", nullable = false)
     private User user;
 
     private int complexity = 1;

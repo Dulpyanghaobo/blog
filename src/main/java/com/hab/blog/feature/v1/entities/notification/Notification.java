@@ -16,7 +16,7 @@ public class Notification {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_name", referencedColumnName = "userName", nullable = false)
     private User user;  // 与用户的多对一关系
 
     @Column(name = "type", length = 50, nullable = false)

@@ -9,7 +9,7 @@ import com.hab.blog.feature.v1.auth.Dto.RelationshipStatus;
 import com.hab.blog.feature.v1.entities.User.Gender;
 import com.hab.blog.feature.v1.entities.User.User;
 import com.hab.blog.feature.v1.entities.User.UserPrivacySettings;
-import com.hab.blog.feature.v1.entities.repository.UserRepository;
+import com.hab.blog.feature.v1.entities.User.Repository.UserRepository;
 import com.hab.blog.feature.v1.user_center.dto.UserSettingsDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;

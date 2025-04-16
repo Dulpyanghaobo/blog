@@ -1,4 +1,4 @@
-package com.hab.blog.feature.v1.entities.repository;
+package com.hab.blog.feature.v1.entities.User.Repository;
 
 import com.hab.blog.feature.v1.entities.User.User;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -24,6 +24,4 @@ public interface UserRepository extends JpaRepository<User, Long> {
     boolean existsByUserName(String displayName);
 
     boolean existsByEmail(String email);
-
-    // 这里可以定义查询方法，Spring Data JPA会自动实现
 }

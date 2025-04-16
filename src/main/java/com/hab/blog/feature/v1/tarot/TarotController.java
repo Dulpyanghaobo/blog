@@ -29,7 +29,7 @@ public class TarotController {
     }
 
     // 根据ID获取塔罗牌阵详情
-    @GetMapping("/{id}")
+    @GetMapping("/spreads/{id}")
     public ResponseEntity<TarotSpreadResponse> getTarotSpreadById(@PathVariable Long id) {
         TarotSpreadResponse spread = tarotSpreadService.getTarotSpreadById(id);
         if (spread != null) {
@@ -48,7 +48,6 @@ public class TarotController {
         return ResponseEntity.ok(response);
     }
 
-    // 新增接口: 系统猜测用户想问的问题或推荐解读
     // 新增接口: 系统猜测用户想问的问题或推荐解读
     @GetMapping("/guess")
     public ResponseEntity<List<String>> guessUserQuestion() {

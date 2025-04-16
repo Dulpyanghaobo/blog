@@ -1,6 +1,6 @@
 package com.hab.blog.feature.v1.publish;
 
-import com.hab.blog.feature.v1.entities.repository.UserRepository;
+import com.hab.blog.feature.v1.entities.User.Repository.UserRepository;
 import com.hab.blog.feature.v1.entities.User.User;
 import com.hab.blog.feature.v1.entities.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;

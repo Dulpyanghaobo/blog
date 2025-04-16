@@ -15,7 +15,7 @@ public class UserPrivacySettings {
     private Long id;
 
     @OneToOne
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_name", referencedColumnName = "userName", nullable = false)
     private User user;
 
     private boolean shareBirthdate;   // 是否分享生日

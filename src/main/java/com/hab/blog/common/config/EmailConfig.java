@@ -2,6 +2,7 @@ package com.hab.blog.common.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -10,7 +11,8 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 import java.util.Properties;
 
 @Configuration
-@ConfigurationProperties
+@ConfigurationProperties(prefix = "spring.mail") // 添加prefix明确指定配置前缀
+@EnableConfigurationProperties
 public class EmailConfig {
 
     private static final int GMAIL_SMTP_PORT = 465;
