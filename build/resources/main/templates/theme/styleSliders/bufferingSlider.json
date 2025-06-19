@@ -1,0 +1,10 @@
+{
+  "minimumTrackTintColorKey": "progressAccentColor",
+  "maximumTrackTintColorKey": "dividerColor",
+  "thumbTintColorKey": null,
+  "thumbImageName": null,
+  "trackHeightKey": "shadowSmall",
+  "thumbSizeKey": null,
+  "isContinuous": false,
+  "animationKey": null
+}

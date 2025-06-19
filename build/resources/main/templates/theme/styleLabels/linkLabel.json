@@ -1,0 +1,11 @@
+{
+  "lineBreak" : "wordWrap",
+  "textAlign" : "left",
+  "underline" : true,
+  "colorKey" : "infoColor",
+  "fontKey" : "body",
+  "lineHeight" : 18,
+  "strikethrough" : false,
+  "opacity" : 1.0,
+  "isMonospaced" : false
+}

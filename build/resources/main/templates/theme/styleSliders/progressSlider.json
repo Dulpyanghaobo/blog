@@ -1,0 +1,10 @@
+{
+  "minimumTrackTintColorKey": "progressAccentColor",
+  "maximumTrackTintColorKey": "sliderMaxTrackColor",
+  "thumbTintColorKey": "sliderThumbColor",
+  "thumbImageName": "icon-thumb-play",
+  "trackHeightKey": "shadowSmall",
+  "thumbSizeKey": "iconSizeSmall",
+  "isContinuous": true,
+  "animationKey": "indicatorAnimationStyleRotate"
+}

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>VideoController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">blog</a> &gt; <a href="index.source.html" class="el_package">com.hab.blog.feature.v1.video</a> &gt; <span class="el_source">VideoController.java</span></div><h1>VideoController.java</h1><pre class="source lang-java linenums">package com.hab.blog.feature.v1.video;
+
+import com.hab.blog.feature.v1.entities.video.Person;
+import com.hab.blog.feature.v1.entities.video.VideoType;
+import com.hab.blog.feature.v1.video.DTO.*;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping(&quot;/api/v1/vision&quot;)
+@Tag(name = &quot;Video API&quot;, description = &quot;视频内容管理接口&quot;)
+<span class="nc" id="L21">@RequiredArgsConstructor</span>
+public class VideoController {
+
+//    private final VideoService videoService;
+
+    private final VideoStaticService videoStaticService;
+
+    @GetMapping(&quot;/video/static&quot;)
+    @Operation(summary = &quot;获取预设视频数据&quot;, description = &quot;适用于Vision Pro的本地静态视频预览&quot;)
+    public ResponseEntity&lt;List&lt;VideoDTO&gt;&gt; getStaticVideos() {
+<span class="nc" id="L31">        return ResponseEntity.ok(videoStaticService.getStaticVideos());</span>
+    }
+
+    @GetMapping(&quot;/genre/static&quot;)
+    @Operation(summary = &quot;获取预设视频数据&quot;, description = &quot;适用于Vision Pro的本地静态视频预览&quot;)
+    public ResponseEntity&lt;List&lt;GenreDTO&gt;&gt; getStaticGenre() {
+<span class="nc" id="L37">        return ResponseEntity.ok(videoStaticService.getAllGenres());</span>
+    }
+    @GetMapping(&quot;/person/static&quot;)
+    @Operation(summary = &quot;获取预设视频数据&quot;, description = &quot;适用于Vision Pro的本地静态视频预览&quot;)
+    public ResponseEntity&lt;List&lt;PersonDTO&gt;&gt; getStaticPerson() {
+<span class="nc" id="L42">        return ResponseEntity.ok(videoStaticService.getAllPeople());</span>
+    }
+
+    @GetMapping(&quot;/relationship/static&quot;)
+    @Operation(summary = &quot;获取预设视频数据&quot;, description = &quot;适用于Vision Pro的本地静态视频预览&quot;)
+    public ResponseEntity&lt;List&lt;VideoRelationshipDTO&gt;&gt; getStaticRelationship() {
+<span class="nc" id="L48">        return ResponseEntity.ok(videoStaticService.getAllRelationships());</span>
+    }
+
+    @Operation(summary = &quot;获取 Up Next 项列表&quot;, description = &quot;提供本地静态 up-next 视频预览&quot;)
+    @GetMapping(&quot;/upNext/static&quot;)
+    public ResponseEntity&lt;List&lt;UpNextItemDTO&gt;&gt; getUpNextItems() {
+<span class="nc" id="L54">        return ResponseEntity.ok(videoStaticService.getUpNextItems());</span>
+    }
+
+    @GetMapping(&quot;/category/static&quot;)
+    @Operation(summary = &quot;获取视频分类&quot;, description = &quot;返回静态定义的所有视频分类列表&quot;)
+    public ResponseEntity&lt;List&lt;CategoryDTO&gt;&gt; getStaticCategories() {
+<span class="nc" id="L60">        return ResponseEntity.ok(videoStaticService.getAllCategories());</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

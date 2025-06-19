@@ -1,0 +1,11 @@
+{
+  "lineBreak" : "truncatingTail",
+  "textAlign" : "left",
+  "underline" : false,
+  "colorKey" : "darkGrayColor",
+  "fontKey" : "body",
+  "lineHeight" : 20,
+  "strikethrough" : false,
+  "opacity" : 1.0,
+  "isMonospaced" : false
+}

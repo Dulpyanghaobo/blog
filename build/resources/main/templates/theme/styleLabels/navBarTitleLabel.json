@@ -1,0 +1,11 @@
+{
+  "lineBreak" : "truncatingTail",
+  "textAlign" : "center",
+  "underline" : false,
+  "colorKey" : "navBarTitleColor",
+  "fontKey" : "title",
+  "lineHeight" : 24,
+  "strikethrough" : false,
+  "opacity" : 1.0,
+  "isMonospaced" : false
+}

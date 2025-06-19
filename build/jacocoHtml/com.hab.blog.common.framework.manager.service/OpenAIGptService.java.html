@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>OpenAIGptService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">blog</a> &gt; <a href="index.source.html" class="el_package">com.hab.blog.common.framework.manager.service</a> &gt; <span class="el_source">OpenAIGptService.java</span></div><h1>OpenAIGptService.java</h1><pre class="source lang-java linenums">package com.hab.blog.common.framework.manager.service;
+
+import com.hab.blog.common.framework.manager.LLMService;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.CompletableFuture;
+
+@Service
+public class OpenAIGptService implements LLMService {
+    private final WebClient webClient;
+
+    @Value(&quot;${chat.chatGPT.apiKey}&quot;)
+    private String API_KEY;
+<span class="nc" id="L18">    public OpenAIGptService(WebClient.Builder webClientBuilder) {</span>
+<span class="nc" id="L19">        this.webClient = webClientBuilder.baseUrl(&quot;https://api.openai.com/v1/&quot;).build();</span>
+<span class="nc" id="L20">    }</span>
+
+    @Override
+    public String callModelSync(String prompt) {
+        // 同步调用OpenAI GPT
+<span class="nc" id="L25">        return webClient.post()</span>
+<span class="nc" id="L26">                .uri(&quot;completions&quot;)</span>
+<span class="nc" id="L27">                .header(&quot;Authorization&quot;, &quot;Bearer &quot; + API_KEY)</span>
+<span class="nc" id="L28">                .bodyValue(buildRequestBody(prompt))</span>
+<span class="nc" id="L29">                .retrieve()</span>
+<span class="nc" id="L30">                .bodyToMono(String.class)  // 获取结果的字符串形式</span>
+<span class="nc" id="L31">                .block();  // 同步阻塞获取结果</span>
+    }
+
+    @Override
+    public CompletableFuture&lt;String&gt; callModelAsync(String prompt) {
+        // 异步调用OpenAI GPT
+<span class="nc" id="L37">        return webClient.post()</span>
+<span class="nc" id="L38">                .uri(&quot;completions&quot;)</span>
+<span class="nc" id="L39">                .header(&quot;Authorization&quot;, &quot;Bearer &quot; + System.getenv(&quot;OPENAI_API_KEY&quot;))</span>
+<span class="nc" id="L40">                .bodyValue(buildRequestBody(prompt))</span>
+<span class="nc" id="L41">                .retrieve()</span>
+<span class="nc" id="L42">                .bodyToMono(String.class)</span>
+<span class="nc" id="L43">                .toFuture();  // 返回异步CompletableFuture</span>
+    }
+
+    private Map&lt;String, Object&gt; buildRequestBody(String prompt) {
+<span class="nc" id="L47">        Map&lt;String, Object&gt; body = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L48">        body.put(&quot;model&quot;, &quot;gpt-4o-mini&quot;);  // 可以根据需要选择模型</span>
+<span class="nc" id="L49">        body.put(&quot;prompt&quot;, prompt);</span>
+<span class="nc" id="L50">        body.put(&quot;max_tokens&quot;, 1000);  // 控制输出的最大 token 数</span>
+<span class="nc" id="L51">        return body;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

@@ -1,0 +1,10 @@
+{
+  "minimumTrackTintColorKey": "secondaryColor",
+  "maximumTrackTintColorKey": "sliderMaxTrackColor",
+  "thumbTintColorKey": "sliderThumbColor",
+  "thumbImageName": null,
+  "trackHeightKey": "sliderTrackHeightThick",
+  "thumbSizeKey": "iconSizeSmall",
+  "isContinuous": true,
+  "animationKey": "indicatorAnimationStyleFade"
+}

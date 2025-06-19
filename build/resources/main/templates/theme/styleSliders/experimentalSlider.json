@@ -1,0 +1,10 @@
+{
+  "minimumTrackTintColorKey": "accentColor",
+  "maximumTrackTintColorKey": "dividerColor",
+  "thumbTintColorKey": "errorColor",
+  "thumbImageName": "icon-experiment",
+  "trackHeightKey": "sliderTrackHeightThick",
+  "thumbSizeKey": "iconSizeMedium",
+  "isContinuous": true,
+  "animationKey": "indicatorAnimationStyleFade"
+}

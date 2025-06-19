@@ -1,0 +1,12 @@
+{
+  "fontKey": "body",
+  "textColorKey": "textColor",
+  "placeholderColorKey": "placeholderTextColor",
+  "backgroundColorKey": "cardColor",
+  "borderColorKey": "borderColor",
+  "borderWidth": "borderWidthThin",
+  "cornerRadius": "cornerRadiusLarge",
+  "isEditable": true,
+  "lineSpacing": "textViewLineSpacing",
+  "padding": { "top": "spacingXLarge", "left": "spacingLarge", "bottom": "spacingXLarge", "right": "spacingLarge" }
+}

@@ -1,0 +1,13 @@
+{
+  "onTintColorKey": "primaryColor",
+  "thumbTintColorKey": "switchThumbColor",
+  "offTintColorKey": "switchOffColor",
+  "isEnabled": true,
+  "animationKey": "indicatorAnimationStyleScale",
+  "scaleKey": "switchScaleSmall",
+  "shadowColorKey": "shadowColor",
+  "shadowOpacity": "viewOpacityDisabled",
+  "shadowOffsetX": "shadowOffsetXSmall",
+  "shadowOffsetY": "shadowOffsetYSmall",
+  "shadowRadius": "shadowRadiusSmall"
+}

@@ -1,0 +1,13 @@
+{
+  "onTintColorKey": "accentColor",
+  "thumbTintColorKey": "errorColor",
+  "offTintColorKey": "dividerColor",
+  "isEnabled": true,
+  "animationKey": "indicatorAnimationStyleFade",
+  "scaleKey": "switchScaleSmall",
+  "shadowColorKey": null,
+  "shadowOpacity": null,
+  "shadowOffsetX": null,
+  "shadowOffsetY": null,
+  "shadowRadius": null
+}

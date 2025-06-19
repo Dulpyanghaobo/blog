@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ThemeStaticService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">blog</a> &gt; <a href="index.source.html" class="el_package">com.hab.blog.feature.v1.theme</a> &gt; <span class="el_source">ThemeStaticService.java</span></div><h1>ThemeStaticService.java</h1><pre class="source lang-java linenums">package com.hab.blog.feature.v1.theme;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.Data;
+import org.springframework.core.io.*;
+import org.springframework.stereotype.Service;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.util.HashMap;
+import java.util.Map;
+
+@Service
+public class ThemeStaticService {
+
+    private final String basePath;
+
+<span class="nc" id="L19">    public ThemeStaticService(ResourceLoader resourceLoader) {</span>
+        try {
+<span class="nc" id="L21">            Resource resource = resourceLoader.getResource(&quot;classpath:templates/theme/&quot;);</span>
+<span class="nc" id="L22">            this.basePath = resource.getFile().getAbsolutePath();  // 获取实际文件路径</span>
+<span class="nc" id="L23">        } catch (IOException e) {</span>
+<span class="nc" id="L24">            throw new RuntimeException(&quot;无法定位资源目录: theme/&quot;, e);</span>
+<span class="nc" id="L25">        }</span>
+<span class="nc" id="L26">    }</span>
+
+    public Map&lt;String, Object&gt; loadStyleCategoryAsObjectMap(String categoryFolder) {
+<span class="nc" id="L29">        Map&lt;String, Object&gt; result = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L30">        File folder = new File(basePath, categoryFolder);</span>
+
+<span class="nc bnc" id="L32" title="All 4 branches missed.">        if (!folder.exists() || !folder.isDirectory()) return result;</span>
+
+<span class="nc" id="L34">        File[] files = folder.listFiles((dir, name) -&gt; name.endsWith(&quot;.json&quot;));</span>
+<span class="nc bnc" id="L35" title="All 2 branches missed.">        if (files == null) return result;</span>
+
+<span class="nc" id="L37">        ObjectMapper mapper = new ObjectMapper();</span>
+
+<span class="nc bnc" id="L39" title="All 2 branches missed.">        for (File file : files) {</span>
+<span class="nc" id="L40">            String key = file.getName().replace(&quot;.json&quot;, &quot;&quot;);</span>
+            try {
+<span class="nc" id="L42">                String json = Files.readString(file.toPath());</span>
+                // 直接将 json 字符串转换为 Object（通常是 Map）
+<span class="nc" id="L44">                Object parsed = mapper.readValue(json, Object.class);</span>
+<span class="nc" id="L45">                result.put(key, parsed);</span>
+<span class="nc" id="L46">            } catch (IOException e) {</span>
+<span class="nc" id="L47">                System.err.println(&quot;⚠️ Failed to parse: &quot; + key);</span>
+<span class="nc" id="L48">                e.printStackTrace();</span>
+<span class="nc" id="L49">            }</span>
+        }
+<span class="nc" id="L51">        return result;</span>
+    }
+
+    public Map&lt;String, Object&gt; loadBaseElementThemeConfig() {
+<span class="nc" id="L55">        Map&lt;String, Object&gt; result = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L56">        File folder = new File(basePath, &quot;baseElement&quot;);</span>
+
+<span class="nc bnc" id="L58" title="All 4 branches missed.">        if (!folder.exists() || !folder.isDirectory()) return result;</span>
+
+<span class="nc" id="L60">        ObjectMapper mapper = new ObjectMapper();</span>
+<span class="nc" id="L61">        File[] files = folder.listFiles((dir, name) -&gt; name.endsWith(&quot;.json&quot;));</span>
+<span class="nc bnc" id="L62" title="All 2 branches missed.">        if (files == null) return result;</span>
+
+<span class="nc bnc" id="L64" title="All 2 branches missed.">        for (File file : files) {</span>
+<span class="nc" id="L65">            String key = file.getName().replace(&quot;.json&quot;, &quot;&quot;);</span>
+            try {
+<span class="nc" id="L67">                String json = Files.readString(file.toPath());</span>
+<span class="nc" id="L68">                Object parsed = mapper.readValue(json, Object.class);</span>
+<span class="nc" id="L69">                result.put(key, parsed);</span>
+<span class="nc" id="L70">            } catch (IOException e) {</span>
+<span class="nc" id="L71">                System.err.println(&quot;⚠️ Failed to parse &quot; + key + &quot;.json&quot;);</span>
+<span class="nc" id="L72">                e.printStackTrace();</span>
+<span class="nc" id="L73">            }</span>
+        }
+
+<span class="nc" id="L76">        return result;</span>
+    }
+//
+////    public Map&lt;String, Object&gt; getThemeViewConfig() { ... }
+////
+////    public Map&lt;String, Object&gt; getThemeProgressBarConfig() { ... }
+////
+////    public Map&lt;String, Object&gt; getThemeActivityIndicatorConfig() { ... }
+////
+////    public Map&lt;String, Object&gt; getThemeTextFieldConfig() { ... }
+////
+////    public Map&lt;String, Object&gt; getThemeTextViewConfig() { ... }
+////
+////    public Map&lt;String, Object&gt; getThemeSegmentConfig() { ... }
+////
+////    public Map&lt;String, Object&gt; getThemeSliderConfig() { ... }
+////
+////    public Map&lt;String, Object&gt; getThemeSwitchConfig() { ... }
+//
+//
+//
+//
+//    public Map&lt;String, Object&gt; getStaticThemeConfig() {
+//        Map&lt;String, Object&gt; json = new HashMap&lt;&gt;();
+//        Map&lt;String, String&gt; colors = new HashMap&lt;&gt;();
+//
+//        // 🌈 基础色定义
+//        colors.put(&quot;primaryColor&quot;, &quot;#FF5733&quot;);
+//        colors.put(&quot;secondaryColor&quot;, &quot;#33FF57&quot;);
+//        colors.put(&quot;textColor&quot;, &quot;#333333&quot;);
+//        colors.put(&quot;backgroundColor&quot;, &quot;#F5F5F5&quot;);
+//        colors.put(&quot;errorColor&quot;, &quot;#FF0000&quot;);
+//        colors.put(&quot;successColor&quot;, &quot;#28A745&quot;);
+//        colors.put(&quot;warningColor&quot;, &quot;#FFC107&quot;);
+//        colors.put(&quot;infoColor&quot;, &quot;#007BFF&quot;);
+//        colors.put(&quot;iconColor&quot;, &quot;#616161&quot;);
+//        colors.put(&quot;dividerColor&quot;, &quot;#BDBDBD&quot;);
+//        colors.put(&quot;borderColor&quot;, &quot;#E0E0E0&quot;);
+//        colors.put(&quot;cardColor&quot;, &quot;#E0E0E0&quot;);
+//        colors.put(&quot;shadowColor&quot;, &quot;#BDBDBD&quot;);
+//
+//        // 🌟 独立定义色（非复用）
+//        colors.put(&quot;secondaryLabel&quot;, &quot;#757575&quot;);
+//        colors.put(&quot;tertiaryLabel&quot;, &quot;#BDBDBD&quot;);
+//        colors.put(&quot;navBarBackgroundColor&quot;, &quot;#1E88E5&quot;);
+//        colors.put(&quot;navBarTitleColor&quot;, &quot;#FFFFFF&quot;);
+//        colors.put(&quot;sectionBackgroundColor&quot;, &quot;#FAFAFA&quot;);
+//        colors.put(&quot;dialogBackgroundColor&quot;, &quot;#F0F0F0&quot;);
+//        colors.put(&quot;emptyStateBackgroundColor&quot;, &quot;#EEEEEE&quot;);
+//        colors.put(&quot;placeholderBackgroundColor&quot;, &quot;#F9F9F9&quot;);
+//        colors.put(&quot;placeholderTextColor&quot;, &quot;#AAAAAA&quot;);
+//        colors.put(&quot;skeletonBackgroundColor&quot;, &quot;#E0E0E0&quot;);
+//        colors.put(&quot;loadingBackgroundColor&quot;, &quot;#F6F6F6&quot;);
+//        colors.put(&quot;switchOffColor&quot;, &quot;#E5E5EA&quot;);
+//        colors.put(&quot;switchThumbColor&quot;, &quot;#FFFFFF&quot;);
+//        colors.put(&quot;sliderMaxTrackColor&quot;, &quot;#D3D3D3&quot;);
+//        colors.put(&quot;sliderThumbColor&quot;, &quot;#FFFFFF&quot;);
+//        colors.put(&quot;segmentUnselectedTextColor&quot;, &quot;#666666&quot;);
+//        colors.put(&quot;segmentUnselectedBackgroundColor&quot;, &quot;#F0F0F0&quot;);
+//        colors.put(&quot;textFieldBackgroundColor&quot;, &quot;#FFFFFF&quot;);
+//        colors.put(&quot;textFieldBorderColor&quot;, &quot;#CCCCCC&quot;);
+//        colors.put(&quot;progressErrorColor&quot;, &quot;#DC3545&quot;);
+//        colors.put(&quot;progressAccentColor&quot;, &quot;#66B3FF&quot;);
+//        colors.put(&quot;indicatorSecondaryColor&quot;, &quot;#CCCCCC&quot;);
+//        colors.put(&quot;indicatorOverlayBackgroundColor&quot;, &quot;#88000000&quot;);
+//
+//        Map&lt;String, Object&gt; typography = new HashMap&lt;&gt;();
+//        typography.put(&quot;title&quot;, Map.of(&quot;size&quot;, 20, &quot;weight&quot;, &quot;bold&quot;));        // → .bold
+//        typography.put(&quot;body&quot;, Map.of(&quot;size&quot;, 16, &quot;weight&quot;, &quot;regular&quot;));     // → .regular
+//        typography.put(&quot;caption&quot;, Map.of(&quot;size&quot;, 12, &quot;weight&quot;, &quot;light&quot;));    // → .light
+//        typography.put(&quot;textFieldFont&quot;, Map.of(&quot;size&quot;, 16, &quot;weight&quot;, &quot;regular&quot;)); // → 对应 .regular
+//        typography.put(&quot;subtitle&quot;, Map.of(&quot;size&quot;, 18, &quot;weight&quot;, &quot;medium&quot;));   // → .medium
+//        typography.put(&quot;button&quot;, Map.of(&quot;size&quot;, 16, &quot;weight&quot;, &quot;semibold&quot;));   // → .semibold
+//        typography.put(&quot;label&quot;, Map.of(&quot;size&quot;, 14, &quot;weight&quot;, &quot;regular&quot;));     // → .regular
+//        typography.put(&quot;footnote&quot;, Map.of(&quot;size&quot;, 10, &quot;weight&quot;, &quot;light&quot;));    // → .light
+//
+//        Map&lt;String, Object&gt; layout = new HashMap&lt;&gt;();
+//        layout.put(&quot;spacingSmall&quot;, 8);
+//        layout.put(&quot;spacingMedium&quot;, 12);
+//        layout.put(&quot;spacingLarge&quot;, 16);
+//        layout.put(&quot;spacingXLarge&quot;, 24);
+//        layout.put(&quot;spacingXXLarge&quot;, 32);
+//
+//        layout.put(&quot;cornerRadiusSmall&quot;, 4);
+//        layout.put(&quot;cornerRadiusLarge&quot;, 12);
+//        layout.put(&quot;cornerRadiusFull&quot;, 999);
+//
+//        layout.put(&quot;paddingHorizontal&quot;, 16);
+//        layout.put(&quot;paddingVertical&quot;, 12);
+//        layout.put(&quot;paddingScreen&quot;, 20);
+//
+//        layout.put(&quot;iconSizeSmall&quot;, 16);
+//        layout.put(&quot;iconSizeMedium&quot;, 24);
+//        layout.put(&quot;iconSizeLarge&quot;, 32);
+//
+//        layout.put(&quot;shadowSmall&quot;, 2);
+//        layout.put(&quot;shadowMedium&quot;, 4);
+//        layout.put(&quot;shadowLarge&quot;, 8);
+//
+//        layout.put(&quot;borderWidthThin&quot;, 1);
+//        layout.put(&quot;borderWidthThick&quot;, 2);
+//
+//        layout.put(&quot;viewOpacityDisabled&quot;, 0.5);
+//
+//        layout.put(&quot;textViewLineSpacing&quot;, 4);
+//        layout.put(&quot;switchScaleSmall&quot;, 0.8);
+//        layout.put(&quot;switchScaleLarge&quot;, 1.2);
+//        layout.put(&quot;sliderTrackHeightThick&quot;, 4);
+//        layout.put(&quot;progressBarHeightLarge&quot;, 8);
+//        layout.put(&quot;indicatorSizeLarge&quot;, 32);
+//
+//        Map&lt;String, Object&gt; animations = new HashMap&lt;&gt;();
+//
+//// 🌐 通用默认动画
+//        animations.put(&quot;defaultDuration&quot;, 0.3);
+//        animations.put(&quot;defaultCurve&quot;, &quot;easeInOut&quot;);
+//
+//// ✨ 按钮点击
+//        animations.put(&quot;buttonTapScale&quot;, 0.95);
+//
+//// ✨ 进入 / 退出动效
+//        animations.put(&quot;appearCurve&quot;, &quot;easeIn&quot;);
+//        animations.put(&quot;disappearDuration&quot;, 0.25);
+//        animations.put(&quot;disappearCurve&quot;, &quot;easeOut&quot;);
+//
+//// 🖼️ 图片加载
+//        animations.put(&quot;imageFadeInDuration&quot;, 0.4);
+//        animations.put(&quot;imageFadeInCurve&quot;, &quot;easeIn&quot;);
+//        animations.put(&quot;imageCrossfadeDuration&quot;, 0.6);
+//
+//// 📃 列表动画
+//        animations.put(&quot;listRemoveDuration&quot;, 0.2);
+//        animations.put(&quot;listReorderDuration&quot;, 0.5);
+//
+//// 📱 模态弹窗
+//        animations.put(&quot;modalPresentDuration&quot;, 0.35);
+//        animations.put(&quot;modalSpringDamping&quot;, 0.8);
+//        animations.put(&quot;modalInitialVelocity&quot;, 0.3);
+//
+//// 💀 骨架屏
+//        animations.put(&quot;skeletonPulseDuration&quot;, 1.2);
+//        animations.put(&quot;skeletonPulseScale&quot;, 1.05);
+//// 🎚️ Slider
+//
+//// 📊 ProgressBar
+//        animations.put(&quot;progressAnimationEnabled&quot;, true);
+//        animations.put(&quot;progressShadowLevelNone&quot;, 0);
+//        animations.put(&quot;progressShadowLevelLow&quot;, 2);
+//        animations.put(&quot;progressShadowLevelMedium&quot;, 4);
+//        animations.put(&quot;progressShadowLevelHigh&quot;, 6);
+//
+//// 🔁 ActivityIndicator 风格类型
+//        animations.put(&quot;indicatorAnimationStyleScale&quot;, &quot;scale&quot;);
+//        animations.put(&quot;indicatorAnimationStyleRotate&quot;, &quot;rotate&quot;);
+//        animations.put(&quot;indicatorAnimationStyleFade&quot;, &quot;fade&quot;);
+//
+//        json.put(&quot;colors&quot;, colors);
+//        json.put(&quot;typography&quot;, typography);
+//        json.put(&quot;layout&quot;, layout);
+//        json.put(&quot;animations&quot;, animations);
+//        return json;
+//    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

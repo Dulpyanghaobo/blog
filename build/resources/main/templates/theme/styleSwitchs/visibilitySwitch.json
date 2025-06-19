@@ -1,0 +1,13 @@
+{
+  "onTintColorKey": "dividerColor",
+  "thumbTintColorKey": "tertiaryLabel",
+  "offTintColorKey": "dividerColor",
+  "isEnabled": false,
+  "animationKey": null,
+  "scaleKey": "switchScaleSmall",
+  "shadowColorKey": null,
+  "shadowOpacity": null,
+  "shadowOffsetX": null,
+  "shadowOffsetY": null,
+  "shadowRadius": null
+}

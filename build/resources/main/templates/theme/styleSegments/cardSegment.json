@@ -1,0 +1,12 @@
+{
+  "selectedTextColorKey": "textColor",
+  "unselectedTextColorKey": "secondaryLabel",
+  "selectedBackgroundColorKey": "cardColor",
+  "unselectedBackgroundColorKey": "segmentUnselectedBackgroundColor",
+  "fontKey": "subtitle",
+  "cornerRadiusKey": "cornerRadiusMedium",
+  "borderWidthKey": "borderWidthThin",
+  "heightKey": "spacingLarge",
+  "borderColorKey": "borderColor",
+  "animationKey": "buttonTapScale"
+}

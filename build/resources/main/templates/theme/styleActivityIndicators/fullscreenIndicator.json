@@ -1,0 +1,13 @@
+{
+  "colorKey": "primaryColor",
+  "backgroundColorKey": "indicatorOverlayBackgroundColor",
+  "cornerRadiusKey": "cornerRadiusSmall",
+  "sizeKey": "indicatorSizeLarge",
+  "hidesWhenStopped": false,
+  "animationKey": "indicatorAnimationStyleRotate",
+  "shadowColorKey": "shadowColor",
+  "shadowOpacityKey": "shadowOpacitySmall",
+  "shadowOffsetXKey": "shadowOffsetXSmall",
+  "shadowOffsetYKey": "shadowOffsetYSmall",
+  "shadowRadiusKey": "shadowRadiusSmall"
+}

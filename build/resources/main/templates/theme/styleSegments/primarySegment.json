@@ -1,0 +1,12 @@
+{
+  "selectedTextColorKey": "textColor",
+  "unselectedTextColorKey": "segmentUnselectedTextColor",
+  "selectedBackgroundColorKey": "primaryColor",
+  "unselectedBackgroundColorKey": "segmentUnselectedBackgroundColor",
+  "fontKey": "button",
+  "cornerRadiusKey": "cornerRadiusMedium",
+  "borderWidthKey": null,
+  "heightKey": "spacingXLarge",
+  "borderColorKey": null,
+  "animationKey": "buttonTapScale"
+}

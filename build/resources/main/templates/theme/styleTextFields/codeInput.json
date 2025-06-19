@@ -1,0 +1,18 @@
+{
+  "textColorKey": "textColor",
+  "placeholderColorKey": "placeholderTextColor",
+  "backgroundColorKey": "textFieldBackgroundColor",
+  "borderColorKey": "primaryColor",
+  "borderWidthKey": "borderWidthThin",
+  "cornerRadiusKey": "cornerRadiusSmall",
+  "fontKey": "title",
+  "paddingKey": "spacingMedium",
+  "isSecure": false,
+  "isEditable": true,
+  "shadowColorKey": null,
+  "shadowOpacityKey": null,
+  "shadowOffsetXKey": null,
+  "shadowOffsetYKey": null,
+  "shadowRadiusKey": null,
+  "tapAnimationKey": "indicatorAnimationStyleScale"
+}

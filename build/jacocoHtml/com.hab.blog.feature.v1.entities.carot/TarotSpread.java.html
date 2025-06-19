@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TarotSpread.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">blog</a> &gt; <a href="index.source.html" class="el_package">com.hab.blog.feature.v1.entities.carot</a> &gt; <span class="el_source">TarotSpread.java</span></div><h1>TarotSpread.java</h1><pre class="source lang-java linenums">package com.hab.blog.feature.v1.entities.carot;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import java.time.LocalDateTime;
+
+@Entity
+@Table(name = &quot;tarot_spreads&quot;)
+<span class="nc bnc" id="L9" title="All 110 branches missed.">@Data</span>
+public class TarotSpread {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+<span class="nc" id="L14">    private Long id;</span>
+
+    @Column(nullable = false)
+<span class="nc" id="L17">    private String name;</span>
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = &quot;spread_type&quot;, nullable = false)
+<span class="nc" id="L21">    private SpreadType spreadType;</span>
+
+    @Column(name = &quot;is_paid&quot;, nullable = false, columnDefinition = &quot;BIT(1) DEFAULT b'0'&quot;)
+<span class="nc" id="L24">    private boolean isPaid;</span>
+
+    @Column(name = &quot;is_popular&quot;, nullable = false, columnDefinition = &quot;BIT(1) DEFAULT b'0'&quot;)
+<span class="nc" id="L27">    private boolean isPopular;</span>
+
+<span class="nc" id="L29">    private String tags;</span>
+
+    @Column(name = &quot;test_count&quot;, columnDefinition = &quot;BIGINT DEFAULT 0&quot;)
+<span class="nc" id="L32">    private Long testCount;</span>
+
+    @Column(name = &quot;like_count&quot;, columnDefinition = &quot;BIGINT DEFAULT 0&quot;)
+<span class="nc" id="L35">    private Long likeCount;</span>
+
+    @Column(name = &quot;image_large&quot;)
+<span class="nc" id="L38">    private String imageLarge;</span>
+
+    @Column(name = &quot;image_small&quot;)
+<span class="nc" id="L41">    private String imageSmall;</span>
+
+    @Column(name = &quot;description&quot;, columnDefinition = &quot;TEXT&quot;)
+<span class="nc" id="L44">    private String description;</span>
+
+    @Column(name = &quot;related_questions&quot;, columnDefinition = &quot;TEXT&quot;)
+<span class="nc" id="L47">    private String relatedQuestions;</span>
+
+    @Column(name = &quot;created_at&quot;, columnDefinition = &quot;TIMESTAMP DEFAULT CURRENT_TIMESTAMP&quot;)
+<span class="nc" id="L50">    private LocalDateTime createdAt;</span>
+
+    @Column(name = &quot;updated_at&quot;, columnDefinition = &quot;TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP&quot;)
+<span class="nc" id="L53">    private LocalDateTime updatedAt;</span>
+}
+
+<span class="nc" id="L56">enum SpreadType {</span>
+<span class="nc" id="L57">    basic, advanced</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

@@ -1,0 +1,10 @@
+{
+  "title": { "size": 20, "weight": "bold" },
+  "body": { "size": 16, "weight": "regular" },
+  "caption": { "size": 12, "weight": "light" },
+  "textFieldFont": { "size": 16, "weight": "regular" },
+  "subtitle": { "size": 18, "weight": "medium" },
+  "button": { "size": 16, "weight": "semibold" },
+  "label": { "size": 14, "weight": "regular" },
+  "footnote": { "size": 10, "weight": "light" }
+}

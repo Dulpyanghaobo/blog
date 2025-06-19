@@ -1,0 +1,15 @@
+{
+  "textAlign" : "center",
+  "underline" : false,
+  "isMonospaced" : false,
+  "cornerRadius" : 8,
+  "borderColorKey" : "buttonColor",
+  "lineBreak" : "clipping",
+  "backgroundColorKey" : "buttonColor",
+  "borderWidth" : 0.0,
+  "colorKey" : "buttonTextColor",
+  "fontKey" : "caption",
+  "lineHeight" : 16,
+  "strikethrough" : false,
+  "opacity" : 1.0
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ModelManager.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">blog</a> &gt; <a href="index.source.html" class="el_package">com.hab.blog.common.framework.manager</a> &gt; <span class="el_source">ModelManager.java</span></div><h1>ModelManager.java</h1><pre class="source lang-java linenums">package com.hab.blog.common.framework.manager;
+
+import com.hab.blog.common.framework.manager.service.BaiduErnieService;
+import com.hab.blog.common.framework.manager.service.OpenAIGptService;
+import com.hab.blog.common.framework.manager.service.PerplexityGptService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+@Component
+public class ModelManager {
+<span class="nc" id="L14">    private Map&lt;String, LLMService&gt; models = new ConcurrentHashMap&lt;&gt;();</span>
+<span class="nc" id="L15">    private Map&lt;String, Boolean&gt; modelHealthStatus = new ConcurrentHashMap&lt;&gt;();</span>
+    @Autowired
+
+<span class="nc" id="L18">    public ModelManager(OpenAIGptService openAIGptService, BaiduErnieService baiduErnieService, PerplexityGptService perplexityGptService) {</span>
+        // 注册模型
+<span class="nc" id="L20">        registerModel(&quot;OpenAI-GPT&quot;, openAIGptService);</span>
+<span class="nc" id="L21">        registerModel(&quot;Baidu-Ernie&quot;, baiduErnieService);</span>
+<span class="nc" id="L22">        registerModel(&quot;Perplexity-GPT&quot;, perplexityGptService);</span>
+<span class="nc" id="L23">    }</span>
+    public void registerModel(String modelName, LLMService modelService) {
+<span class="nc" id="L25">        models.put(modelName, modelService);</span>
+<span class="nc" id="L26">        modelHealthStatus.put(modelName, true); // 初始健康状态为true</span>
+<span class="nc" id="L27">    }</span>
+
+    public LLMService getModel(String modelName) {
+<span class="nc bnc" id="L30" title="All 2 branches missed.">        if (modelHealthStatus.getOrDefault(modelName, false)) {</span>
+<span class="nc" id="L31">            return models.get(modelName);</span>
+        } else {
+<span class="nc" id="L33">            throw new ModelUnavailableException(modelName + &quot; is unavailable.&quot;);</span>
+        }
+    }
+
+    public void setModelHealth(String modelName, boolean isHealthy) {
+<span class="nc" id="L38">        modelHealthStatus.put(modelName, isHealthy);</span>
+<span class="nc" id="L39">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

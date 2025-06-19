@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TarotController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">blog</a> &gt; <a href="index.source.html" class="el_package">com.hab.blog.feature.v1.tarot</a> &gt; <span class="el_source">TarotController.java</span></div><h1>TarotController.java</h1><pre class="source lang-java linenums">package com.hab.blog.feature.v1.tarot;
+
+import com.hab.blog.common.framework.manager.TaskSchedulerService;
+import com.hab.blog.feature.v1.tarot.dto.*;
+import com.hab.blog.feature.v1.tarot.service.TarotCardService;
+import com.hab.blog.feature.v1.tarot.service.TarotReadingService;
+import com.hab.blog.feature.v1.tarot.service.TarotSpreadService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping(&quot;/api/v1/tarot&quot;)
+<span class="nc" id="L16">public class TarotController {</span>
+
+    @Autowired
+    private TarotCardService tarotCardService;
+    @Autowired
+    private TarotSpreadService tarotSpreadService;
+    @Autowired
+    private TarotReadingService tarotReadingService;
+
+    // 获取所有塔罗牌阵
+    @GetMapping(&quot;/spreads&quot;)
+    public ResponseEntity&lt;List&lt;TarotSpreadResponse&gt;&gt; getAllTarotSpreads() {
+<span class="nc" id="L28">        List&lt;TarotSpreadResponse&gt; spreads = tarotSpreadService.getAllTarotSpreads();</span>
+<span class="nc" id="L29">        return ResponseEntity.ok(spreads);</span>
+    }
+
+    // 根据ID获取塔罗牌阵详情
+    @GetMapping(&quot;/{id}&quot;)
+    public ResponseEntity&lt;TarotSpreadResponse&gt; getTarotSpreadById(@PathVariable Long id) {
+<span class="nc" id="L35">        TarotSpreadResponse spread = tarotSpreadService.getTarotSpreadById(id);</span>
+<span class="nc bnc" id="L36" title="All 2 branches missed.">        if (spread != null) {</span>
+<span class="nc" id="L37">            return ResponseEntity.ok(spread);</span>
+        } else {
+<span class="nc" id="L39">            return ResponseEntity.notFound().build();</span>
+        }
+    }
+    @PostMapping(&quot;/draw&quot;)
+    public List&lt;TarotCardResponse&gt; drawTarotCards(@RequestBody TarotDrawRequest request) {
+<span class="nc" id="L44">        return tarotCardService.drawTarotCards(request);</span>
+    }
+    @PostMapping(&quot;/interpret&quot;)
+    public ResponseEntity&lt;TarotInterpretationResponse&gt; interpretTarotReading(@RequestBody TarotInterpretationRequest request) {
+<span class="nc" id="L48">        TarotInterpretationResponse response = tarotReadingService.generateTarotInterpretation(request);</span>
+<span class="nc" id="L49">        return ResponseEntity.ok(response);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

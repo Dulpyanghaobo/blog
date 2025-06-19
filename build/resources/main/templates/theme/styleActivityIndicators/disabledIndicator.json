@@ -1,0 +1,13 @@
+{
+  "colorKey": "dividerColor",
+  "backgroundColorKey": null,
+  "cornerRadiusKey": "cornerRadiusSmall",
+  "sizeKey": "iconSizeSmall",
+  "hidesWhenStopped": false,
+  "animationKey": null,
+  "shadowColorKey": null,
+  "shadowOpacityKey": null,
+  "shadowOffsetXKey": null,
+  "shadowOffsetYKey": null,
+  "shadowRadiusKey": null
+}

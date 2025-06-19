@@ -1,0 +1,10 @@
+{
+  "minimumTrackTintColorKey": "dividerColor",
+  "maximumTrackTintColorKey": "dividerColor",
+  "thumbTintColorKey": null,
+  "thumbImageName": null,
+  "trackHeightKey": "sliderTrackHeightThick",
+  "thumbSizeKey": null,
+  "isContinuous": false,
+  "animationKey": null
+}

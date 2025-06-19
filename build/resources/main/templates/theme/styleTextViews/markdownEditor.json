@@ -1,0 +1,12 @@
+{
+  "fontKey": "textFieldFont",
+  "textColorKey": "textColor",
+  "placeholderColorKey": "placeholderTextColor",
+  "backgroundColorKey": "textFieldBackgroundColor",
+  "borderColorKey": "borderColor",
+  "borderWidth": "borderWidthThin",
+  "cornerRadius": "cornerRadiusSmall",
+  "isEditable": true,
+  "lineSpacing": "textViewLineSpacing",
+  "padding": { "top": "paddingTop", "left": "paddingLeft", "bottom": "paddingBottom", "right": "paddingRight" }
+}

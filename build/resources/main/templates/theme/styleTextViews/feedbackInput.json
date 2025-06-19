@@ -1,0 +1,12 @@
+{
+  "fontKey": "body",
+  "textColorKey": "textColor",
+  "placeholderColorKey": "placeholderTextColor",
+  "backgroundColorKey": "dialogBackgroundColor",
+  "borderColorKey": "warningColor",
+  "borderWidth": "borderWidthThin",
+  "cornerRadius": "cornerRadiusMedium",
+  "isEditable": true,
+  "lineSpacing": "textViewLineSpacing",
+  "padding": { "top": "paddingTop", "left": "paddingLeft", "bottom": "paddingBottom", "right": "paddingRight" }
+}

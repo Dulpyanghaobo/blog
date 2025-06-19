@@ -1,0 +1,13 @@
+{
+  "onTintColorKey": "successColor",
+  "thumbTintColorKey": "sliderThumbColor",
+  "offTintColorKey": "dividerColor",
+  "isEnabled": true,
+  "animationKey": "indicatorAnimationStyleRotate",
+  "scaleKey": "switchScaleSmall",
+  "shadowColorKey": null,
+  "shadowOpacity": null,
+  "shadowOffsetX": null,
+  "shadowOffsetY": null,
+  "shadowRadius": null
+}

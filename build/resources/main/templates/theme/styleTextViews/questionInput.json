@@ -1,0 +1,17 @@
+{
+  "fontKey": "subtitle",
+  "textColorKey": "textColor",
+  "placeholderColorKey": "placeholderTextColor",
+  "backgroundColorKey": "emptyStateBackgroundColor",
+  "borderColorKey": "primaryColor",
+  "borderWidth": "borderWidthThick",
+  "cornerRadius": "cornerRadiusMedium",
+  "isEditable": true,
+  "lineSpacing": "textViewLineSpacing",
+  "padding": {
+    "top": "spacingMedium",
+    "left": "spacingMedium",
+    "bottom": "spacingMedium",
+    "right": "spacingMedium"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "borderColorKey" : "",
+  "sourceType" : "asset",
+  "contentMode" : "scaleAspectFit",
+  "borderWidth" : "borderWidthThin",
+  "width" : "guideWidth",
+  "shadowLevel" : "none",
+  "cornerRadius" : "cornerRadiusNone",
+  "height" : "guideHeight"
+}

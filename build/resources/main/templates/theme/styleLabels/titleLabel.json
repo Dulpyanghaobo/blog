@@ -1,0 +1,11 @@
+{
+  "lineBreak" : "wordWrap",
+  "textAlign" : "left",
+  "underline" : false,
+  "colorKey" : "primaryLabel",
+  "fontKey" : "title",
+  "lineHeight" : 24,
+  "strikethrough" : false,
+  "opacity" : 1.0,
+  "isMonospaced" : false
+}

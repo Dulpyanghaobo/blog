@@ -1,0 +1,10 @@
+{
+  "minimumTrackTintColorKey": "successColor",
+  "maximumTrackTintColorKey": "dividerColor",
+  "thumbTintColorKey": "warningColor",
+  "thumbImageName": "icon-dev",
+  "trackHeightKey": "sliderTrackHeightThick",
+  "thumbSizeKey": "iconSizeMedium",
+  "isContinuous": true,
+  "animationKey": "indicatorAnimationStyleRotate"
+}

@@ -1,0 +1,12 @@
+{
+  "selectedTextColorKey": "navBarTitleColor",
+  "unselectedTextColorKey": "navBarTitleColor",
+  "selectedBackgroundColorKey": "errorColor",
+  "unselectedBackgroundColorKey": "warningColor",
+  "fontKey": "caption",
+  "cornerRadiusKey": "cornerRadiusFull",
+  "borderWidthKey": null,
+  "heightKey": "iconSizeSmall",
+  "borderColorKey": null,
+  "animationKey": null
+}

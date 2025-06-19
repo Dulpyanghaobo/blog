@@ -1,0 +1,147 @@
+2025-06-13T00:32:18.560+08:00 DEBUG 36477 --- [http-nio-8081-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.559+08:00 DEBUG 36477 --- [http-nio-8081-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.560+08:00 DEBUG 36477 --- [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.568+08:00 DEBUG 36477 --- [http-nio-8081-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.568+08:00 DEBUG 36477 --- [http-nio-8081-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.568+08:00 DEBUG 36477 --- [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.560+08:00 DEBUG 36477 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStaticThemeConfig()
+2025-06-13T00:32:18.569+08:00 DEBUG 36477 --- [http-nio-8081-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.570+08:00 DEBUG 36477 --- [http-nio-8081-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.570+08:00 DEBUG 36477 --- [http-nio-8081-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.570+08:00 DEBUG 36477 --- [http-nio-8081-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.570+08:00 DEBUG 36477 --- [http-nio-8081-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.570+08:00 DEBUG 36477 --- [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.570+08:00 DEBUG 36477 --- [http-nio-8081-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.570+08:00 DEBUG 36477 --- [http-nio-8081-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.571+08:00 DEBUG 36477 --- [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.571+08:00 DEBUG 36477 --- [http-nio-8081-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.571+08:00 DEBUG 36477 --- [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.571+08:00 DEBUG 36477 --- [http-nio-8081-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/theme/styles/labels", parameters={}
+2025-06-13T00:32:18.571+08:00 DEBUG 36477 --- [http-nio-8081-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.571+08:00 DEBUG 36477 --- [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.571+08:00 DEBUG 36477 --- [http-nio-8081-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.571+08:00 DEBUG 36477 --- [http-nio-8081-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.559+08:00 DEBUG 36477 --- [http-nio-8081-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.569+08:00 DEBUG 36477 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStaticThemeConfig()
+2025-06-13T00:32:18.572+08:00 DEBUG 36477 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStaticThemeConfig()
+2025-06-13T00:32:18.572+08:00 DEBUG 36477 --- [http-nio-8081-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/theme/styles/images", parameters={}
+2025-06-13T00:32:18.572+08:00 DEBUG 36477 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStaticThemeConfig()
+2025-06-13T00:32:18.560+08:00 DEBUG 36477 --- [http-nio-8081-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.573+08:00 DEBUG 36477 --- [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.573+08:00 DEBUG 36477 --- [http-nio-8081-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/theme/styles/views", parameters={}
+2025-06-13T00:32:18.573+08:00 DEBUG 36477 --- [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.573+08:00 DEBUG 36477 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStaticThemeConfig()
+2025-06-13T00:32:18.573+08:00 DEBUG 36477 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStaticThemeConfig()
+2025-06-13T00:32:18.574+08:00 DEBUG 36477 --- [http-nio-8081-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.574+08:00 DEBUG 36477 --- [http-nio-8081-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.574+08:00 DEBUG 36477 --- [http-nio-8081-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.575+08:00 DEBUG 36477 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStaticThemeConfig()
+2025-06-13T00:32:18.578+08:00 DEBUG 36477 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/theme/config/static", parameters={}
+2025-06-13T00:32:18.578+08:00 DEBUG 36477 --- [http-nio-8081-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.580+08:00 DEBUG 36477 --- [http-nio-8081-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.580+08:00 DEBUG 36477 --- [http-nio-8081-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.580+08:00 DEBUG 36477 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStaticThemeConfig()
+2025-06-13T00:32:18.580+08:00 DEBUG 36477 --- [http-nio-8081-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.580+08:00 DEBUG 36477 --- [http-nio-8081-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.580+08:00 DEBUG 36477 --- [http-nio-8081-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.581+08:00 DEBUG 36477 --- [http-nio-8081-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.581+08:00 DEBUG 36477 --- [http-nio-8081-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.581+08:00 DEBUG 36477 --- [http-nio-8081-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.581+08:00 DEBUG 36477 --- [http-nio-8081-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/theme/styles/progressbars", parameters={}
+2025-06-13T00:32:18.581+08:00 DEBUG 36477 --- [http-nio-8081-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.581+08:00 DEBUG 36477 --- [http-nio-8081-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.581+08:00 DEBUG 36477 --- [http-nio-8081-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/theme/styles/buttons", parameters={}
+2025-06-13T00:32:18.581+08:00 DEBUG 36477 --- [http-nio-8081-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.616+08:00 DEBUG 36477 --- [http-nio-8081-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-13T00:32:18.617+08:00 DEBUG 36477 --- [http-nio-8081-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{layout={spacingSmall=8, spacingMedium=12, spacingLarge=16, spacingXLarge=24, spacingXXLarge=32, cor (truncated)...]
+2025-06-13T00:32:18.618+08:00 DEBUG 36477 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-13T00:32:18.620+08:00 DEBUG 36477 --- [http-nio-8081-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.621+08:00 DEBUG 36477 --- [http-nio-8081-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.621+08:00 DEBUG 36477 --- [http-nio-8081-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.621+08:00 DEBUG 36477 --- [http-nio-8081-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.621+08:00 DEBUG 36477 --- [http-nio-8081-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.621+08:00 DEBUG 36477 --- [http-nio-8081-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.621+08:00 DEBUG 36477 --- [http-nio-8081-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.621+08:00 DEBUG 36477 --- [http-nio-8081-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/theme/styles/activityindicators", parameters={}
+2025-06-13T00:32:18.621+08:00 DEBUG 36477 --- [http-nio-8081-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.652+08:00 DEBUG 36477 --- [http-nio-8081-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-13T00:32:18.652+08:00 DEBUG 36477 --- [http-nio-8081-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{inputFieldBackground={backgroundColorKey=cardColor, cornerRadius=cornerRadiusMedium, shadowColorKey (truncated)...]
+2025-06-13T00:32:18.652+08:00 DEBUG 36477 --- [http-nio-8081-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-13T00:32:18.652+08:00 DEBUG 36477 --- [http-nio-8081-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-13T00:32:18.653+08:00 DEBUG 36477 --- [http-nio-8081-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{warningProgress={trackColorKey=dividerColor, progressColorKey=primaryColor, cornerRadiusKey=cornerR (truncated)...]
+2025-06-13T00:32:18.653+08:00 DEBUG 36477 --- [http-nio-8081-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-13T00:32:18.653+08:00 DEBUG 36477 --- [http-nio-8081-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-13T00:32:18.653+08:00 DEBUG 36477 --- [http-nio-8081-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.654+08:00 DEBUG 36477 --- [http-nio-8081-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{overlayIndicator={colorKey=primaryColor, backgroundColorKey=indicatorOverlayBackgroundColor, corner (truncated)...]
+2025-06-13T00:32:18.654+08:00 DEBUG 36477 --- [http-nio-8081-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.654+08:00 DEBUG 36477 --- [http-nio-8081-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-13T00:32:18.654+08:00 DEBUG 36477 --- [http-nio-8081-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.654+08:00 DEBUG 36477 --- [http-nio-8081-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.654+08:00 DEBUG 36477 --- [http-nio-8081-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.654+08:00 DEBUG 36477 --- [http-nio-8081-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.654+08:00 DEBUG 36477 --- [http-nio-8081-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.654+08:00 DEBUG 36477 --- [http-nio-8081-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.655+08:00 DEBUG 36477 --- [http-nio-8081-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.655+08:00 DEBUG 36477 --- [http-nio-8081-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.655+08:00 DEBUG 36477 --- [http-nio-8081-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.655+08:00 DEBUG 36477 --- [http-nio-8081-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.655+08:00 DEBUG 36477 --- [http-nio-8081-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.655+08:00 DEBUG 36477 --- [http-nio-8081-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.655+08:00 DEBUG 36477 --- [http-nio-8081-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/theme/styles/textfields", parameters={}
+2025-06-13T00:32:18.655+08:00 DEBUG 36477 --- [http-nio-8081-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.655+08:00 DEBUG 36477 --- [http-nio-8081-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.655+08:00 DEBUG 36477 --- [http-nio-8081-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.656+08:00 DEBUG 36477 --- [http-nio-8081-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.656+08:00 DEBUG 36477 --- [http-nio-8081-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.656+08:00 DEBUG 36477 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/theme/styles/textviews", parameters={}
+2025-06-13T00:32:18.656+08:00 DEBUG 36477 --- [http-nio-8081-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.656+08:00 DEBUG 36477 --- [http-nio-8081-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.656+08:00 DEBUG 36477 --- [http-nio-8081-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.656+08:00 DEBUG 36477 --- [http-nio-8081-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.656+08:00 DEBUG 36477 --- [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/theme/styles/segments", parameters={}
+2025-06-13T00:32:18.656+08:00 DEBUG 36477 --- [http-nio-8081-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.674+08:00 DEBUG 36477 --- [http-nio-8081-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-13T00:32:18.674+08:00 DEBUG 36477 --- [http-nio-8081-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-13T00:32:18.675+08:00 DEBUG 36477 --- [http-nio-8081-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{secondarySegment={selectedTextColorKey=textColor, unselectedTextColorKey=segmentUnselectedTextColor (truncated)...]
+2025-06-13T00:32:18.675+08:00 DEBUG 36477 --- [http-nio-8081-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{linkLabel={lineBreak=wordWrap, textAlign=left, underline=true, colorKey=infoColor, fontKey=body, li (truncated)...]
+2025-06-13T00:32:18.675+08:00 DEBUG 36477 --- [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-13T00:32:18.675+08:00 DEBUG 36477 --- [http-nio-8081-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-13T00:32:18.676+08:00 DEBUG 36477 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.677+08:00 DEBUG 36477 --- [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.677+08:00 DEBUG 36477 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.677+08:00 DEBUG 36477 --- [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.677+08:00 DEBUG 36477 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.677+08:00 DEBUG 36477 --- [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.677+08:00 DEBUG 36477 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.678+08:00 DEBUG 36477 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.678+08:00 DEBUG 36477 --- [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.678+08:00 DEBUG 36477 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.678+08:00 DEBUG 36477 --- [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.678+08:00 DEBUG 36477 --- [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.678+08:00 DEBUG 36477 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.679+08:00 DEBUG 36477 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/theme/styles/sliders", parameters={}
+2025-06-13T00:32:18.679+08:00 DEBUG 36477 --- [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.679+08:00 DEBUG 36477 --- [http-nio-8081-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/theme/styles/switchs", parameters={}
+2025-06-13T00:32:18.679+08:00 DEBUG 36477 --- [http-nio-8081-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.679+08:00 DEBUG 36477 --- [http-nio-8081-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hab.blog.feature.v1.theme.ThemeController#getStyleJsonMap(String)
+2025-06-13T00:32:18.683+08:00 DEBUG 36477 --- [http-nio-8081-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-13T00:32:18.683+08:00 DEBUG 36477 --- [http-nio-8081-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{readonlyInput={textColorKey=secondaryLabel, placeholderColorKey=placeholderTextColor, backgroundCol (truncated)...]
+2025-06-13T00:32:18.683+08:00 DEBUG 36477 --- [http-nio-8081-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-13T00:32:18.685+08:00 DEBUG 36477 --- [http-nio-8081-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-13T00:32:18.686+08:00 DEBUG 36477 --- [http-nio-8081-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{errorButton={iconSpacing=spacingXSmall, shadowOffsetX=null, shadowOffsetY=null, horizontalPadding=s (truncated)...]
+2025-06-13T00:32:18.686+08:00 DEBUG 36477 --- [http-nio-8081-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-13T00:32:18.687+08:00 DEBUG 36477 --- [http-nio-8081-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-13T00:32:18.687+08:00 DEBUG 36477 --- [http-nio-8081-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{readonlyDisplay={fontKey=body, textColorKey=secondaryLabel, placeholderColorKey=null, backgroundCol (truncated)...]
+2025-06-13T00:32:18.687+08:00 DEBUG 36477 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-13T00:32:18.688+08:00 DEBUG 36477 --- [http-nio-8081-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-13T00:32:18.688+08:00 DEBUG 36477 --- [http-nio-8081-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{statusError={borderColorKey=, sourceType=system, contentMode=scaleAspectFit, borderWidth=borderWidt (truncated)...]
+2025-06-13T00:32:18.688+08:00 DEBUG 36477 --- [http-nio-8081-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-13T00:32:18.700+08:00 DEBUG 36477 --- [http-nio-8081-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-13T00:32:18.700+08:00 DEBUG 36477 --- [http-nio-8081-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{disabledSlider={minimumTrackTintColorKey=dividerColor, maximumTrackTintColorKey=dividerColor, thumb (truncated)...]
+2025-06-13T00:32:18.700+08:00 DEBUG 36477 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-13T00:32:18.701+08:00 DEBUG 36477 --- [http-nio-8081-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-06-13T00:32:18.701+08:00 DEBUG 36477 --- [http-nio-8081-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{primarySwitch={onTintColorKey=primaryColor, thumbTintColorKey=sliderThumbColor, offTintColorKey=swi (truncated)...]
+2025-06-13T00:32:18.701+08:00 DEBUG 36477 --- [http-nio-8081-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-06-13T01:18:57.248+08:00  INFO 36477 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-13T01:18:57.257+08:00  INFO 36477 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-13T01:18:57.260+08:00  INFO 36477 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

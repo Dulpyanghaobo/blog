@@ -1,0 +1,17 @@
+{
+  "fontKey": "body",
+  "textColorKey": "secondaryLabel",
+  "placeholderColorKey": null,
+  "backgroundColorKey": "backgroundColor",
+  "borderColorKey": "dividerColor",
+  "borderWidth": "borderWidthThin",
+  "cornerRadius": "cornerRadiusSmall",
+  "isEditable": false,
+  "lineSpacing": "textViewLineSpacing",
+  "padding": {
+    "top": "spacingLarge",
+    "left": "spacingLarge",
+    "bottom": "spacingLarge",
+    "right": "spacingLarge"
+  }
+}

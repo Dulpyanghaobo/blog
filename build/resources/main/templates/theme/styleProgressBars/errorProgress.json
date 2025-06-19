@@ -1,0 +1,12 @@
+{
+  "trackColorKey": "dividerColor",
+  "progressColorKey": "errorColor",
+  "cornerRadiusKey": "cornerRadiusSmall",
+  "heightKey": "progressBarHeightLarge",
+  "shadowColorKey": "errorColor",
+  "shadowOpacityKey": "shadowOpacitySmall",
+  "shadowOffsetXKey": "shadowOffsetXSmall",
+  "shadowOffsetYKey": "shadowOffsetYSmall",
+  "shadowRadiusKey": "shadowRadiusSmall",
+  "animationKey": "progressAnimationEnabled"
+}

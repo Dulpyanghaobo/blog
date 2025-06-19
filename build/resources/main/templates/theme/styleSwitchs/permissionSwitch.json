@@ -1,0 +1,13 @@
+{
+  "onTintColorKey": "warningColor",
+  "thumbTintColorKey": "sliderThumbColor",
+  "offTintColorKey": "dividerColor",
+  "isEnabled": true,
+  "animationKey": "indicatorAnimationStyleScale",
+  "scaleKey": "switchScaleSmall",
+  "shadowColorKey": "shadowColor",
+  "shadowOpacity": "shadowOpacitySmall",
+  "shadowOffsetX": "shadowOffsetXSmall",
+  "shadowOffsetY": "shadowOffsetYSmall",
+  "shadowRadius": "shadowRadiusSmall"
+}

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>VideoStaticService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">blog</a> &gt; <a href="index.source.html" class="el_package">com.hab.blog.feature.v1.video</a> &gt; <span class="el_source">VideoStaticService.java</span></div><h1>VideoStaticService.java</h1><pre class="source lang-java linenums">package com.hab.blog.feature.v1.video;
+
+import com.hab.blog.feature.v1.entities.video.VideoType;
+import com.hab.blog.feature.v1.video.DTO.*;
+import org.springframework.stereotype.Service;
+
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
+@Service
+<span class="nc" id="L14">public class VideoStaticService {</span>
+
+    public List&lt;CategoryDTO&gt; getAllCategories() {
+<span class="nc" id="L17">        return List.of(</span>
+<span class="nc" id="L18">                new CategoryDTO(1000L, &quot;Cinematic Shots&quot;, &quot;Celebrate the art of cinematography with beautifully-captured videos and animation. The perfect collection for any cinema lover.&quot;, &quot;cinematic_poster&quot;),</span>
+<span class="nc" id="L19">                new CategoryDTO(1001L, &quot;Forest Life&quot;, &quot;Take a break from the busyness of city life and immerse yourself in nature with a curated collection of videos. Focus your attention on the forests of California and learn about the variety of cool plants.&quot;, &quot;forest_poster&quot;),</span>
+<span class="nc" id="L20">                new CategoryDTO(1002L, &quot;By the Sea&quot;, &quot;You can almost feel the calming sea breeze and the refreshing ocean mist as you take in the wonder of the vast Pacific Ocean. The perfect collection of videos for those that feel the call of the ocean.&quot;, &quot;sea_poster&quot;),</span>
+<span class="nc" id="L21">                new CategoryDTO(1003L, &quot;Cute Animals&quot;, &quot;Take a closer look at some of nature’s cutest animals. Feathered and shelled friends star in this adorable collection of animal videos. From little birds soaring through the sky to turtles in a lake fighting for the sunniest spot.&quot;, &quot;animals_poster&quot;),</span>
+<span class="nc" id="L22">                new CategoryDTO(1004L, &quot;Amazing Animation&quot;, &quot;Whether you’re a fan of 2D or 3D animation, this collection includes the best of both. Step into the world of a robot botanist with this new series of animated films.&quot;, &quot;amazing_poster&quot;),</span>
+<span class="nc" id="L23">                new CategoryDTO(1005L, &quot;Extraordinary&quot;, &quot;Step on to another planet as you follow the robot botanist on its mission to explore the universe and discover new and exciting plant life. Come see what exciting adventures lay in store.&quot;, &quot;extraordinary_poster&quot;)</span>
+        );
+    }
+
+
+
+    public List&lt;UpNextItemDTO&gt; getUpNextItems() {
+<span class="nc" id="L30">        List&lt;UpNextItemDTO&gt; upNextItems = new ArrayList&lt;&gt;();</span>
+
+<span class="nc" id="L32">        VideoDTO video0 = new VideoDTO();</span>
+<span class="nc" id="L33">        video0.setId(0L);</span>
+<span class="nc" id="L34">        video0.setName(&quot;A BOT-anist Adventure&quot;);</span>
+<span class="nc" id="L35">        video0.setSynopsis(&quot;A robot’s journey to save alien vegetation from extinction.&quot;);</span>
+<span class="nc" id="L36">        video0.setVideoType(VideoType.TWO_D);</span>
+<span class="nc" id="L37">        video0.setUrl(&quot;hhttps://playgrounds-cdn.apple.com/assets/lake/index.m3u8&quot;);</span>
+<span class="nc" id="L38">        video0.setImageName(&quot;BOT-anist&quot;);</span>
+<span class="nc" id="L39">        video0.setYearOfRelease(2024);</span>
+<span class="nc" id="L40">        video0.setDuration(66);</span>
+<span class="nc" id="L41">        video0.setStartTime(0L);</span>
+<span class="nc" id="L42">        video0.setContentRating(&quot;NR&quot;);</span>
+<span class="nc" id="L43">        video0.setIsHero(true);</span>
+<span class="nc" id="L44">        video0.setIsFeatured(false);</span>
+<span class="nc" id="L45">        video0.setCreatedAt(LocalDateTime.now());</span>
+<span class="nc" id="L46">        video0.setActorIDs(List.of(1L));</span>
+<span class="nc" id="L47">        video0.setWriterIDs(List.of(2L));</span>
+<span class="nc" id="L48">        video0.setDirectorIDs(List.of(3L));</span>
+<span class="nc" id="L49">        video0.setCategoryIDs(List.of(1000L, 1004L, 1005L));</span>
+<span class="nc" id="L50">        video0.setGenreIDs(List.of(7L, 8L));</span>
+
+
+<span class="nc" id="L53">        VideoDTO video1 = new VideoDTO();</span>
+<span class="nc" id="L54">        video1.setId(1L);</span>
+<span class="nc" id="L55">        video1.setName(&quot;示例视频1&quot;);</span>
+<span class="nc" id="L56">        video1.setSynopsis(&quot;这是视频1的简介&quot;);</span>
+<span class="nc" id="L57">        video1.setVideoType(VideoType.THREE_D);</span>
+<span class="nc" id="L58">        video1.setUrl(&quot;https://playgrounds-cdn.apple.com/assets/lake/index.m3u8&quot;);</span>
+<span class="nc" id="L59">        video1.setDuration(95);</span>
+<span class="nc" id="L60">        video1.setCreatedAt(LocalDateTime.now());</span>
+<span class="nc" id="L61">        video0.setGenreIDs(List.of(7L, 8L));</span>
+<span class="nc" id="L62">        video0.setActorIDs(List.of(1L));</span>
+<span class="nc" id="L63">        video0.setWriterIDs(List.of(2L));</span>
+<span class="nc" id="L64">        video0.setDirectorIDs(List.of(3L));</span>
+<span class="nc" id="L65">        video0.setCategoryIDs(List.of(1000L, 1004L, 1005L));</span>
+
+<span class="nc" id="L67">        UpNextItemDTO item0 = new UpNextItemDTO();</span>
+<span class="nc" id="L68">        item0.setId(UUID.randomUUID());</span>
+<span class="nc" id="L69">        item0.setVideoID(0L);</span>
+<span class="nc" id="L70">        item0.setVideo(video0);</span>
+<span class="nc" id="L71">        item0.setCreatedAt(Instant.now());</span>
+
+<span class="nc" id="L73">        UpNextItemDTO item1 = new UpNextItemDTO();</span>
+<span class="nc" id="L74">        item1.setId(UUID.randomUUID());</span>
+<span class="nc" id="L75">        item1.setVideoID(1L);</span>
+<span class="nc" id="L76">        item1.setVideo(video1);</span>
+<span class="nc" id="L77">        item1.setCreatedAt(Instant.now());</span>
+
+<span class="nc" id="L79">        upNextItems.add(item0);</span>
+<span class="nc" id="L80">        upNextItems.add(item1);</span>
+
+<span class="nc" id="L82">        return upNextItems;</span>
+    }
+
+
+
+    public List&lt;GenreDTO&gt; getAllGenres() {
+<span class="nc" id="L88">        return List.of(</span>
+<span class="nc" id="L89">                new GenreDTO(0L, &quot;Drama&quot;),</span>
+<span class="nc" id="L90">                new GenreDTO(1L, &quot;Romance&quot;),</span>
+<span class="nc" id="L91">                new GenreDTO(2L, &quot;Comedy&quot;),</span>
+<span class="nc" id="L92">                new GenreDTO(3L, &quot;Action&quot;),</span>
+<span class="nc" id="L93">                new GenreDTO(4L, &quot;Adventure&quot;),</span>
+<span class="nc" id="L94">                new GenreDTO(5L, &quot;Documentary&quot;),</span>
+<span class="nc" id="L95">                new GenreDTO(6L, &quot;Mystery&quot;),</span>
+<span class="nc" id="L96">                new GenreDTO(7L, &quot;Animation&quot;),</span>
+<span class="nc" id="L97">                new GenreDTO(8L, &quot;Sci-Fi&quot;)</span>
+        );
+    }
+
+    public List&lt;PersonDTO&gt; getAllPeople() {
+<span class="nc" id="L102">        return List.of(</span>
+<span class="nc" id="L103">                new PersonDTO(0L, &quot;A&quot;, &quot;Cloud&quot;, List.of(), List.of(), List.of(21L)),</span>
+<span class="nc" id="L104">                new PersonDTO(1L, &quot;A&quot;, &quot;Leaf&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L105">                new PersonDTO(2L, &quot;A&quot;, &quot;Tent&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L106">                new PersonDTO(3L, &quot;B&quot;, &quot;Misty&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L107">                new PersonDTO(4L, &quot;B&quot;, &quot;Skies&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L108">                new PersonDTO(5L, &quot;D&quot;, &quot;Lily&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L109">                new PersonDTO(6L, &quot;E&quot;, &quot;Reed&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L110">                new PersonDTO(7L, &quot;F&quot;, &quot;Log&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L111">                new PersonDTO(8L, &quot;G&quot;, &quot;Grass&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L112">                new PersonDTO(9L, &quot;G&quot;, &quot;Run&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L113">                new PersonDTO(10L, &quot;G&quot;, &quot;Seaglass&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L114">                new PersonDTO(11L, &quot;J&quot;, &quot;Sun&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L115">                new PersonDTO(12L, &quot;K&quot;, &quot;Dark&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L116">                new PersonDTO(13L, &quot;K&quot;, &quot;Green&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L117">                new PersonDTO(14L, &quot;L&quot;, &quot;Misty&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L118">                new PersonDTO(15L, &quot;L&quot;, &quot;Shore&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L119">                new PersonDTO(16L, &quot;L&quot;, &quot;Windy&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L120">                new PersonDTO(17L, &quot;M&quot;, &quot;Seagull&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L121">                new PersonDTO(18L, &quot;M&quot;, &quot;Turtle&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L122">                new PersonDTO(19L, &quot;N&quot;, &quot;Hide&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L123">                new PersonDTO(20L, &quot;N&quot;, &quot;Sand&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L124">                new PersonDTO(21L, &quot;A&quot;, &quot;Cloud&quot;, List.of(), List.of(), List.of(0L)),</span>
+<span class="nc" id="L125">                new PersonDTO(22L, &quot;O&quot;, &quot;Scary&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L126">                new PersonDTO(23L, &quot;P&quot;, &quot;Sky&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L127">                new PersonDTO(24L, &quot;R&quot;, &quot;Hill&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L128">                new PersonDTO(25L, &quot;R&quot;, &quot;Rock&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L129">                new PersonDTO(26L, &quot;S&quot;, &quot;Dandy&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L130">                new PersonDTO(27L, &quot;S&quot;, &quot;Sticks&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L131">                new PersonDTO(28L, &quot;T&quot;, &quot;Daisy&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L132">                new PersonDTO(29L, &quot;U&quot;, &quot;Brush&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L133">                new PersonDTO(30L, &quot;U&quot;, &quot;Dare&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L134">                new PersonDTO(31L, &quot;V&quot;, &quot;Sunny&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L135">                new PersonDTO(32L, &quot;V&quot;, &quot;Water&quot;, List.of(), List.of(), List.of()),</span>
+<span class="nc" id="L136">                new PersonDTO(33L, &quot;Z&quot;, &quot;Splash&quot;, List.of(), List.of(), List.of())</span>
+        );
+    }
+
+
+    public List&lt;VideoDTO&gt; getStaticVideos() {
+<span class="nc" id="L142">        List&lt;VideoDTO&gt; list = new ArrayList&lt;&gt;();</span>
+
+<span class="nc" id="L144">        list.add(new VideoDTO(0L, &quot;A BOT-anist Adventure&quot;,</span>
+                &quot;An awe-inspiring tale of a beloved robot...&quot;,
+<span class="nc" id="L146">                VideoType.THREE_D, &quot;https://playgrounds-cdn.apple.com/assets/creek/index.m3u8&quot;, 66, null,</span>
+<span class="nc" id="L147">                &quot;BOT-anist&quot;, 2024, &quot;NR&quot;,</span>
+<span class="nc" id="L148">                List.of(1000L, 1004L, 1005L), List.of(7L, 8L), List.of(1L),</span>
+<span class="nc" id="L149">                List.of(2L), List.of(3L), 0L, true, false));</span>
+
+<span class="nc" id="L151">        list.add(new VideoDTO(1L, &quot;Landing&quot;,</span>
+                &quot;After a long journey through the stars...&quot;,
+<span class="nc" id="L153">                VideoType.THREE_D, &quot;file://BOT-anist_video.mov&quot;, 66, null,</span>
+<span class="nc" id="L154">                &quot;landing&quot;, 2024, &quot;NR&quot;,</span>
+<span class="nc" id="L155">                List.of(1004L, 1005L), List.of(8L), List.of(1L),</span>
+<span class="nc" id="L156">                List.of(2L), List.of(3L), 0L, false, false));</span>
+
+<span class="nc" id="L158">        list.add(new VideoDTO(2L, &quot;Seed Sampling&quot;,</span>
+                &quot;On a planet covered in lush jungles...&quot;,
+<span class="nc" id="L160">                VideoType.THREE_D, &quot;file://BOT-anist_video.mov&quot;, 66, null,</span>
+<span class="nc" id="L161">                &quot;samples&quot;, 2024, &quot;NR&quot;,</span>
+<span class="nc" id="L162">                List.of(1001L, 1004L, 1005L), List.of(7L), List.of(1L),</span>
+<span class="nc" id="L163">                List.of(2L), List.of(3L), 0L, false, false));</span>
+
+<span class="nc" id="L165">        list.add(new VideoDTO(3L, &quot;The Lab&quot;,</span>
+                &quot;After filling its backpack...&quot;,
+<span class="nc" id="L167">                VideoType.THREE_D, &quot;file://BOT-anist_video.mov&quot;, 66, null,</span>
+<span class="nc" id="L168">                &quot;lab&quot;, 2024, &quot;NR&quot;,</span>
+<span class="nc" id="L169">                List.of(1004L, 1005L), List.of(8L), List.of(1L),</span>
+<span class="nc" id="L170">                List.of(2L), List.of(3L), 0L, false, false));</span>
+
+<span class="nc" id="L172">        list.add(new VideoDTO(4L, &quot;Discovering&quot;,</span>
+                &quot;Always determined to discover new species...&quot;,
+<span class="nc" id="L174">                VideoType.THREE_D, &quot;file://BOT-anist_video.mov&quot;, 66, null,</span>
+<span class="nc" id="L175">                &quot;discovery&quot;, 2024, &quot;NR&quot;,</span>
+<span class="nc" id="L176">                List.of(1004L, 1005L), List.of(8L), List.of(1L),</span>
+<span class="nc" id="L177">                List.of(2L), List.of(3L), 0L, false, false));</span>
+
+<span class="nc" id="L179">        list.add(new VideoDTO(5L, &quot;Dance&quot;,</span>
+                &quot;Everyone needs a break from work sometimes...&quot;,
+<span class="nc" id="L181">                VideoType.THREE_D, &quot;file://dance_video.mov&quot;, 16, null,</span>
+<span class="nc" id="L182">                &quot;dance&quot;, 2024, &quot;NR&quot;,</span>
+<span class="nc" id="L183">                List.of(1004L), List.of(9L), List.of(1L),</span>
+<span class="nc" id="L184">                List.of(2L), List.of(3L), 0L, true, true));</span>
+
+<span class="nc" id="L186">        list.add(new VideoDTO(6L, &quot;A Beach&quot;,</span>
+                &quot;From an award-winning producer and actor...&quot;,
+<span class="nc" id="L188">                VideoType.TWO_D, &quot;https://playgrounds-cdn.apple.com/assets/beach/index.m3u8&quot;, 61, null,</span>
+<span class="nc" id="L189">                &quot;beach&quot;, 2023, &quot;NR&quot;,</span>
+<span class="nc" id="L190">                List.of(1002L), List.of(6L), List.of(4L),</span>
+<span class="nc" id="L191">                List.of(5L), List.of(6L), 0L, false, false));</span>
+
+<span class="nc" id="L193">        list.add(new VideoDTO(7L, &quot;By the Lake&quot;,</span>
+                &quot;The battle for the sunniest spot continues...&quot;,
+<span class="nc" id="L195">                VideoType.TWO_D, &quot;https://playgrounds-cdn.apple.com/assets/lake/index.m3u8&quot;, 19, null,</span>
+<span class="nc" id="L196">                &quot;lake&quot;, 2023, &quot;NR&quot;,</span>
+<span class="nc" id="L197">                List.of(1002L, 1003L), List.of(6L), List.of(4L),</span>
+<span class="nc" id="L198">                List.of(5L), List.of(6L), 0L, false, true));</span>
+
+<span class="nc" id="L200">        list.add(new VideoDTO(8L, &quot;Camping in the Woods&quot;,</span>
+                &quot;Come along for a journey of epic proportion...&quot;,
+<span class="nc" id="L202">                VideoType.TWO_D, &quot;https://playgrounds-cdn.apple.com/assets/camping/index.m3u8&quot;, 28, null,</span>
+<span class="nc" id="L203">                &quot;camping&quot;, 2023, &quot;NR&quot;,</span>
+<span class="nc" id="L204">                List.of(1001L), List.of(6L), List.of(4L),</span>
+<span class="nc" id="L205">                List.of(5L), List.of(6L), 0L, false, false));</span>
+
+<span class="nc" id="L207">        list.add(new VideoDTO(9L, &quot;Birds in the Park&quot;,</span>
+                &quot;On a dreamy spring day near the California hillside...&quot;,
+<span class="nc" id="L209">                VideoType.TWO_D, &quot;https://playgrounds-cdn.apple.com/assets/park/index.m3u8&quot;, 23, null,</span>
+<span class="nc" id="L210">                &quot;park&quot;, 2023, &quot;NR&quot;,</span>
+<span class="nc" id="L211">                List.of(1003L), List.of(5L), List.of(4L),</span>
+<span class="nc" id="L212">                List.of(5L), List.of(6L), 0L, false, false));</span>
+
+<span class="nc" id="L214">        list.add(new VideoDTO(10L, &quot;Mystery at the Creek&quot;,</span>
+                &quot;A mystery is brewing on a rainy Wednesday...&quot;,
+<span class="nc" id="L216">                VideoType.TWO_D, &quot;https://playgrounds-cdn.apple.com/assets/creek/index.m3u8&quot;, 28, null,</span>
+<span class="nc" id="L217">                &quot;creek&quot;, 2023, &quot;NR&quot;,</span>
+<span class="nc" id="L218">                List.of(1001L, 1002L), List.of(5L, 6L), List.of(4L),</span>
+<span class="nc" id="L219">                List.of(5L), List.of(6L), 0L, false, true));</span>
+
+<span class="nc" id="L221">        list.add(new VideoDTO(11L, &quot;The Rolling Hills&quot;,</span>
+                &quot;Discover the beauty beyond the highway...&quot;,
+<span class="nc" id="L223">                VideoType.TWO_D, &quot;https://playgrounds-cdn.apple.com/assets/hillside/index.m3u8&quot;, 80, null,</span>
+<span class="nc" id="L224">                &quot;hillside&quot;, 2023, &quot;NR&quot;,</span>
+<span class="nc" id="L225">                List.of(1000L), List.of(4L), List.of(4L),</span>
+<span class="nc" id="L226">                List.of(5L), List.of(6L), 0L, false, false));</span>
+
+<span class="nc" id="L228">        list.add(new VideoDTO(12L, &quot;Ocean Breeze&quot;,</span>
+                &quot;Experience the great flight of a black beetle...&quot;,
+<span class="nc" id="L230">                VideoType.TWO_D, &quot;https://playgrounds-cdn.apple.com/assets/ocean/index.m3u8&quot;, 14, null,</span>
+<span class="nc" id="L231">                &quot;ocean&quot;, 2023, &quot;NR&quot;,</span>
+<span class="nc" id="L232">                List.of(1000L, 1002L), List.of(4L, 6L), List.of(4L),</span>
+<span class="nc" id="L233">                List.of(5L), List.of(6L), 0L, false, true));</span>
+
+<span class="nc" id="L235">        return list;</span>
+    }
+
+
+    public List&lt;VideoRelationshipDTO&gt; getAllRelationships() {
+<span class="nc" id="L240">        return List.of(</span>
+<span class="nc" id="L241">                new VideoRelationshipDTO(0L, List.of(1L, 6L), List.of(32L, 15L), List.of(4L), List.of(7L, 8L)),</span>
+<span class="nc" id="L242">                new VideoRelationshipDTO(1L, List.of(1L, 6L), List.of(32L, 15L), List.of(4L), List.of(7L, 4L)),</span>
+<span class="nc" id="L243">                new VideoRelationshipDTO(2L, List.of(1L, 6L), List.of(32L, 15L), List.of(4L), List.of(7L, 8L)),</span>
+<span class="nc" id="L244">                new VideoRelationshipDTO(3L, List.of(1L, 6L), List.of(32L, 15L), List.of(4L), List.of(7L, 8L)),</span>
+<span class="nc" id="L245">                new VideoRelationshipDTO(4L, List.of(1L, 6L), List.of(32L, 15L), List.of(4L), List.of(7L, 6L)),</span>
+<span class="nc" id="L246">                new VideoRelationshipDTO(5L, List.of(20L, 23L, 11L, 16L), List.of(25L, 10L), List.of(17L), List.of(2L, 7L)),</span>
+<span class="nc" id="L247">                new VideoRelationshipDTO(6L, List.of(20L, 23L, 11L, 16L), List.of(25L, 10L), List.of(17L), List.of(0L, 1L)),</span>
+<span class="nc" id="L248">                new VideoRelationshipDTO(7L, List.of(18L, 13L), List.of(33L), List.of(5L), List.of(2L, 3L)),</span>
+<span class="nc" id="L249">                new VideoRelationshipDTO(8L, List.of(27L, 7L, 2L), List.of(28L), List.of(21L), List.of(3L, 4L)),</span>
+<span class="nc" id="L250">                new VideoRelationshipDTO(9L, List.of(3L, 24L), List.of(8L, 0L), List.of(26L, 31L), List.of(5L)),</span>
+<span class="nc" id="L251">                new VideoRelationshipDTO(10L, List.of(22L, 30L), List.of(9L), List.of(19L, 12L), List.of(6L)),</span>
+<span class="nc" id="L252">                new VideoRelationshipDTO(11L, List.of(14L, 24L), List.of(0L), List.of(29L), List.of(1L, 0L)),</span>
+<span class="nc" id="L253">                new VideoRelationshipDTO(12L, List.of(1L, 6L), List.of(32L, 15L), List.of(4L), List.of(2L, 3L))</span>
+        );
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

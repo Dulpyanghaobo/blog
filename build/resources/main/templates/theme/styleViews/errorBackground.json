@@ -1,0 +1,13 @@
+{
+  "backgroundColorKey": "cardColor",
+  "cornerRadius": "cornerRadiusMedium",
+  "shadowColorKey": "shadowColor",
+  "shadowOpacity": "shadowOpacitySmall",
+  "shadowOffsetX": "shadowOffsetXSmall",
+  "shadowOffsetY": "shadowOffsetYSmall",
+  "shadowRadius": "shadowRadiusSmall",
+  "borderColorKey": null,
+  "borderWidth": null,
+  "opacity": "opacityFull",
+  "blurStyle": null
+}

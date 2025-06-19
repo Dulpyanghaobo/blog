@@ -1,0 +1,13 @@
+{
+  "borderColorKey" : "warningColor",
+  "lineBreak" : "truncatingTail",
+  "textAlign" : "left",
+  "underline" : true,
+  "borderWidth" : 1.0,
+  "colorKey" : "warningColor",
+  "fontKey" : "body",
+  "lineHeight" : 18,
+  "strikethrough" : false,
+  "opacity" : 1.0,
+  "isMonospaced" : false
+}

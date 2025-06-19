@@ -4,40 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="425c50e7-2d3d-44ae-a215-f8df489a72bf" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/blog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/blog.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/blog.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/blog.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/apect/LoggingAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/common/apect/LoggingAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/apect/ResourceManagementAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/common/apect/ResourceManagementAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/auth/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/auth/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/auth/Entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/auth/Entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/auth/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/auth/Service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/controller/DocumentProcessingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/Objective/controller/DocumentProcessingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/controller/FileUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/Objective/controller/FileUploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/Objective/controller/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/Objective/controller/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/Objective/controller/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/dto/JwtRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/Objective/dto/JwtRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/dto/PostDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/Objective/dto/PostDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/dto/TaskDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/Objective/dto/TaskDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/dto/UserRegistrationDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/Objective/dto/UserRegistrationDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/init/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/common/apect/init/DataInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/model/KeyAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/Objective/model/KeyAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/model/KeyResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/Objective/model/KeyResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/model/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/Objective/model/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/Objective/model/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/model/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/Objective/model/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/repository/KeyActionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/repository/KeyActionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/repository/KeyResultRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/repository/KeyResultRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/repository/PostRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/repository/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/repository/RoleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/repository/TaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/repository/TaskRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/service/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hab/blog/api/v1/service/TaskService.java" afterDir="false" />
-    </list>
+    <list default="true" id="425c50e7-2d3d-44ae-a215-f8df489a72bf" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,6 +41,9 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2mk7vhn18NJRnH3JXNDe9uC9LBq" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -83,7 +53,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "hab/develop__wechat__auth",
+    "git-widget-placeholder": "master",
     "last_opened_file_path": "/Users/i564407/blog",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",

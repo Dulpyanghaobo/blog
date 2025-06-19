@@ -1,0 +1,18 @@
+{
+  "textColorKey": "tertiaryLabel",
+  "placeholderColorKey": "placeholderTextColor",
+  "backgroundColorKey": "sectionBackgroundColor",
+  "borderColorKey": "dividerColor",
+  "borderWidthKey": "borderWidthThin",
+  "cornerRadiusKey": "cornerRadiusSmall",
+  "fontKey": "textFieldFont",
+  "paddingKey": "paddingHorizontal",
+  "isSecure": false,
+  "isEditable": false,
+  "shadowColorKey": null,
+  "shadowOpacityKey": null,
+  "shadowOffsetXKey": null,
+  "shadowOffsetYKey": null,
+  "shadowRadiusKey": null,
+  "tapAnimationKey": null
+}

@@ -1,0 +1,18 @@
+{
+  "textColorKey": "textColor",
+  "placeholderColorKey": "placeholderTextColor",
+  "backgroundColorKey": "emptyStateBackgroundColor",
+  "borderColorKey": "dividerColor",
+  "borderWidthKey": "borderWidthThin",
+  "cornerRadiusKey": "cornerRadiusSmall",
+  "fontKey": "body",
+  "paddingKey": "spacingMedium",
+  "isSecure": false,
+  "isEditable": true,
+  "shadowColorKey": "shadowColor",
+  "shadowOpacityKey": "shadowOpacitySmall",
+  "shadowOffsetXKey": "shadowOffsetXSmall",
+  "shadowOffsetYKey": "shadowOffsetYSmall",
+  "shadowRadiusKey": "shadowRadiusSmall",
+  "tapAnimationKey": "buttonTapScale"
+}
