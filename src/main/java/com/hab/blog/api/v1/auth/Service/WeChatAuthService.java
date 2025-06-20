@@ -7,6 +7,7 @@ import com.hab.blog.api.v1.response.ApiResponse;
 import com.hab.blog.api.v1.utility.JwtTokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -18,6 +19,10 @@ import java.util.Collection;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+
+@ConditionalOnProperty(name = "wechat.enabled",
+        havingValue = "true",
+        matchIfMissing = false)
 @Service
 public class WeChatAuthService {
 

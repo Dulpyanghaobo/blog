@@ -35,8 +35,8 @@ public class AuthController {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private WeChatAuthService weChatAuthService;
+//    @Autowired
+//    private WeChatAuthService weChatAuthService;
 
     @PostMapping("/login")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequestDto authenticationRequest) throws Exception {
@@ -148,10 +148,10 @@ public class AuthController {
         return new ResponseEntity<>("User verified successfully!", HttpStatus.OK);
     }
 
-    // 新增的微信登录接口
-    @PostMapping("/wechat/login")
-    public ResponseEntity<ApiResponse<String>> loginWithWeChat(@RequestParam String code) {
-        ApiResponse<String> response = weChatAuthService.loginWithWeChat(code);
-        return ResponseEntity.ok(response);
-    }
+//    // 新增的微信登录接口
+//    @PostMapping("/wechat/login")
+//    public ResponseEntity<ApiResponse<String>> loginWithWeChat(@RequestParam String code) {
+//        ApiResponse<String> response = weChatAuthService.loginWithWeChat(code);
+//        return ResponseEntity.ok(response);
+//    }
 }
