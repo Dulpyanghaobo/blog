@@ -1,8 +1,8 @@
-package com.hab.blog.api.v1.moods;
+package com.hab.blog.module.mood;
 
-import com.hab.blog.api.v1.moods.Entity.Mood;
-import com.hab.blog.api.v1.moods.Entity.MoodRequest;
-import com.hab.blog.api.v1.moods.Service.MoodService;
+import com.hab.blog.module.mood.Entity.Mood;
+import com.hab.blog.module.mood.Entity.MoodRequest;
+import com.hab.blog.module.mood.Service.MoodService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;

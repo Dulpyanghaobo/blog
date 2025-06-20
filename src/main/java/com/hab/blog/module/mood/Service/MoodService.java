@@ -1,8 +1,8 @@
-package com.hab.blog.api.v1.moods.Service;
+package com.hab.blog.module.mood.Service;
 
 import com.hab.blog.api.v1.auth.UserRepository;
-import com.hab.blog.api.v1.moods.Entity.Mood;
-import com.hab.blog.api.v1.moods.Repository.MoodRepository;
+import com.hab.blog.module.mood.Entity.Mood;
+import com.hab.blog.module.mood.Repository.MoodRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.hab.blog.api.v1.moods.Entity;
+package com.hab.blog.module.mood.Entity;
 
 import lombok.Data;
 

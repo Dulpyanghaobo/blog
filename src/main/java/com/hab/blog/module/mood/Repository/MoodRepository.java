@@ -1,6 +1,6 @@
-package com.hab.blog.api.v1.moods.Repository;
+package com.hab.blog.module.mood.Repository;
 
-import com.hab.blog.api.v1.moods.Entity.Mood;
+import com.hab.blog.module.mood.Entity.Mood;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
