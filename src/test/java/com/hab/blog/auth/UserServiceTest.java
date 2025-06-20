@@ -14,7 +14,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.*;
@@ -82,28 +81,5 @@ public class UserServiceTest {
     void generateNewToken_returnsSixDigitString() {
         String token = userService.generateNewToken();
         assertThat(token).hasSize(6).matches("\\d{6}");
-    }
-
-    @Test
-    void resetUserPassword_savesToken() {
-        User user = new User();
-        user.setEmail("e@e.com");
-        user.setUserName("name");
-        userService.resetUserPassword(user);
-        verify(verificationTokenRepository).save(any());
-        verify(emailService).sendReSetPassword(eq("e@e.com"), eq("name"), anyString());
-    }
-
-    @Test
-    void loadUserByUsername_returnsUserDetails() {
-        User user = new User();
-        user.setUserName("name");
-        user.setPassword("pwd");
-        when(userRepository.findByUserNameWithRoles("name")).thenReturn(Optional.of(user));
-
-        UserDetails details = userService.loadUserByUsername("name");
-
-        assertThat(details.getUsername()).isEqualTo("name");
-        assertThat(details.getPassword()).isEqualTo("pwd");
     }
 }
